@@ -113,13 +113,16 @@
             // 
             // registryNowButton
             // 
+            this.registryNowButton.BackColor = System.Drawing.Color.Green;
             this.registryNowButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.registryNowButton.ForeColor = System.Drawing.Color.Yellow;
             this.registryNowButton.Location = new System.Drawing.Point(264, 343);
             this.registryNowButton.Name = "registryNowButton";
-            this.registryNowButton.Size = new System.Drawing.Size(94, 29);
+            this.registryNowButton.Padding = new System.Windows.Forms.Padding(5);
+            this.registryNowButton.Size = new System.Drawing.Size(109, 51);
             this.registryNowButton.TabIndex = 2;
             this.registryNowButton.Text = "Registry";
-            this.registryNowButton.UseVisualStyleBackColor = true;
+            this.registryNowButton.UseVisualStyleBackColor = false;
             this.registryNowButton.Click += new System.EventHandler(this.registryNowButton_Click);
             // 
             // registryLabel
@@ -136,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(664, 450);
             this.Controls.Add(this.registryLabel);
             this.Controls.Add(this.registryNowButton);
             this.Controls.Add(this.emailLabel);
