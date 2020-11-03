@@ -28,13 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.startButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // startButton
+            // 
+            this.startButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.startButton.Location = new System.Drawing.Point(509, 325);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(154, 29);
+            this.startButton.TabIndex = 0;
+            this.startButton.Text = "buttonStart";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(1152, 972);
+            this.Controls.Add(this.startButton);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
@@ -44,5 +58,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button startButton;
     }
 }

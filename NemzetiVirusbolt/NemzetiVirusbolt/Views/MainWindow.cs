@@ -8,5 +8,12 @@ namespace NemzetiVirusbolt.Views
         {
             InitializeComponent();
         }
+
+        private void startButton_Click(object sender, System.EventArgs e)
+        {
+            this.Hide();
+            Form1 login = new Form1();
+            login.Show();
+        }
     }
 }
