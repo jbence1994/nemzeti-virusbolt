@@ -79,7 +79,6 @@
             this.nameLabel.Size = new System.Drawing.Size(57, 23);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "Name";
-            this.nameLabel.Click += new System.EventHandler(this.nameLabel_Click);
             // 
             // passwordLabel
             // 
