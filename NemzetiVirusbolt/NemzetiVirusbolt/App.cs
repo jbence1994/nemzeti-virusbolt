@@ -37,11 +37,10 @@ namespace NemzetiVirusbolt
                 })
                 .Build();
 
-            var mainWindow = host.Services.GetRequiredService<MainWindow>();
-
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
-            Application.Run(mainWindow);
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(mainForm: host.Services.GetRequiredService<MainWindow>());
         }
     }
 }
