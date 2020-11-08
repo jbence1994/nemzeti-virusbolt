@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using NemzetiVirusbolt.DesktopClient.Services;
 
 namespace NemzetiVirusbolt.DesktopClient.Views
@@ -11,6 +12,11 @@ namespace NemzetiVirusbolt.DesktopClient.Views
         {
             InitializeComponent();
             _stockRepository = stockRepository;
+        }
+
+        private void StockComponent_Load(object sender, EventArgs e)
+        {
+            dataGridViewStock.DataSource = _stockRepository.GetStocks();
         }
     }
 }
