@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NemzetiVirusbolt
+namespace NemzetiVirusbolt.Forms
 {
-    public partial class Menu : Form
+    public partial class Logout : Form
     {
-        public Menu()
+        public Logout()
         {
             InitializeComponent();
         }
@@ -18,8 +18,10 @@ namespace NemzetiVirusbolt
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 login = new Form1();
-            login.Show();
+
+            Login f1 = new Login();
+            f1.Show();
+
         }
     }
 }

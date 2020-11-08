@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NemzetiVirusbolt
+namespace NemzetiVirusbolt.Forms
 {
     public partial class Menu : Form
     {
@@ -18,7 +18,7 @@ namespace NemzetiVirusbolt
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 login = new Form1();
+            Logout login = new Logout();
             login.Show();
         }
     }
