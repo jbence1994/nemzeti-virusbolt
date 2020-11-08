@@ -37,6 +37,9 @@ namespace NemzetiVirusbolt.DesktopClient
                     services.AddScoped<IUserRepository, UserRepository>();
 
                     services.AddScoped<MainWindow>();
+                    services.AddScoped<TabControlComponent>();
+                    services.AddScoped<StockComponent>();
+
                 })
                 .Build();
 

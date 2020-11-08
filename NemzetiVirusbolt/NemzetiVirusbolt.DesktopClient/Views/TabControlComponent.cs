@@ -5,15 +5,18 @@ namespace NemzetiVirusbolt.DesktopClient.Views
 {
     public partial class TabControlComponent : UserControl
     {
-        public TabControlComponent()
+        private readonly StockComponent _stockComponent;
+
+        public TabControlComponent(StockComponent stockComponent)
         {
             InitializeComponent();
+            _stockComponent = stockComponent;
+            _stockComponent.Dock = DockStyle.Fill;
         }
 
         private void TabControlComponent_Load(object sender, EventArgs e)
         {
-            var stockComponent = new StockComponent {Dock = DockStyle.Fill};
-            tabPageStock.Controls.Add(stockComponent);
+            tabPageStock.Controls.Add(_stockComponent);
         }
     }
 }

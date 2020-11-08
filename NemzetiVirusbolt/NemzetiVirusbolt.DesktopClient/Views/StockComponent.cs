@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using NemzetiVirusbolt.DesktopClient.Services;
 
 namespace NemzetiVirusbolt.DesktopClient.Views
 {
     public partial class StockComponent : UserControl
     {
-        public StockComponent()
+        private readonly IStockRepository _stockRepository;
+
+        public StockComponent(IStockRepository stockRepository)
         {
             InitializeComponent();
+            _stockRepository = stockRepository;
         }
     }
 }
