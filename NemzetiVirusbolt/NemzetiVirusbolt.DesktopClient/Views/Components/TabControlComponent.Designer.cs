@@ -47,6 +47,7 @@
             this.supplier = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.netPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grossPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addButton = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,6 +81,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.addButton);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
@@ -244,6 +246,15 @@
             this.grossPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.grossPrice.Width = 125;
             // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(957, 272);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "Hozzáad";
+            this.addButton.UseVisualStyleBackColor = true;
+            // 
             // TabControlComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -283,5 +294,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn supplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn netPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn grossPrice;
+        private System.Windows.Forms.Button addButton;
     }
 }
