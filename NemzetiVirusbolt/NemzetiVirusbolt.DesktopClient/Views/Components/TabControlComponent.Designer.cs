@@ -39,6 +39,7 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchLabel = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.addButton = new System.Windows.Forms.Button();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unit = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -47,7 +48,6 @@
             this.supplier = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.netPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grossPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addButton = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -179,12 +179,20 @@
             this.tabPage3.Size = new System.Drawing.Size(1084, 868);
             this.tabPage3.TabIndex = 3;
             // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(925, 272);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(107, 48);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "Hozzáad";
+            this.addButton.UseVisualStyleBackColor = true;
+            // 
             // name
             // 
             this.name.HeaderText = "Név";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
-            this.name.ReadOnly = true;
             this.name.Width = 125;
             // 
             // quantity
@@ -192,7 +200,6 @@
             this.quantity.HeaderText = "Mennyiség";
             this.quantity.MinimumWidth = 6;
             this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
             this.quantity.Width = 125;
             // 
             // unit
@@ -200,7 +207,6 @@
             this.unit.HeaderText = "Mennyiségi egység";
             this.unit.MinimumWidth = 6;
             this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
             this.unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.unit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.unit.Width = 125;
@@ -210,7 +216,6 @@
             this.itemNum.HeaderText = "Cikkszám";
             this.itemNum.MinimumWidth = 6;
             this.itemNum.Name = "itemNum";
-            this.itemNum.ReadOnly = true;
             this.itemNum.Width = 125;
             // 
             // barCode
@@ -218,7 +223,6 @@
             this.barCode.HeaderText = "Vonalkód";
             this.barCode.MinimumWidth = 6;
             this.barCode.Name = "barCode";
-            this.barCode.ReadOnly = true;
             this.barCode.Width = 125;
             // 
             // supplier
@@ -245,15 +249,6 @@
             this.grossPrice.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.grossPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.grossPrice.Width = 125;
-            // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(957, 272);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 1;
-            this.addButton.Text = "Hozzáad";
-            this.addButton.UseVisualStyleBackColor = true;
             // 
             // TabControlComponent
             // 
@@ -286,6 +281,7 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button modifyButton;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewComboBoxColumn unit;
@@ -294,6 +290,5 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn supplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn netPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn grossPrice;
-        private System.Windows.Forms.Button addButton;
     }
 }
