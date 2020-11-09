@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace NemzetiVirusbolt.Core.Models
 {
@@ -7,11 +8,11 @@ namespace NemzetiVirusbolt.Core.Models
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public IEnumerable<Stock> Stocks { get; set; }
+        public ICollection<Stock> Stocks { get; set; }
 
         public User()
         {
-            Stocks = new List<Stock>();
+            Stocks = new Collection<Stock>();
         }
     }
 }
