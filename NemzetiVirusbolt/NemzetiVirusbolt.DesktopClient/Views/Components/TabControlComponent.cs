@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace NemzetiVirusbolt.DesktopClient.Views
+namespace NemzetiVirusbolt.DesktopClient.Views.Components
 {
     public partial class TabControlComponent : UserControl
     {

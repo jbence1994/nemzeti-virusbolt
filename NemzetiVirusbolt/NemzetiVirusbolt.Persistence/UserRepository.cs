@@ -19,7 +19,7 @@ namespace NemzetiVirusbolt.Persistence
             var user = _context.Users.SingleOrDefault(u => u.Id == id);
 
             if (user == null)
-                throw new Exception("Unknown user.");
+                throw new Exception("Ismeretlen felhasználó.");
 
             return user;
         }
@@ -28,7 +28,7 @@ namespace NemzetiVirusbolt.Persistence
         {
             if (!_context.Users.Any(u =>
                 u.Username == username && u.Password == password))
-                throw new Exception("Invalid username or password.");
+                throw new Exception("Helytelen felhasználónév vagy jelszó.");
         }
     }
 }

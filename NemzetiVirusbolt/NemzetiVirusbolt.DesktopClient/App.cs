@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using NemzetiVirusbolt.Core;
 using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.DesktopClient.Views;
+using NemzetiVirusbolt.DesktopClient.Views.Components;
 using NemzetiVirusbolt.Persistence;
 
 namespace NemzetiVirusbolt.DesktopClient
@@ -37,6 +38,7 @@ namespace NemzetiVirusbolt.DesktopClient
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
                     services.AddScoped<IUserRepository, UserRepository>();
 
+                    services.AddScoped<LoginWindow>();
                     services.AddScoped<MainWindow>();
                     services.AddScoped<TabControlComponent>();
                     services.AddScoped<StockComponent>();
@@ -46,7 +48,7 @@ namespace NemzetiVirusbolt.DesktopClient
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(mainForm: host.Services.GetRequiredService<MainWindow>());
+            Application.Run(mainForm: host.Services.GetRequiredService<LoginWindow>());
         }
     }
 }

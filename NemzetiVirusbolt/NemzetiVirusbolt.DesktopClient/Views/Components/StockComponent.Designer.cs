@@ -1,4 +1,4 @@
-﻿namespace NemzetiVirusbolt.DesktopClient.Views
+﻿namespace NemzetiVirusbolt.DesktopClient.Views.Components
 {
     partial class StockComponent
     {

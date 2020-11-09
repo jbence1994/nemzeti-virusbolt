@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using NemzetiVirusbolt.Core.Repositories;
 
-namespace NemzetiVirusbolt.DesktopClient.Views
+namespace NemzetiVirusbolt.DesktopClient.Views.Components
 {
     public partial class StockComponent : UserControl
     {
