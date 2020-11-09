@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NemzetiVirusbolt.DesktopClient.Models;
+using NemzetiVirusbolt.Core.Models;
 
-namespace NemzetiVirusbolt.DesktopClient.Persistence
+namespace NemzetiVirusbolt.Persistence
 {
     public class ApplicationDbContext : DbContext
     {

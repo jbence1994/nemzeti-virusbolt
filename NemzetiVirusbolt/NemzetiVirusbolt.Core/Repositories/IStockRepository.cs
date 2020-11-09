@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using NemzetiVirusbolt.DesktopClient.Models;
+using NemzetiVirusbolt.Core.Models;
 
-namespace NemzetiVirusbolt.DesktopClient.Services
+namespace NemzetiVirusbolt.Core.Repositories
 {
     public interface IStockRepository
     {

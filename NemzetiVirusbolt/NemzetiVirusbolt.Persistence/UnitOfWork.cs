@@ -1,6 +1,6 @@
-﻿using NemzetiVirusbolt.DesktopClient.Services;
+﻿using NemzetiVirusbolt.Core;
 
-namespace NemzetiVirusbolt.DesktopClient.Persistence
+namespace NemzetiVirusbolt.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {

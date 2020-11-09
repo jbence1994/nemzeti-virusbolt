@@ -1,4 +1,4 @@
-﻿namespace NemzetiVirusbolt.DesktopClient.Services
+﻿namespace NemzetiVirusbolt.Core
 {
     public interface IUnitOfWork
     {

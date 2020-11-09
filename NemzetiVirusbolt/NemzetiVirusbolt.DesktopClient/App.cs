@@ -5,9 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NemzetiVirusbolt.DesktopClient.Persistence;
-using NemzetiVirusbolt.DesktopClient.Services;
+using NemzetiVirusbolt.Core;
+using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.DesktopClient.Views;
+using NemzetiVirusbolt.Persistence;
 
 namespace NemzetiVirusbolt.DesktopClient
 {
@@ -28,7 +29,7 @@ namespace NemzetiVirusbolt.DesktopClient
                 .ConfigureServices(services =>
                 {
                     services.AddDbContext<ApplicationDbContext>(options =>
-                        options.UseSqlite(configuration.GetConnectionString("Default")));
+                        options.UseSqlite(configuration.GetConnectionString(DefaultDatabaseConnectionName)));
 
                     services.AddScoped<IProductRepository, ProductRepository>();
                     services.AddScoped<IStockRepository, StockRepository>();

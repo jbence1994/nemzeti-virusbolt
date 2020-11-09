@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using NemzetiVirusbolt.DesktopClient.Services;
+using NemzetiVirusbolt.Core.Repositories;
 
 namespace NemzetiVirusbolt.DesktopClient.Views
 {
