@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Windows.Forms;
 
 namespace NemzetiVirusbolt.DesktopClient.Views.Components
@@ -18,5 +19,29 @@ namespace NemzetiVirusbolt.DesktopClient.Views.Components
         {
             tabPageStock.Controls.Add(_stockComponent);
         }
-    }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            ArrayList stock = new ArrayList();
+            stock.Add("Maszk");
+          
+                if (stock.Contains(searchTextBox.Text))
+                {
+                    checkedListBox1.Enabled = true;
+                    
+                }
+            
+           
+        }
+
+        private void modifyButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
 }
