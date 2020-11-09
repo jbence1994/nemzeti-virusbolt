@@ -205,6 +205,10 @@
             // unit
             // 
             this.unit.HeaderText = "Mennyiségi egység";
+            this.unit.Items.AddRange(new object[] {
+            "darab",
+            "csomag",
+            "doboz"});
             this.unit.MinimumWidth = 6;
             this.unit.Name = "unit";
             this.unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
