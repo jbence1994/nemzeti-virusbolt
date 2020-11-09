@@ -23,15 +23,13 @@ namespace NemzetiVirusbolt.DesktopClient.Views.Components
         private void searchButton_Click(object sender, EventArgs e)
         {
             ArrayList stock = new ArrayList();
-            stock.Add("Maszk");
-          
-                if (stock.Contains(searchTextBox.Text))
-                {
-                    checkedListBox1.Enabled = true;
-                    
-                }
-            
-           
+
+            if (stock.Contains(searchTextBox.Text))
+            {
+
+            }
+
+
         }
 
         private void modifyButton_Click(object sender, EventArgs e)
@@ -43,5 +41,5 @@ namespace NemzetiVirusbolt.DesktopClient.Views.Components
         {
 
         }
-
+    }
 }
