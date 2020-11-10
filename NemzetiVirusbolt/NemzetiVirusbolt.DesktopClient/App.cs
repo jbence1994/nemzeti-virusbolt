@@ -40,7 +40,8 @@ namespace NemzetiVirusbolt.DesktopClient
 
                     services.AddScoped<LoginWindow>();
                     services.AddScoped<MainWindow>();
-                    services.AddScoped<TabControlComponent>();
+                    services.AddScoped<AddProductComponent>();
+                    services.AddScoped<SearchComponent>();
                     services.AddScoped<StockComponent>();
 
                 })
@@ -48,7 +49,11 @@ namespace NemzetiVirusbolt.DesktopClient
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(mainForm: host.Services.GetRequiredService<LoginWindow>());
+
+            //Application.Run(mainForm: host.Services.GetRequiredService<LoginWindow>());
+            // TODO: amíg nem jövök rá loginnál miért omlik össze az Sqlie dll-je, addig a főablak indul el, hogy tudjátok tesztelni a UI-t...
+
+            Application.Run(mainForm: host.Services.GetRequiredService<MainWindow>());
         }
     }
 }
