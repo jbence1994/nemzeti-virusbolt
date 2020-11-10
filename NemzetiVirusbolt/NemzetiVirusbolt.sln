@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.Forms", "NemzetiVirusbolt.Forms\NemzetiVirusbolt.Forms.csproj", "{B87DBC8B-8043-4ABB-B402-1A4640247FA3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.DesktopClient", "NemzetiVirusbolt.DesktopClient\NemzetiVirusbolt.DesktopClient.csproj", "{1146C86D-823F-47F0-BCCD-EA43F149F616}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{7A0FD6CE-8CAE-4032-9657-336DD2825EEB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{09CC3E4A-CD97-4021-8493-42F088F650F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.Core", "NemzetiVirusbolt.Core\NemzetiVirusbolt.Core.csproj", "{10B3BEF0-E366-4F98-9186-BAAB718AEE98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NemzetiVirusbolt.Core", "NemzetiVirusbolt.Core\NemzetiVirusbolt.Core.csproj", "{10B3BEF0-E366-4F98-9186-BAAB718AEE98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.Persistence", "NemzetiVirusbolt.Persistence\NemzetiVirusbolt.Persistence.csproj", "{EB153A75-74AA-4B66-84A6-0F17A6B87366}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NemzetiVirusbolt.Persistence", "NemzetiVirusbolt.Persistence\NemzetiVirusbolt.Persistence.csproj", "{EB153A75-74AA-4B66-84A6-0F17A6B87366}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B87DBC8B-8043-4ABB-B402-1A4640247FA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B87DBC8B-8043-4ABB-B402-1A4640247FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B87DBC8B-8043-4ABB-B402-1A4640247FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B87DBC8B-8043-4ABB-B402-1A4640247FA3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1146C86D-823F-47F0-BCCD-EA43F149F616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1146C86D-823F-47F0-BCCD-EA43F149F616}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1146C86D-823F-47F0-BCCD-EA43F149F616}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,7 +36,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B87DBC8B-8043-4ABB-B402-1A4640247FA3} = {7A0FD6CE-8CAE-4032-9657-336DD2825EEB}
 		{1146C86D-823F-47F0-BCCD-EA43F149F616} = {7A0FD6CE-8CAE-4032-9657-336DD2825EEB}
 		{10B3BEF0-E366-4F98-9186-BAAB718AEE98} = {09CC3E4A-CD97-4021-8493-42F088F650F4}
 		{EB153A75-74AA-4B66-84A6-0F17A6B87366} = {09CC3E4A-CD97-4021-8493-42F088F650F4}
