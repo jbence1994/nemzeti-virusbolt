@@ -19,12 +19,9 @@ namespace NemzetiVirusbolt.DesktopClient.Views
 
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            var username = textBoxUsername.Text;
-            var password = textBoxPassword.Text;
-
             try
             {
-                _userRepository.Authenticate(username, password);
+                _userRepository.Authenticate(textBoxUsername.Text, textBoxPassword.Text);
 
                 Hide();
                 _mainWindow.Show();
