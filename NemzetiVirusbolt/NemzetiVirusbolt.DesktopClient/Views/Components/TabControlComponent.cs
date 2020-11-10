@@ -41,5 +41,15 @@ namespace NemzetiVirusbolt.DesktopClient.Views.Components
         {
 
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
