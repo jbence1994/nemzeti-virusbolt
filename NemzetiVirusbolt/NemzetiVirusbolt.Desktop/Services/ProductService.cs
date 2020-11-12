@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -9,29 +10,40 @@ namespace NemzetiVirusbolt.Desktop.Services
     public class ProductService
     {
         private readonly HttpClient _apiClient;
-        private const string ProductsEndPoint = "https://localhost:44349/api/products";
+        private const string GetProductsEndPoint = "https://localhost:44349/api/products";
+        private const string GetProductEndPoint = "https://localhost:44349/api/products/";
 
         public ProductService()
         {
             _apiClient = new HttpClient();
+
+            _apiClient.DefaultRequestHeaders.Accept
+                .Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public async Task<IEnumerable<Product>> GetProducts()
         {
-            var products = new List<Product>();
-
-            _apiClient.DefaultRequestHeaders.Accept.Clear();
-            _apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            using (var response = await _apiClient.GetAsync(ProductsEndPoint))
+            using (var response = await _apiClient.GetAsync(GetProductsEndPoint))
             {
-                if (response.IsSuccessStatusCode)
-                {
-                    products = JsonConvert.DeserializeObject<List<Product>>(await response.Content.ReadAsStringAsync());
-                }
-            }
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception("Adatok letöltése sikertelen! Ellenőrízze az internetkapcsolatot.");
 
-            return products;
+                return JsonConvert
+                    .DeserializeObject<List<Product>>
+                        (await response.Content.ReadAsStringAsync());
+            }
+        }
+
+        public async Task<Product> GetProduct(int id)
+        {
+            using (var response = await _apiClient.GetAsync(GetProductEndPoint + id))
+            {
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception("Adatok letöltése sikertelen! Ellenőrízze az internetkapcsolatot.");
+
+                return JsonConvert
+                    .DeserializeObject<Product>(await response.Content.ReadAsStringAsync());
+            }
         }
     }
 }
