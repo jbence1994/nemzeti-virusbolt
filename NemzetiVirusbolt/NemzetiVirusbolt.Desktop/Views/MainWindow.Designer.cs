@@ -101,7 +101,7 @@
             this.tabPageCentralStock.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageCentralStock.Size = new System.Drawing.Size(811, 703);
             this.tabPageCentralStock.TabIndex = 5;
-            this.tabPageCentralStock.Text = "Nemzeti Vírusboltellátó Zrt. központi raktárkészlet";
+            this.tabPageCentralStock.Text = "Nemzeti Vírusboltellátó Zrt. által forgalmazott termékek";
             this.tabPageCentralStock.UseVisualStyleBackColor = true;
             // 
             // pictureBoxLogo
