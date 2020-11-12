@@ -25,7 +25,7 @@ namespace NemzetiVirusbolt.DesktopClient.Views.Components
 
         private void StockComponent_Load(object sender, EventArgs e)
         {
-            dataGridViewStock.DataSource = _stockRepository.GetStocks();
+            dataGridViewStock.DataSource = _productRepository.GetProducts();
         }
 
         private void addButton_Click(object sender, EventArgs e)
