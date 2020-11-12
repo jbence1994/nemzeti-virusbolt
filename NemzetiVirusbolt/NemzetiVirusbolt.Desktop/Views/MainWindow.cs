@@ -8,25 +8,30 @@ namespace NemzetiVirusbolt.Desktop.Views
     {
         private readonly SearchComponent _searchComponent;
         private readonly StockComponent _stockComponent;
+        private readonly CentralStockComponent _centralStockComponent;
 
         public MainWindow
         (
             SearchComponent searchComponent,
-            StockComponent stockComponent)
+            StockComponent stockComponent,
+            CentralStockComponent centralStockComponent)
         {
             InitializeComponent();
 
             _searchComponent = searchComponent;
             _stockComponent = stockComponent;
+            _centralStockComponent = centralStockComponent;
 
             _searchComponent.Dock = DockStyle.Fill;
             _stockComponent.Dock = DockStyle.Fill;
+            _centralStockComponent.Dock = DockStyle.Fill;
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
             tabPageSearch.Controls.Add(_searchComponent);
             tabPageStock.Controls.Add(_stockComponent);
+            tabPageCentralStock.Controls.Add(_centralStockComponent);
         }
     }
 }

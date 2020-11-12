@@ -85,9 +85,16 @@
     <Compile Include="Persistence\Repositories\IUserRepository.cs" />
     <Compile Include="Persistence\Repositories\StockRepository.cs" />
     <Compile Include="Persistence\Repositories\UserRepository.cs" />
+    <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\Product.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\Supplier.cs" />
+    <Compile Include="Views\Components\CentralStockComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\CentralStockComponent.Designer.cs">
+      <DependentUpon>CentralStockComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Components\SearchComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +128,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Components\CentralStockComponent.resx">
+      <DependentUpon>CentralStockComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\StockComponent.resx">
       <DependentUpon>StockComponent.cs</DependentUpon>
     </EmbeddedResource>

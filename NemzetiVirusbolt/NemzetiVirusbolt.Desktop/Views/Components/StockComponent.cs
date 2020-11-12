@@ -22,10 +22,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             //_stockRepository = stockRepository;
         }
 
-        private async void StockComponent_Load(object sender, EventArgs e)
+        private void StockComponent_Load(object sender, EventArgs e)
         {
-            var productService = new ProductService();
-            dataGridViewStock.DataSource = await productService.GetProducts();
         }
 
         //private void addButton_Click(object sender, EventArgs e)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Autofac;
+using NemzetiVirusbolt.Desktop.Services;
 using NemzetiVirusbolt.Desktop.Views;
 using NemzetiVirusbolt.Desktop.Views.Components;
 
@@ -19,7 +20,10 @@ namespace NemzetiVirusbolt.Desktop
         {
             var containerBuilder = new ContainerBuilder();
 
+            containerBuilder.RegisterType<ProductService>().As<IProductService>();
+
             containerBuilder.RegisterType<App>().AsSelf();
+            containerBuilder.RegisterType<CentralStockComponent>().AsSelf();
             containerBuilder.RegisterType<SearchComponent>().AsSelf();
             containerBuilder.RegisterType<StockComponent>().AsSelf();
             containerBuilder.RegisterType<LoginWindow>().AsSelf();

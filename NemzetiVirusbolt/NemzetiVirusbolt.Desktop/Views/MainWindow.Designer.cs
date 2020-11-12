@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panelWindow = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.tabControlMain = new System.Windows.Forms.TabControl();
-            this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.tabPageAddProduct = new System.Windows.Forms.TabPage();
-            this.tabPageSearch = new System.Windows.Forms.TabPage();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.tabPageCentralStock = new System.Windows.Forms.TabPage();
+            this.tabPageSearch = new System.Windows.Forms.TabPage();
+            this.tabPageStock = new System.Windows.Forms.TabPage();
+            this.tabControlMain = new System.Windows.Forms.TabControl();
             this.panelWindow.SuspendLayout();
             this.panelMain.SuspendLayout();
-            this.tabControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.tabControlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelWindow
@@ -62,48 +62,6 @@
             this.panelMain.Size = new System.Drawing.Size(819, 729);
             this.panelMain.TabIndex = 1;
             // 
-            // tabControlMain
-            // 
-            this.tabControlMain.Controls.Add(this.tabPageStock);
-            this.tabControlMain.Controls.Add(this.tabPageAddProduct);
-            this.tabControlMain.Controls.Add(this.tabPageSearch);
-            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlMain.Location = new System.Drawing.Point(0, 0);
-            this.tabControlMain.Name = "tabControlMain";
-            this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(819, 729);
-            this.tabControlMain.TabIndex = 0;
-            // 
-            // tabPageStock
-            // 
-            this.tabPageStock.Location = new System.Drawing.Point(4, 22);
-            this.tabPageStock.Name = "tabPageStock";
-            this.tabPageStock.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageStock.Size = new System.Drawing.Size(811, 703);
-            this.tabPageStock.TabIndex = 2;
-            this.tabPageStock.Text = "Raktárkészlet";
-            this.tabPageStock.UseVisualStyleBackColor = true;
-            // 
-            // tabPageAddProduct
-            // 
-            this.tabPageAddProduct.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAddProduct.Name = "tabPageAddProduct";
-            this.tabPageAddProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAddProduct.Size = new System.Drawing.Size(811, 703);
-            this.tabPageAddProduct.TabIndex = 3;
-            this.tabPageAddProduct.Text = "Új termék hozzáadása";
-            this.tabPageAddProduct.UseVisualStyleBackColor = true;
-            // 
-            // tabPageSearch
-            // 
-            this.tabPageSearch.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSearch.Name = "tabPageSearch";
-            this.tabPageSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSearch.Size = new System.Drawing.Size(811, 703);
-            this.tabPageSearch.TabIndex = 4;
-            this.tabPageSearch.Text = "Keresés";
-            this.tabPageSearch.UseVisualStyleBackColor = true;
-            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.BackColor = System.Drawing.Color.White;
@@ -115,6 +73,48 @@
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
+            // 
+            // tabPageCentralStock
+            // 
+            this.tabPageCentralStock.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCentralStock.Name = "tabPageCentralStock";
+            this.tabPageCentralStock.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCentralStock.Size = new System.Drawing.Size(811, 703);
+            this.tabPageCentralStock.TabIndex = 5;
+            this.tabPageCentralStock.Text = "Nemzeti Vírusboltellátó Központ központi raktárkészlete";
+            this.tabPageCentralStock.UseVisualStyleBackColor = true;
+            // 
+            // tabPageSearch
+            // 
+            this.tabPageSearch.Location = new System.Drawing.Point(4, 22);
+            this.tabPageSearch.Name = "tabPageSearch";
+            this.tabPageSearch.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSearch.Size = new System.Drawing.Size(811, 703);
+            this.tabPageSearch.TabIndex = 4;
+            this.tabPageSearch.Text = "Keresés";
+            this.tabPageSearch.UseVisualStyleBackColor = true;
+            // 
+            // tabPageStock
+            // 
+            this.tabPageStock.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStock.Name = "tabPageStock";
+            this.tabPageStock.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageStock.Size = new System.Drawing.Size(811, 703);
+            this.tabPageStock.TabIndex = 2;
+            this.tabPageStock.Text = "Raktárkészlet";
+            this.tabPageStock.UseVisualStyleBackColor = true;
+            // 
+            // tabControlMain
+            // 
+            this.tabControlMain.Controls.Add(this.tabPageStock);
+            this.tabControlMain.Controls.Add(this.tabPageSearch);
+            this.tabControlMain.Controls.Add(this.tabPageCentralStock);
+            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlMain.Location = new System.Drawing.Point(0, 0);
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.Size = new System.Drawing.Size(819, 729);
+            this.tabControlMain.TabIndex = 0;
             // 
             // MainWindow
             // 
@@ -131,8 +131,8 @@
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panelWindow.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
-            this.tabControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.tabControlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -144,7 +144,7 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tabPageStock;
-        private System.Windows.Forms.TabPage tabPageAddProduct;
         private System.Windows.Forms.TabPage tabPageSearch;
+        private System.Windows.Forms.TabPage tabPageCentralStock;
     }
 }

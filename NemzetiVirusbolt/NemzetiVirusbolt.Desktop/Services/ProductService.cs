@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace NemzetiVirusbolt.Desktop.Services
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         private readonly HttpClient _apiClient;
         private const string GetProductsEndPoint = "https://localhost:44349/api/products";
