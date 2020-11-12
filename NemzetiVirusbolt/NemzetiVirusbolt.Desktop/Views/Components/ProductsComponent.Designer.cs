@@ -105,14 +105,14 @@
             // ColumnProductPrice
             // 
             this.ColumnProductPrice.DataPropertyName = "Price";
-            this.ColumnProductPrice.HeaderText = "Ár";
+            this.ColumnProductPrice.HeaderText = "Egységár";
             this.ColumnProductPrice.Name = "ColumnProductPrice";
             this.ColumnProductPrice.ReadOnly = true;
             // 
             // ColumnProductUnit
             // 
             this.ColumnProductUnit.DataPropertyName = "Unit";
-            this.ColumnProductUnit.HeaderText = "Egység";
+            this.ColumnProductUnit.HeaderText = "Mennyiségi egység";
             this.ColumnProductUnit.Name = "ColumnProductUnit";
             this.ColumnProductUnit.ReadOnly = true;
             // 

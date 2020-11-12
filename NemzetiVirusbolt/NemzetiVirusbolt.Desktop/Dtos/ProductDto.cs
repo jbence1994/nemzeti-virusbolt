@@ -6,7 +6,7 @@ namespace NemzetiVirusbolt.Desktop.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public double Price { get; set; }
+        public string Price { get; set; }
         public string Unit { get; set; }
         public string Description { get; set; }
         public string SupplierName { get; set; }
@@ -17,7 +17,7 @@ namespace NemzetiVirusbolt.Desktop.Dtos
             {
                 Id = product.Id,
                 Name = product.Name,
-                Price = product.Price,
+                Price = product.Price.ToString("C0"),
                 Unit = product.Unit,
                 Description = product.Description,
                 SupplierName = product.Supplier.Name
