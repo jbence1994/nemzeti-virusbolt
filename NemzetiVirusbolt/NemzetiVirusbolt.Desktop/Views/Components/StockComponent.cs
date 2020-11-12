@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using NemzetiVirusbolt.Desktop.Services;
 
 namespace NemzetiVirusbolt.Desktop.Views.Components
 {
@@ -20,9 +22,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             //_stockRepository = stockRepository;
         }
 
-        private void StockComponent_Load(object sender, EventArgs e)
+        private async void StockComponent_Load(object sender, EventArgs e)
         {
-            //dataGridViewStock.DataSource = _productRepository.GetProducts();
+            var productService = new ProductService();
+            dataGridViewStock.DataSource = await productService.GetProducts();
         }
 
         //private void addButton_Click(object sender, EventArgs e)
