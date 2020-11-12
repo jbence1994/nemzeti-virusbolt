@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using NemzetiVirusbolt.API.Controllers.Resources;
@@ -22,9 +23,9 @@ namespace NemzetiVirusbolt.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetProducts()
+        public async Task<IActionResult> GetProducts()
         {
-            var products = _productRepository.GetProducts();
+            var products = await _productRepository.GetProducts();
 
             var productResources =
                 _mapper.Map<IEnumerable<Product>, IEnumerable<ProductResource>>(products);
@@ -33,11 +34,11 @@ namespace NemzetiVirusbolt.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetProduct(int id)
+        public async Task<IActionResult> GetProduct(int id)
         {
             try
             {
-                var product = _productRepository.GetProduct(id);
+                var product = await _productRepository.GetProduct(id);
                 var productResource = _mapper.Map<Product, ProductResource>(product);
 
                 return Ok(productResource);

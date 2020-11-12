@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using NemzetiVirusbolt.API.Controllers.Resources;
@@ -22,9 +23,9 @@ namespace NemzetiVirusbolt.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetSuppliers()
+        public async Task<IActionResult> GetSuppliers()
         {
-            var suppliers = _supplierRepository.GetSuppliers();
+            var suppliers = await _supplierRepository.GetSuppliers();
 
             var supplierResources =
                 _mapper.Map<IEnumerable<Supplier>, IEnumerable<SupplierResource>>(suppliers);
@@ -33,11 +34,11 @@ namespace NemzetiVirusbolt.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetSupplier(int id)
+        public async Task<IActionResult> GetSupplier(int id)
         {
             try
             {
-                var supplier = _supplierRepository.GetSupplier(id);
+                var supplier = await _supplierRepository.GetSupplier(id);
                 var supplierResource = _mapper.Map<Supplier, SupplierResource>(supplier);
 
                 return Ok(supplierResource);

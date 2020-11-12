@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using NemzetiVirusbolt.API.Core.Models;
 
 namespace NemzetiVirusbolt.API.Core.Repositories
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> GetProducts();
-        Product GetProduct(int id);
+        Task<IEnumerable<Product>> GetProducts();
+        Task<Product> GetProduct(int id);
     }
 }
