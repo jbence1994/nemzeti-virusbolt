@@ -1,4 +1,6 @@
-﻿namespace NemzetiVirusbolt.DesktopClient.Views.Components
+﻿using System.Windows.Forms;
+
+namespace NemzetiVirusbolt.DesktopClient.Views.Components
 {
     partial class AddProductComponent
     {
@@ -28,8 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,14 +41,24 @@
             this.supplier = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.netPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grossPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameBox = new System.Windows.Forms.TextBox();
+            this.quantityBox = new System.Windows.Forms.TextBox();
+            this.supplierBox = new System.Windows.Forms.TextBox();
+            this.priceBox = new System.Windows.Forms.TextBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.quantityLabel = new System.Windows.Forms.Label();
+            this.supplierLabel = new System.Windows.Forms.Label();
+            this.netPriceLabel = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.descriptionBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -57,20 +69,20 @@
             this.supplier,
             this.netPrice,
             this.grossPrice});
-            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(880, 122);
+            this.dataGridView1.Size = new System.Drawing.Size(1173, 150);
             this.dataGridView1.TabIndex = 1;
             // 
             // name
@@ -139,26 +151,124 @@
             this.grossPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.grossPrice.Width = 125;
             // 
+            // nameBox
+            // 
+            this.nameBox.Location = new System.Drawing.Point(320, 204);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(248, 22);
+            this.nameBox.TabIndex = 2;
+            // 
+            // quantityBox
+            // 
+            this.quantityBox.Location = new System.Drawing.Point(320, 252);
+            this.quantityBox.Name = "quantityBox";
+            this.quantityBox.Size = new System.Drawing.Size(248, 22);
+            this.quantityBox.TabIndex = 3;
+            // 
+            // supplierBox
+            // 
+            this.supplierBox.Location = new System.Drawing.Point(320, 410);
+            this.supplierBox.Name = "supplierBox";
+            this.supplierBox.Size = new System.Drawing.Size(248, 22);
+            this.supplierBox.TabIndex = 7;
+            // 
+            // priceBox
+            // 
+            this.priceBox.Location = new System.Drawing.Point(320, 304);
+            this.priceBox.Name = "priceBox";
+            this.priceBox.Size = new System.Drawing.Size(248, 22);
+            this.priceBox.TabIndex = 8;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nameLabel.Location = new System.Drawing.Point(96, 206);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(41, 20);
+            this.nameLabel.TabIndex = 10;
+            this.nameLabel.Text = "Név";
+            // 
+            // quantityLabel
+            // 
+            this.quantityLabel.AutoSize = true;
+            this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.quantityLabel.Location = new System.Drawing.Point(96, 254);
+            this.quantityLabel.Name = "quantityLabel";
+            this.quantityLabel.Size = new System.Drawing.Size(98, 20);
+            this.quantityLabel.TabIndex = 11;
+            this.quantityLabel.Text = "Mennyiség";
+            // 
+            // supplierLabel
+            // 
+            this.supplierLabel.AutoSize = true;
+            this.supplierLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.supplierLabel.Location = new System.Drawing.Point(96, 412);
+            this.supplierLabel.Name = "supplierLabel";
+            this.supplierLabel.Size = new System.Drawing.Size(65, 20);
+            this.supplierLabel.TabIndex = 15;
+            this.supplierLabel.Text = "Gyártó";
+            // 
+            // netPriceLabel
+            // 
+            this.netPriceLabel.AutoSize = true;
+            this.netPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.netPriceLabel.Location = new System.Drawing.Point(96, 306);
+            this.netPriceLabel.Name = "netPriceLabel";
+            this.netPriceLabel.Size = new System.Drawing.Size(60, 20);
+            this.netPriceLabel.TabIndex = 16;
+            this.netPriceLabel.Text = "Ár (ft)";
+            // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(802, 128);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addButton.Location = new System.Drawing.Point(387, 504);
+            this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(80, 39);
-            this.addButton.TabIndex = 2;
+            this.addButton.Size = new System.Drawing.Size(107, 48);
+            this.addButton.TabIndex = 18;
             this.addButton.Text = "Hozzáad";
             this.addButton.UseVisualStyleBackColor = true;
             // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.descriptionLabel.Location = new System.Drawing.Point(94, 358);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(62, 20);
+            this.descriptionLabel.TabIndex = 19;
+            this.descriptionLabel.Text = "Leírás";
+            // 
+            // descriptionBox
+            // 
+            this.descriptionBox.Location = new System.Drawing.Point(320, 356);
+            this.descriptionBox.Name = "descriptionBox";
+            this.descriptionBox.Size = new System.Drawing.Size(248, 22);
+            this.descriptionBox.TabIndex = 20;
+            // 
             // AddProductComponent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.descriptionBox);
+            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.addButton);
+            this.Controls.Add(this.netPriceLabel);
+            this.Controls.Add(this.supplierLabel);
+            this.Controls.Add(this.quantityLabel);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.priceBox);
+            this.Controls.Add(this.supplierBox);
+            this.Controls.Add(this.quantityBox);
+            this.Controls.Add(this.nameBox);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddProductComponent";
-            this.Size = new System.Drawing.Size(884, 552);
+            this.Size = new System.Drawing.Size(1179, 679);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -173,6 +283,20 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn supplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn netPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn grossPrice;
-        private System.Windows.Forms.Button addButton;
-    }
+        private TextBox nameBox;
+        private TextBox quantityBox;
+        private TextBox supplierBox;
+        private TextBox priceBox;
+        private Label nameLabel;
+        private Label quantityLabel;
+        private Label supplierLabel;
+        private Label netPriceLabel;
+        private Button addButton;
+        private Label descriptionLabel;
+        private TextBox descriptionBox;
+
+        // private AddProductComponent item = (AddProductComponent)DataGridView.CurrentRow.DataBoundItem;
+
+
+    }       
 }

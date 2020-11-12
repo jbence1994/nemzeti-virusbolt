@@ -32,5 +32,6 @@ namespace NemzetiVirusbolt.DesktopClient.Views
             tabPageSearch.Controls.Add(_searchComponent);
             tabPageStock.Controls.Add(_stockComponent);
         }
+
     }
 }
