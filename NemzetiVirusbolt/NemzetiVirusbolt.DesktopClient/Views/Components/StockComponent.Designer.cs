@@ -57,13 +57,12 @@
             this.dataGridViewStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStock.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewStock.MultiSelect = false;
             this.dataGridViewStock.Name = "dataGridViewStock";
             this.dataGridViewStock.ReadOnly = true;
             this.dataGridViewStock.RowHeadersWidth = 51;
             this.dataGridViewStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStock.Size = new System.Drawing.Size(1081, 444);
+            this.dataGridViewStock.Size = new System.Drawing.Size(811, 361);
             this.dataGridViewStock.TabIndex = 0;
             // 
             // panel1
@@ -82,47 +81,50 @@
             this.panel1.Controls.Add(this.supplierBox);
             this.panel1.Controls.Add(this.quantityBox);
             this.panel1.Controls.Add(this.nameBox);
-            this.panel1.Location = new System.Drawing.Point(4, 452);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 367);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1073, 410);
+            this.panel1.Size = new System.Drawing.Size(805, 333);
             this.panel1.TabIndex = 1;
             // 
             // descriptionBox
             // 
-            this.descriptionBox.Location = new System.Drawing.Point(247, 181);
+            this.descriptionBox.Location = new System.Drawing.Point(185, 147);
+            this.descriptionBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.descriptionBox.Name = "descriptionBox";
-            this.descriptionBox.Size = new System.Drawing.Size(248, 22);
+            this.descriptionBox.Size = new System.Drawing.Size(187, 20);
             this.descriptionBox.TabIndex = 31;
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.descriptionLabel.Location = new System.Drawing.Point(21, 183);
+            this.descriptionLabel.Location = new System.Drawing.Point(16, 149);
+            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(62, 20);
+            this.descriptionLabel.Size = new System.Drawing.Size(53, 17);
             this.descriptionLabel.TabIndex = 30;
             this.descriptionLabel.Text = "Leírás";
             // 
             // addButton
             // 
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.addButton.Location = new System.Drawing.Point(314, 329);
-            this.addButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addButton.Location = new System.Drawing.Point(236, 267);
+            this.addButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(107, 48);
+            this.addButton.Size = new System.Drawing.Size(80, 39);
             this.addButton.TabIndex = 29;
             this.addButton.Text = "Hozzáad";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // netPriceLabel
             // 
             this.netPriceLabel.AutoSize = true;
             this.netPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.netPriceLabel.Location = new System.Drawing.Point(23, 131);
+            this.netPriceLabel.Location = new System.Drawing.Point(17, 106);
+            this.netPriceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.netPriceLabel.Name = "netPriceLabel";
-            this.netPriceLabel.Size = new System.Drawing.Size(60, 20);
+            this.netPriceLabel.Size = new System.Drawing.Size(51, 17);
             this.netPriceLabel.TabIndex = 28;
             this.netPriceLabel.Text = "Ár (ft)";
             // 
@@ -130,9 +132,10 @@
             // 
             this.supplierLabel.AutoSize = true;
             this.supplierLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.supplierLabel.Location = new System.Drawing.Point(23, 237);
+            this.supplierLabel.Location = new System.Drawing.Point(17, 193);
+            this.supplierLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.supplierLabel.Name = "supplierLabel";
-            this.supplierLabel.Size = new System.Drawing.Size(65, 20);
+            this.supplierLabel.Size = new System.Drawing.Size(57, 17);
             this.supplierLabel.TabIndex = 27;
             this.supplierLabel.Text = "Gyártó";
             // 
@@ -140,9 +143,10 @@
             // 
             this.quantityLabel.AutoSize = true;
             this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.quantityLabel.Location = new System.Drawing.Point(23, 79);
+            this.quantityLabel.Location = new System.Drawing.Point(17, 64);
+            this.quantityLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(98, 20);
+            this.quantityLabel.Size = new System.Drawing.Size(85, 17);
             this.quantityLabel.TabIndex = 26;
             this.quantityLabel.Text = "Mennyiség";
             // 
@@ -150,49 +154,53 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nameLabel.Location = new System.Drawing.Point(23, 31);
+            this.nameLabel.Location = new System.Drawing.Point(17, 25);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(41, 20);
+            this.nameLabel.Size = new System.Drawing.Size(36, 17);
             this.nameLabel.TabIndex = 25;
             this.nameLabel.Text = "Név";
             // 
             // priceBox
             // 
-            this.priceBox.Location = new System.Drawing.Point(247, 129);
+            this.priceBox.Location = new System.Drawing.Point(185, 105);
+            this.priceBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(248, 22);
+            this.priceBox.Size = new System.Drawing.Size(187, 20);
             this.priceBox.TabIndex = 24;
             // 
             // supplierBox
             // 
-            this.supplierBox.Location = new System.Drawing.Point(247, 235);
+            this.supplierBox.Location = new System.Drawing.Point(185, 191);
+            this.supplierBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.supplierBox.Name = "supplierBox";
-            this.supplierBox.Size = new System.Drawing.Size(248, 22);
+            this.supplierBox.Size = new System.Drawing.Size(187, 20);
             this.supplierBox.TabIndex = 23;
             // 
             // quantityBox
             // 
-            this.quantityBox.Location = new System.Drawing.Point(247, 77);
+            this.quantityBox.Location = new System.Drawing.Point(185, 63);
+            this.quantityBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.quantityBox.Name = "quantityBox";
-            this.quantityBox.Size = new System.Drawing.Size(248, 22);
+            this.quantityBox.Size = new System.Drawing.Size(187, 20);
             this.quantityBox.TabIndex = 22;
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(247, 29);
+            this.nameBox.Location = new System.Drawing.Point(185, 24);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(248, 22);
+            this.nameBox.Size = new System.Drawing.Size(187, 20);
             this.nameBox.TabIndex = 21;
             // 
             // StockComponent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewStock);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "StockComponent";
-            this.Size = new System.Drawing.Size(1081, 865);
+            this.Size = new System.Drawing.Size(811, 703);
             this.Load += new System.EventHandler(this.StockComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
             this.panel1.ResumeLayout(false);
