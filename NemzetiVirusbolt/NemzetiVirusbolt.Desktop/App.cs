@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Windows.Forms;
 using Autofac;
 using NemzetiVirusbolt.Desktop.Persistence.Repositories;
@@ -21,6 +22,8 @@ namespace NemzetiVirusbolt.Desktop
             var containerBuilder = new ContainerBuilder();
 
             containerBuilder.RegisterType<ProductRepository>().As<IProductRepository>();
+
+            containerBuilder.RegisterType<HttpClient>().AsSelf();
 
             containerBuilder.RegisterType<App>().AsSelf();
             containerBuilder.RegisterType<CentralStockComponent>().AsSelf();

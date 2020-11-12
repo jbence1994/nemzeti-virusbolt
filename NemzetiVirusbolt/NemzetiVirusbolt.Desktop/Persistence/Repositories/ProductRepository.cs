@@ -11,12 +11,10 @@ namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
     public class ProductRepository : IProductRepository
     {
         private readonly HttpClient _apiClient;
-        private const string GetProductsEndPoint = "https://localhost:44349/api/products";
-        private const string GetProductEndPoint = "https://localhost:44349/api/products/";
 
-        public ProductRepository()
+        public ProductRepository(HttpClient apiClient)
         {
-            _apiClient = new HttpClient();
+            _apiClient = apiClient;
 
             _apiClient.DefaultRequestHeaders.Accept
                 .Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -24,7 +22,8 @@ namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
 
         public async Task<IEnumerable<Product>> GetProducts()
         {
-            using (var response = await _apiClient.GetAsync(GetProductsEndPoint))
+            using (var response = await _apiClient
+                .GetAsync("https://localhost:44349/api/products"))
             {
                 if (!response.IsSuccessStatusCode)
                     throw new Exception("Adatok letöltése sikertelen! Ellenőrízze az internetkapcsolatot.");
@@ -37,7 +36,8 @@ namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
 
         public async Task<Product> GetProduct(int id)
         {
-            using (var response = await _apiClient.GetAsync(GetProductEndPoint + id))
+            using (var response = await _apiClient
+                .GetAsync("https://localhost:44349/api/products/" + id))
             {
                 if (!response.IsSuccessStatusCode)
                     throw new Exception("Adatok letöltése sikertelen! Ellenőrízze az internetkapcsolatot.");
