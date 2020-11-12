@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using NemzetiVirusbolt.API.Core.Models;
+using NemzetiVirusbolt.API.Models;
 
-namespace NemzetiVirusbolt.API.Core.Repositories
+namespace NemzetiVirusbolt.API.Persistence.Repositories
 {
     public interface IProductRepository
     {

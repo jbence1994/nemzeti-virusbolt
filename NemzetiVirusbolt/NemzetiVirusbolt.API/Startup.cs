@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NemzetiVirusbolt.API.Core.Repositories;
 using NemzetiVirusbolt.API.Persistence;
 using NemzetiVirusbolt.API.Persistence.Repositories;
 

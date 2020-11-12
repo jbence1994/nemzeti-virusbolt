@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using NemzetiVirusbolt.API.Core.Models;
-using NemzetiVirusbolt.API.Core.Repositories;
+using NemzetiVirusbolt.API.Models;
 
 namespace NemzetiVirusbolt.API.Persistence.Repositories
 {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using NemzetiVirusbolt.API.Controllers.Resources;
-using NemzetiVirusbolt.API.Core.Models;
-using NemzetiVirusbolt.API.Core.Repositories;
+using NemzetiVirusbolt.API.Models;
+using NemzetiVirusbolt.API.Persistence.Repositories;
+using NemzetiVirusbolt.API.Resources;
 
 namespace NemzetiVirusbolt.API.Controllers
 {

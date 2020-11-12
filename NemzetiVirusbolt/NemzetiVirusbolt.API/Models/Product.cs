@@ -1,4 +1,4 @@
-﻿namespace NemzetiVirusbolt.API.Core.Models
+﻿namespace NemzetiVirusbolt.API.Models
 {
     public class Product
     {

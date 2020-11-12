@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace NemzetiVirusbolt.API.Core.Models
+namespace NemzetiVirusbolt.API.Models
 {
     public class Supplier
     {
