@@ -1,6 +1,6 @@
-﻿using NemzetiVirusbolt.Core.Models;
+﻿using NemzetiVirusbolt.DesktopClient.Models;
 
-namespace NemzetiVirusbolt.Core.Repositories
+namespace NemzetiVirusbolt.DesktopClient.Repositories
 {
     public interface IUserRepository
     {

@@ -6,10 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NemzetiVirusbolt.Core;
-using NemzetiVirusbolt.Core.Repositories;
+using NemzetiVirusbolt.DesktopClient.Persistence;
+using NemzetiVirusbolt.DesktopClient.Persistence.Repositories;
+using NemzetiVirusbolt.DesktopClient.Repositories;
 using NemzetiVirusbolt.DesktopClient.Views;
 using NemzetiVirusbolt.DesktopClient.Views.Components;
-using NemzetiVirusbolt.Persistence;
 
 namespace NemzetiVirusbolt.DesktopClient
 {

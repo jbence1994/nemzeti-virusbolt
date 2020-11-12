@@ -7,9 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.Core;
-using NemzetiVirusbolt.Core.Models;
 
 namespace NemzetiVirusbolt.DesktopClient.Views.Components
 {

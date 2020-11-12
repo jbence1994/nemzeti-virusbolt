@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace NemzetiVirusbolt.Core.Models
+namespace NemzetiVirusbolt.DesktopClient.Models
 {
     public class User
     {

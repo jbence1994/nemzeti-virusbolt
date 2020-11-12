@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using NemzetiVirusbolt.Core.Models;
-using NemzetiVirusbolt.Core.Repositories;
+using NemzetiVirusbolt.DesktopClient.Models;
+using NemzetiVirusbolt.DesktopClient.Repositories;
 
-namespace NemzetiVirusbolt.Persistence
+namespace NemzetiVirusbolt.DesktopClient.Persistence.Repositories
 {
     public class StockRepository : IStockRepository
     {

@@ -1,9 +1,9 @@
-﻿using NemzetiVirusbolt.Core.Repositories;
-using System;
+﻿using System;
 using System.Linq;
-using NemzetiVirusbolt.Core.Models;
+using NemzetiVirusbolt.DesktopClient.Models;
+using NemzetiVirusbolt.DesktopClient.Repositories;
 
-namespace NemzetiVirusbolt.Persistence
+namespace NemzetiVirusbolt.DesktopClient.Persistence.Repositories
 {
     public class UserRepository : IUserRepository
     {
