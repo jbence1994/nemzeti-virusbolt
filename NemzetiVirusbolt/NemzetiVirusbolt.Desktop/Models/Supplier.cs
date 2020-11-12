@@ -1,4 +1,4 @@
-﻿namespace NemzetiVirusbolt.Desktop.Services
+﻿namespace NemzetiVirusbolt.Desktop.Models
 {
     public class Supplier
     {

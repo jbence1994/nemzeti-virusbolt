@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Autofac;
-using NemzetiVirusbolt.Desktop.Services;
+using NemzetiVirusbolt.Desktop.Persistence.Repositories;
 using NemzetiVirusbolt.Desktop.Views;
 using NemzetiVirusbolt.Desktop.Views.Components;
 
@@ -20,7 +20,7 @@ namespace NemzetiVirusbolt.Desktop
         {
             var containerBuilder = new ContainerBuilder();
 
-            containerBuilder.RegisterType<ProductService>().As<IProductService>();
+            containerBuilder.RegisterType<ProductRepository>().As<IProductRepository>();
 
             containerBuilder.RegisterType<App>().AsSelf();
             containerBuilder.RegisterType<CentralStockComponent>().AsSelf();

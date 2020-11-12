@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using NemzetiVirusbolt.Desktop.Models;
 
-namespace NemzetiVirusbolt.Desktop.Services
+namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
 {
-    public interface IProductService
+    public interface IProductRepository
     {
         Task<IEnumerable<Product>> GetProducts();
         Task<Product> GetProduct(int id);

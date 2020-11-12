@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using NemzetiVirusbolt.Desktop.Services;
+using NemzetiVirusbolt.Desktop.Persistence.Repositories;
 
 namespace NemzetiVirusbolt.Desktop.Views.Components
 {
     public partial class CentralStockComponent : UserControl
     {
-        private readonly IProductService _productService;
+        private readonly IProductRepository _productService;
 
-        public CentralStockComponent(IProductService productService)
+        public CentralStockComponent(IProductRepository productService)
         {
             InitializeComponent();
             _productService = productService;
