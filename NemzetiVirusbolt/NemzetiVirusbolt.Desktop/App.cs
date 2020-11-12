@@ -26,7 +26,7 @@ namespace NemzetiVirusbolt.Desktop
             containerBuilder.RegisterType<HttpClient>().AsSelf();
 
             containerBuilder.RegisterType<App>().AsSelf();
-            containerBuilder.RegisterType<CentralStockComponent>().AsSelf();
+            containerBuilder.RegisterType<ProductsComponent>().AsSelf();
             containerBuilder.RegisterType<SearchComponent>().AsSelf();
             containerBuilder.RegisterType<StockComponent>().AsSelf();
             containerBuilder.RegisterType<LoginWindow>().AsSelf();

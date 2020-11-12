@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Dtos\ProductDto.cs" />
     <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,11 +90,11 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Persistence\Repositories\ProductRepository.cs" />
     <Compile Include="Models\Supplier.cs" />
-    <Compile Include="Views\Components\CentralStockComponent.cs">
+    <Compile Include="Views\Components\ProductsComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Components\CentralStockComponent.Designer.cs">
-      <DependentUpon>CentralStockComponent.cs</DependentUpon>
+    <Compile Include="Views\Components\ProductsComponent.Designer.cs">
+      <DependentUpon>ProductsComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Components\SearchComponent.cs">
       <SubType>UserControl</SubType>
@@ -128,8 +129,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Components\CentralStockComponent.resx">
-      <DependentUpon>CentralStockComponent.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Components\ProductsComponent.resx">
+      <DependentUpon>ProductsComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\StockComponent.resx">
       <DependentUpon>StockComponent.cs</DependentUpon>

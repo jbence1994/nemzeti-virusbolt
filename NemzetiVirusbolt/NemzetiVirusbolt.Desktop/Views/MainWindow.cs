@@ -8,13 +8,13 @@ namespace NemzetiVirusbolt.Desktop.Views
     {
         private readonly SearchComponent _searchComponent;
         private readonly StockComponent _stockComponent;
-        private readonly CentralStockComponent _centralStockComponent;
+        private readonly ProductsComponent _centralStockComponent;
 
         public MainWindow
         (
             SearchComponent searchComponent,
             StockComponent stockComponent,
-            CentralStockComponent centralStockComponent)
+            ProductsComponent centralStockComponent)
         {
             InitializeComponent();
 
