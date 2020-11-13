@@ -22,8 +22,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         {
             try
             {
+                dataGridViewCentralStock.DataSource = null;
                 dataGridViewCentralStock.DataSource = await GetProductDtos();
-                buttonLoad.Enabled = false;
             }
             catch (Exception ex)
             {
