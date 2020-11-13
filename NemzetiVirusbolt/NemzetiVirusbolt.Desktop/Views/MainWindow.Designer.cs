@@ -81,7 +81,7 @@
             this.tabPageStock.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageStock.Size = new System.Drawing.Size(811, 703);
             this.tabPageStock.TabIndex = 2;
-            this.tabPageStock.Text = "Helyi raktárkészlet";
+            this.tabPageStock.Text = "Raktárkészlet";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
             // tabPageSearch

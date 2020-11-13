@@ -20,13 +20,21 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async void ButtonLoad_Click(object sender, EventArgs e)
         {
-            dataGridViewCentralStock.DataSource = await GetProductDtos();
-        }
-
-        private async void ButtonUpdate_Click(object sender, EventArgs e)
-        {
-            dataGridViewCentralStock.DataSource = null;
-            dataGridViewCentralStock.DataSource = await GetProductDtos();
+            try
+            {
+                dataGridViewCentralStock.DataSource = await GetProductDtos();
+                buttonLoad.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show
+                (
+                    ex.Message,
+                    string.Empty,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
         private async Task<IEnumerable<ProductDto>> GetProductDtos()

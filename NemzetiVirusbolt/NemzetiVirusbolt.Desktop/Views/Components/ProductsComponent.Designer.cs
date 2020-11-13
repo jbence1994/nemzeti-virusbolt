@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.dataGridViewCentralStock = new System.Windows.Forms.DataGridView();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.buttonLoad = new System.Windows.Forms.Button();
             this.ColumnProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProductUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProductSupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCentralStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,28 +64,6 @@
             this.dataGridViewCentralStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCentralStock.Size = new System.Drawing.Size(811, 671);
             this.dataGridViewCentralStock.TabIndex = 0;
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonUpdate.Location = new System.Drawing.Point(733, 677);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpdate.TabIndex = 1;
-            this.buttonUpdate.Text = "Frissítés";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
-            // 
-            // buttonLoad
-            // 
-            this.buttonLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonLoad.Location = new System.Drawing.Point(3, 677);
-            this.buttonLoad.Name = "buttonLoad";
-            this.buttonLoad.Size = new System.Drawing.Size(97, 23);
-            this.buttonLoad.TabIndex = 2;
-            this.buttonLoad.Text = "Adatok letöltése";
-            this.buttonLoad.UseVisualStyleBackColor = true;
-            this.buttonLoad.Click += new System.EventHandler(this.ButtonLoad_Click);
             // 
             // ColumnProductId
             // 
@@ -130,13 +107,23 @@
             this.ColumnProductSupplierName.Name = "ColumnProductSupplierName";
             this.ColumnProductSupplierName.ReadOnly = true;
             // 
+            // buttonLoad
+            // 
+            this.buttonLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonLoad.Location = new System.Drawing.Point(3, 677);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(97, 23);
+            this.buttonLoad.TabIndex = 2;
+            this.buttonLoad.Text = "Adatok letöltése";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.ButtonLoad_Click);
+            // 
             // ProductsComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.buttonLoad);
-            this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.dataGridViewCentralStock);
             this.Name = "ProductsComponent";
             this.Size = new System.Drawing.Size(811, 703);
@@ -148,7 +135,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewCentralStock;
-        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProductName;
