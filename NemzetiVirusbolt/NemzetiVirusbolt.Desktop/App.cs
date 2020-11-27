@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NemzetiVirusbolt.Views;
 
-namespace NemzetiVirusbolt
+namespace NemzetiVirusbolt.Desktop
 {
     public static class App
     {
@@ -19,10 +19,7 @@ namespace NemzetiVirusbolt
                 .Build();
 
             var host = Host.CreateDefaultBuilder()
-                .ConfigureServices(services =>
-                {
-                    services.AddScoped<MainWindow>();
-                })
+                .ConfigureServices(services => { services.AddScoped<MainWindow>(); })
                 .Build();
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
