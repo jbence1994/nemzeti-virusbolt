@@ -1,4 +1,4 @@
-﻿﻿namespace NemzetiVirusbolt.Views
+﻿﻿namespace NemzetiVirusbolt.Desktop.Views
 {
     partial class MainWindow
     {

@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NemzetiVirusbolt.Desktop.Persistence;
-using NemzetiVirusbolt.Views;
+using NemzetiVirusbolt.Desktop.Views;
 
 namespace NemzetiVirusbolt.Desktop
 {
