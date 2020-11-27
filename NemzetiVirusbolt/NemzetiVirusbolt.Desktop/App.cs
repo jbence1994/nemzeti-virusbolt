@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using NemzetiVirusbolt.Desktop.Persistence;
 using NemzetiVirusbolt.Desktop.Services;
 using NemzetiVirusbolt.Desktop.Views;
+using NemzetiVirusbolt.Desktop.Views.Components;
 
 namespace NemzetiVirusbolt.Desktop
 {
@@ -31,6 +32,7 @@ namespace NemzetiVirusbolt.Desktop
 
                     services.AddScoped<LoginWindow>();
                     services.AddScoped<MainWindow>();
+                    services.AddScoped<StockComponent>();
                 })
                 .Build();
 
