@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NemzetiVirusbolt.Desktop.Persistence;
+using NemzetiVirusbolt.Desktop.Services;
 using NemzetiVirusbolt.Desktop.Views;
 
 namespace NemzetiVirusbolt.Desktop
@@ -26,6 +27,9 @@ namespace NemzetiVirusbolt.Desktop
                     services.AddDbContext<ApplicationDbContext>(options =>
                         options.UseMySQL(configuration.GetConnectionString("Default")));
 
+                    services.AddScoped<AuthenticationService>();
+
+                    services.AddScoped<LoginWindow>();
                     services.AddScoped<MainWindow>();
                 })
                 .Build();
@@ -33,7 +37,7 @@ namespace NemzetiVirusbolt.Desktop
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(host.Services.GetRequiredService<MainWindow>());
+            Application.Run(host.Services.GetRequiredService<LoginWindow>());
         }
     }
 }

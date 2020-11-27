@@ -1,24 +1,32 @@
 ﻿using System;
 using System.Windows.Forms;
+using NemzetiVirusbolt.Desktop.Services;
 
 namespace NemzetiVirusbolt.Desktop.Views
 {
     public partial class LoginWindow : Form
     {
         private readonly MainWindow _mainWindow;
+        private readonly AuthenticationService _authenticationService;
 
-        public LoginWindow(MainWindow mainWindow)
+        public LoginWindow
+        (
+            MainWindow mainWindow,
+            AuthenticationService authenticationService
+        )
         {
             InitializeComponent();
 
             _mainWindow = mainWindow;
+            _authenticationService = authenticationService;
         }
 
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                // Auth...
+                _authenticationService
+                    .Authenticate(textBoxUsername.Text, textBoxPassword.Text);
 
                 Hide();
                 _mainWindow.Show();
