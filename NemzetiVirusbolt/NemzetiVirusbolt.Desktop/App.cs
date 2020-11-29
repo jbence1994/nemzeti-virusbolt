@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NemzetiVirusbolt.Core;
 using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.Desktop.Persistence;
 using NemzetiVirusbolt.Desktop.Persistence.Repositories;
@@ -32,6 +33,8 @@ namespace NemzetiVirusbolt.Desktop
 
                     services.AddScoped<IProductRepository, ProductRepository>();
                     services.AddScoped<IStockRepository, StockRepository>();
+
+                    services.AddScoped<IUnitOfWork, UnitOfWork>();
 
                     services.AddScoped<IAuthenticationService, AuthenticationService>();
 
