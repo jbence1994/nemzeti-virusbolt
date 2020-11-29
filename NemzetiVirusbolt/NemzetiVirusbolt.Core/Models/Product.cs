@@ -1,4 +1,7 @@
-﻿namespace NemzetiVirusbolt.Core.Models
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+namespace NemzetiVirusbolt.Core.Models
 {
     public class Product
     {
@@ -9,5 +12,11 @@
         public string Description { get; set; }
         public int SupplierId { get; set; }
         public Supplier Supplier { get; set; }
+        public ICollection<Stock> Stocks { get; set; }
+
+        public Product()
+        {
+            Stocks = new Collection<Stock>();
+        }
     }
 }
