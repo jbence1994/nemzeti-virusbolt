@@ -53,6 +53,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.Controls.Add(this.dataGridViewStock);
             this.Name = "StockComponent";
             this.Size = new System.Drawing.Size(948, 813);
+            this.Load += new System.EventHandler(this.StockComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
             this.ResumeLayout(false);
 
