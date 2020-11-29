@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
 
@@ -16,12 +17,16 @@ namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
 
         public IEnumerable<Product> GetProducts()
         {
-            return _context.Products.ToList();
+            return _context.Products
+                .Include(p => p.Supplier)
+                .ToList();
         }
 
         public Product GetProduct(int id)
         {
-            return _context.Products.SingleOrDefault(p => p.Id == id);
+            return _context.Products
+                .Include(p => p.Supplier)
+                .SingleOrDefault(p => p.Id == id);
         }
 
         public void AddProduct(Product product)
