@@ -5,7 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.Desktop.Persistence;
+using NemzetiVirusbolt.Desktop.Persistence.Repositories;
 using NemzetiVirusbolt.Desktop.Services;
 using NemzetiVirusbolt.Desktop.Views;
 using NemzetiVirusbolt.Desktop.Views.Components;
@@ -27,6 +29,9 @@ namespace NemzetiVirusbolt.Desktop
                 {
                     services.AddDbContext<ApplicationDbContext>(options =>
                         options.UseMySQL(configuration.GetConnectionString("Default")));
+
+                    services.AddScoped<IProductRepository, ProductRepository>();
+                    services.AddScoped<IStockRepository, StockRepository>();
 
                     services.AddScoped<AuthenticationService>();
 
