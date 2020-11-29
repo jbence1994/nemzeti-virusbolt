@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
-using NemzetiVirusbolt.Desktop.Services;
+using NemzetiVirusbolt.Desktop.Services.Authentication;
 
 namespace NemzetiVirusbolt.Desktop.Views
 {
     public partial class LoginWindow : Form
     {
         private readonly MainWindow _mainWindow;
-        private readonly AuthenticationService _authenticationService;
+        private readonly IAuthenticationService _authenticationService;
 
         public LoginWindow
         (
             MainWindow mainWindow,
-            AuthenticationService authenticationService
+            IAuthenticationService authenticationService
         )
         {
             InitializeComponent();

@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.Desktop.Persistence;
 using NemzetiVirusbolt.Desktop.Persistence.Repositories;
-using NemzetiVirusbolt.Desktop.Services;
+using NemzetiVirusbolt.Desktop.Services.Authentication;
 using NemzetiVirusbolt.Desktop.Views;
 using NemzetiVirusbolt.Desktop.Views.Components;
 
@@ -33,7 +33,7 @@ namespace NemzetiVirusbolt.Desktop
                     services.AddScoped<IProductRepository, ProductRepository>();
                     services.AddScoped<IStockRepository, StockRepository>();
 
-                    services.AddScoped<AuthenticationService>();
+                    services.AddScoped<IAuthenticationService, AuthenticationService>();
 
                     services.AddScoped<LoginWindow>();
                     services.AddScoped<MainWindow>();

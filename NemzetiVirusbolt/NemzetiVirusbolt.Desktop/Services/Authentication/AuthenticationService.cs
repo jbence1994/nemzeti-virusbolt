@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
 
-namespace NemzetiVirusbolt.Desktop.Services
+namespace NemzetiVirusbolt.Desktop.Services.Authentication
 {
-    public class AuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly IConfiguration _configuration;
 
