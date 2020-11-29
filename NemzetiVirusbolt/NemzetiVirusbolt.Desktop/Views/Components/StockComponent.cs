@@ -23,8 +23,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private void InitializeStock()
         {
-            var productDtos = _productRepository.GetProducts()
-                .Select(ProductDto.ToDto).ToList();
+            var productDtos = _productRepository
+                .GetProducts()
+                .Select(ProductDto.ToDto)
+                .ToList();
 
             dataGridViewStock.DataSource = productDtos;
         }
