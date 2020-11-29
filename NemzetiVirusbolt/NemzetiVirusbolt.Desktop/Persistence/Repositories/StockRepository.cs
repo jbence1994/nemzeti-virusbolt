@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
 
@@ -16,7 +17,9 @@ namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
 
         public IEnumerable<Stock> GetStocks()
         {
-            return _context.Stocks.ToList();
+            return _context.Stocks
+                .Include(s => s.Product)
+                .ToList();
         }
 
         public void AddStock(Stock stock)
