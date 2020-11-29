@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using NemzetiVirusbolt.Core.Repositories;
+using NemzetiVirusbolt.Desktop.Dtos;
 
 namespace NemzetiVirusbolt.Desktop.Views.Components
 {
@@ -16,7 +18,15 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private void StockComponent_Load(object sender, EventArgs e)
         {
-            dataGridViewStock.DataSource = _productRepository.GetProducts();
+            InitializeStock();
+        }
+
+        private void InitializeStock()
+        {
+            var productDtos = _productRepository.GetProducts()
+                .Select(ProductDto.ToDto).ToList();
+
+            dataGridViewStock.DataSource = productDtos;
         }
     }
 }
