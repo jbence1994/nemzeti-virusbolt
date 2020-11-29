@@ -1,34 +1,22 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using NemzetiVirusbolt.Core.Repositories;
-using NemzetiVirusbolt.Desktop.Dtos;
 
 namespace NemzetiVirusbolt.Desktop.Views.Components
 {
     public partial class StockComponent : UserControl
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IStockRepository _stockRepository;
 
-        public StockComponent(IProductRepository productRepository)
+        public StockComponent(IStockRepository stockRepository)
         {
             InitializeComponent();
-            _productRepository = productRepository;
+            _stockRepository = stockRepository;
         }
 
         private void StockComponent_Load(object sender, EventArgs e)
         {
-            InitializeStock();
-        }
 
-        private void InitializeStock()
-        {
-            var productDtos = _productRepository
-                .GetProducts()
-                .Select(ProductDto.ToDto)
-                .ToList();
-
-            dataGridViewStock.DataSource = productDtos;
         }
     }
 }

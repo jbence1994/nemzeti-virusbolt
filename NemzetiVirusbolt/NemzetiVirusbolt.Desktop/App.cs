@@ -40,6 +40,7 @@ namespace NemzetiVirusbolt.Desktop
 
                     services.AddScoped<LoginWindow>();
                     services.AddScoped<MainWindow>();
+                    services.AddScoped<ProductsComponent>();
                     services.AddScoped<StockComponent>();
                 })
                 .Build();

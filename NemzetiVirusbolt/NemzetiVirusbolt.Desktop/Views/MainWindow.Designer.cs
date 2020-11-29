@@ -34,6 +34,7 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageStock = new System.Windows.Forms.TabPage();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.tabPageProducts = new System.Windows.Forms.TabPage();
             this.panelWindow.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -65,6 +66,7 @@
             // tabControlMain
             // 
             this.tabControlMain.Controls.Add(this.tabPageStock);
+            this.tabControlMain.Controls.Add(this.tabPageProducts);
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMain.Location = new System.Drawing.Point(0, 0);
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -97,6 +99,16 @@
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
             // 
+            // tabPageProducts
+            // 
+            this.tabPageProducts.Location = new System.Drawing.Point(4, 24);
+            this.tabPageProducts.Name = "tabPageProducts";
+            this.tabPageProducts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageProducts.Size = new System.Drawing.Size(948, 813);
+            this.tabPageProducts.TabIndex = 3;
+            this.tabPageProducts.Text = "Termékek";
+            this.tabPageProducts.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -126,5 +138,6 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tabPageStock;
+        private System.Windows.Forms.TabPage tabPageProducts;
     }
 }
