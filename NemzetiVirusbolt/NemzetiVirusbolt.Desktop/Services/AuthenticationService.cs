@@ -21,12 +21,19 @@ namespace NemzetiVirusbolt.Desktop.Services
 
         private string GetUsername()
         {
-            return _configuration.GetSection("Credentials").GetSection("Username").Value;
+            return GetCredentialsSection()
+                .GetSection("Username").Value;
         }
 
         private string GetPassword()
         {
-            return _configuration.GetSection("Credentials").GetSection("Password").Value;
+            return GetCredentialsSection()
+                .GetSection("Password").Value;
+        }
+
+        private IConfigurationSection GetCredentialsSection(string credentialsSection = "Credentials")
+        {
+            return _configuration.GetSection(credentialsSection);
         }
     }
 }
