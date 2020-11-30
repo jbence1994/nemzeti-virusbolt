@@ -70,7 +70,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.dataGridViewProducts.RowTemplate.Height = 25;
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducts.Size = new System.Drawing.Size(948, 532);
-            this.dataGridViewProducts.TabIndex = 0;
+            this.dataGridViewProducts.TabIndex = 6;
             // 
             // ColumnProductId
             // 
@@ -119,14 +119,14 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.textBoxProductDescription.Location = new System.Drawing.Point(35, 662);
             this.textBoxProductDescription.Name = "textBoxProductDescription";
             this.textBoxProductDescription.Size = new System.Drawing.Size(292, 23);
-            this.textBoxProductDescription.TabIndex = 1;
+            this.textBoxProductDescription.TabIndex = 3;
             // 
             // buttonAddProduct
             // 
             this.buttonAddProduct.Location = new System.Drawing.Point(35, 720);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(292, 23);
-            this.buttonAddProduct.TabIndex = 2;
+            this.buttonAddProduct.TabIndex = 5;
             this.buttonAddProduct.Text = "Hozzáadás";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
             this.buttonAddProduct.Click += new System.EventHandler(this.ButtonAddProduct_Click);
@@ -139,28 +139,28 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.comboBoxSuppliers.Location = new System.Drawing.Point(35, 691);
             this.comboBoxSuppliers.Name = "comboBoxSuppliers";
             this.comboBoxSuppliers.Size = new System.Drawing.Size(292, 23);
-            this.comboBoxSuppliers.TabIndex = 3;
+            this.comboBoxSuppliers.TabIndex = 4;
             // 
             // textBoxProductUnit
             // 
             this.textBoxProductUnit.Location = new System.Drawing.Point(35, 633);
             this.textBoxProductUnit.Name = "textBoxProductUnit";
             this.textBoxProductUnit.Size = new System.Drawing.Size(292, 23);
-            this.textBoxProductUnit.TabIndex = 4;
+            this.textBoxProductUnit.TabIndex = 2;
             // 
             // textBoxProductPrice
             // 
             this.textBoxProductPrice.Location = new System.Drawing.Point(35, 604);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
             this.textBoxProductPrice.Size = new System.Drawing.Size(292, 23);
-            this.textBoxProductPrice.TabIndex = 5;
+            this.textBoxProductPrice.TabIndex = 1;
             // 
             // textBoxProductName
             // 
             this.textBoxProductName.Location = new System.Drawing.Point(35, 575);
             this.textBoxProductName.Name = "textBoxProductName";
             this.textBoxProductName.Size = new System.Drawing.Size(292, 23);
-            this.textBoxProductName.TabIndex = 6;
+            this.textBoxProductName.TabIndex = 0;
             // 
             // ProductsComponent
             // 
