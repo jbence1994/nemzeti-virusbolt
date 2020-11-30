@@ -36,9 +36,12 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnProductUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxProductDescription = new System.Windows.Forms.TextBox();
             this.buttonAddProduct = new System.Windows.Forms.Button();
             this.comboBoxSuppliers = new System.Windows.Forms.ComboBox();
+            this.textBoxProductUnit = new System.Windows.Forms.TextBox();
+            this.textBoxProductPrice = new System.Windows.Forms.TextBox();
+            this.textBoxProductName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,16 +114,16 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnSupplierName.Name = "ColumnSupplierName";
             this.ColumnSupplierName.ReadOnly = true;
             // 
-            // textBox1
+            // textBoxProductDescription
             // 
-            this.textBox1.Location = new System.Drawing.Point(309, 615);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 23);
-            this.textBox1.TabIndex = 1;
+            this.textBoxProductDescription.Location = new System.Drawing.Point(35, 662);
+            this.textBoxProductDescription.Name = "textBoxProductDescription";
+            this.textBoxProductDescription.Size = new System.Drawing.Size(292, 23);
+            this.textBoxProductDescription.TabIndex = 1;
             // 
             // buttonAddProduct
             // 
-            this.buttonAddProduct.Location = new System.Drawing.Point(309, 673);
+            this.buttonAddProduct.Location = new System.Drawing.Point(35, 720);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(292, 23);
             this.buttonAddProduct.TabIndex = 2;
@@ -133,18 +136,42 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.comboBoxSuppliers.DisplayMember = "Name";
             this.comboBoxSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSuppliers.FormattingEnabled = true;
-            this.comboBoxSuppliers.Location = new System.Drawing.Point(309, 644);
+            this.comboBoxSuppliers.Location = new System.Drawing.Point(35, 691);
             this.comboBoxSuppliers.Name = "comboBoxSuppliers";
             this.comboBoxSuppliers.Size = new System.Drawing.Size(292, 23);
             this.comboBoxSuppliers.TabIndex = 3;
+            // 
+            // textBoxProductUnit
+            // 
+            this.textBoxProductUnit.Location = new System.Drawing.Point(35, 633);
+            this.textBoxProductUnit.Name = "textBoxProductUnit";
+            this.textBoxProductUnit.Size = new System.Drawing.Size(292, 23);
+            this.textBoxProductUnit.TabIndex = 4;
+            // 
+            // textBoxProductPrice
+            // 
+            this.textBoxProductPrice.Location = new System.Drawing.Point(35, 604);
+            this.textBoxProductPrice.Name = "textBoxProductPrice";
+            this.textBoxProductPrice.Size = new System.Drawing.Size(292, 23);
+            this.textBoxProductPrice.TabIndex = 5;
+            // 
+            // textBoxProductName
+            // 
+            this.textBoxProductName.Location = new System.Drawing.Point(35, 575);
+            this.textBoxProductName.Name = "textBoxProductName";
+            this.textBoxProductName.Size = new System.Drawing.Size(292, 23);
+            this.textBoxProductName.TabIndex = 6;
             // 
             // ProductsComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxProductName);
+            this.Controls.Add(this.textBoxProductPrice);
+            this.Controls.Add(this.textBoxProductUnit);
             this.Controls.Add(this.comboBoxSuppliers);
             this.Controls.Add(this.buttonAddProduct);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxProductDescription);
             this.Controls.Add(this.dataGridViewProducts);
             this.Name = "ProductsComponent";
             this.Size = new System.Drawing.Size(948, 813);
@@ -164,8 +191,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProductUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProductDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSupplierName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxProductDescription;
         private System.Windows.Forms.Button buttonAddProduct;
         private System.Windows.Forms.ComboBox comboBoxSuppliers;
+        private System.Windows.Forms.TextBox textBoxProductUnit;
+        private System.Windows.Forms.TextBox textBoxProductPrice;
+        private System.Windows.Forms.TextBox textBoxProductName;
     }
 }

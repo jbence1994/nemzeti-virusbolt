@@ -1,15 +1,16 @@
-﻿using NemzetiVirusbolt.Core.Models;
+﻿using System;
+using NemzetiVirusbolt.Core.Models;
 
 namespace NemzetiVirusbolt.Desktop.Dtos
 {
     public class ProductDto
     {
-        public int Id { get; private set; }
-        public string Name { get; private set; }
-        public string Price { get; private set; }
-        public string Unit { get; private set; }
-        public string Description { get; private set; }
-        public string SupplierName { get; private set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Price { get; set; }
+        public string Unit { get; set; }
+        public string Description { get; set; }
+        public string SupplierName { get; set; }
 
         public static ProductDto ToDto(Product product)
         {
@@ -21,6 +22,18 @@ namespace NemzetiVirusbolt.Desktop.Dtos
                 Unit = product.Unit,
                 Description = product.Description,
                 SupplierName = product.Supplier.Name
+            };
+        }
+
+        public static Product ToModel(ProductDto productDto)
+        {
+            return new Product
+            {
+                Id = productDto.Id,
+                Name = productDto.Name,
+                Price = Convert.ToDouble(productDto.Price),
+                Unit = productDto.Unit,
+                Description = productDto.Description,
             };
         }
     }
