@@ -18,7 +18,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             _stockRepository = stockRepository;
         }
 
-        private async void StockComponent_Load(object sender, EventArgs e)
+        private async void ButtonLoadStock_Click(object sender, EventArgs e)
         {
             await InitializeStock();
         }
