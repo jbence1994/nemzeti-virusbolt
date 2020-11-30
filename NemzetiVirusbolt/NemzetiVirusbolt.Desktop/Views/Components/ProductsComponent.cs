@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using NemzetiVirusbolt.Core;
 using NemzetiVirusbolt.Core.Models;
@@ -28,13 +29,13 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             _unitOfWork = unitOfWork;
         }
 
-        private void ProductsComponent_Load(object sender, EventArgs e)
+        private async void ProductsComponent_Load(object sender, EventArgs e)
         {
-            InitializeProducts();
-            InitializeSuppliers();
+            await InitializeProducts();
+            await InitializeSuppliers();
         }
 
-        private async void InitializeProducts()
+        private async Task InitializeProducts()
         {
             var productDtos =
                 (from product in await _productRepository.GetProducts()
@@ -44,7 +45,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             dataGridViewProducts.DataSource = productDtos;
         }
 
-        private async void InitializeSuppliers()
+        private async Task InitializeSuppliers()
         {
             var supplierDtos =
                 (from supplier in await _supplierRepository.GetSuppliers()
@@ -91,7 +92,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 MessageBoxIcon.Information
             );
 
-            InitializeProducts();
+            await InitializeProducts();
         }
     }
 }
