@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
@@ -15,16 +15,16 @@ namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
             _context = context;
         }
 
-        public IEnumerable<Stock> GetStocks()
+        public async Task<IEnumerable<Stock>> GetStocks()
         {
-            return _context.Stocks
+            return await _context.Stocks
                 .Include(s => s.Product)
-                .ToList();
+                .ToListAsync();
         }
 
-        public void AddStock(Stock stock)
+        public async Task AddStock(Stock stock)
         {
-            _context.Stocks.Add(stock);
+            await _context.Stocks.AddAsync(stock);
         }
     }
 }

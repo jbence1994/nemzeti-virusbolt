@@ -21,13 +21,13 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             InitializeStock();
         }
 
-        private void InitializeStock()
+        private async void InitializeStock()
         {
-            var stockDtos = _stockRepository
-                .GetStocks()
-                .Select(StockDto.ToDto)
-                .ToList();
+            var stockDtos =
+                (from stock in await _stockRepository.GetStocks()
+                    select StockDto.ToDto(stock)).ToList();
 
+            dataGridViewStock.DataSource = null;
             dataGridViewStock.DataSource = stockDtos;
         }
     }

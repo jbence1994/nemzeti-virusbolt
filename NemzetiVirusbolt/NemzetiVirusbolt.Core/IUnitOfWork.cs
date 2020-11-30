@@ -1,7 +1,9 @@
-﻿namespace NemzetiVirusbolt.Core
+﻿using System.Threading.Tasks;
+
+namespace NemzetiVirusbolt.Core
 {
     public interface IUnitOfWork
     {
-        void Complete();
+        Task CompleteAsync();
     }
 }

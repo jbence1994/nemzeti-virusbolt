@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
@@ -15,23 +15,23 @@ namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
             _context = context;
         }
 
-        public IEnumerable<Product> GetProducts()
+        public async Task<IEnumerable<Product>> GetProducts()
         {
-            return _context.Products
+            return await _context.Products
                 .Include(p => p.Supplier)
-                .ToList();
+                .ToListAsync();
         }
 
-        public Product GetProduct(int id)
+        public async Task<Product> GetProduct(int id)
         {
-            return _context.Products
+            return await _context.Products
                 .Include(p => p.Supplier)
-                .SingleOrDefault(p => p.Id == id);
+                .SingleOrDefaultAsync(p => p.Id == id);
         }
 
-        public void AddProduct(Product product)
+        public async Task AddProduct(Product product)
         {
-            _context.Products.Add(product);
+            await _context.Products.AddAsync(product);
         }
     }
 }

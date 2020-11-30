@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using NemzetiVirusbolt.Core;
@@ -33,24 +34,23 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             InitializeSuppliers();
         }
 
-        private void InitializeProducts()
+        private async void InitializeProducts()
         {
-            var productDtos = _productRepository
-                .GetProducts()
-                .Select(ProductDto.ToDto)
-                .ToList();
+            var productDtos =
+                (from product in await _productRepository.GetProducts()
+                    select ProductDto.ToDto(product)).ToList();
 
             dataGridViewProducts.DataSource = null;
             dataGridViewProducts.DataSource = productDtos;
         }
 
-        private void InitializeSuppliers()
+        private async void InitializeSuppliers()
         {
-            var supplierDtos = _supplierRepository
-                .GetSuppliers()
-                .Select(SupplierDto.ToDto)
-                .ToList();
+            var supplierDtos =
+                (from supplier in await _supplierRepository.GetSuppliers()
+                    select SupplierDto.ToDto(supplier)).ToList();
 
+            comboBoxSuppliers.DataSource = null;
             comboBoxSuppliers.DataSource = supplierDtos;
         }
 
@@ -74,15 +74,15 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             return ProductDto.ToModel(productDto);
         }
 
-        private void ButtonAddProduct_Click(object sender, EventArgs e)
+        private async void ButtonAddProduct_Click(object sender, EventArgs e)
         {
             var selectedSupplier = GetSelectedSupplier();
 
             var newProduct = GetProduct();
             newProduct.SupplierId = selectedSupplier.Id;
 
-            _productRepository.AddProduct(newProduct);
-            _unitOfWork.Complete();
+            await _productRepository.AddProduct(newProduct);
+            await _unitOfWork.CompleteAsync();
 
             MessageBox.Show(
                 "Termék hozzáadásra került.",

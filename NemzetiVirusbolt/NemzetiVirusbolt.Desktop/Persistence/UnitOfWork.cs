@@ -1,4 +1,5 @@
-﻿using NemzetiVirusbolt.Core;
+﻿using System.Threading.Tasks;
+using NemzetiVirusbolt.Core;
 
 namespace NemzetiVirusbolt.Desktop.Persistence
 {
@@ -11,9 +12,9 @@ namespace NemzetiVirusbolt.Desktop.Persistence
             _context = context;
         }
 
-        public void Complete()
+        public async Task CompleteAsync()
         {
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }

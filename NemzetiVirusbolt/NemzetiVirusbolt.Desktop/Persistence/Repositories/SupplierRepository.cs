@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
 
@@ -14,9 +15,9 @@ namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
             _context = context;
         }
 
-        public IEnumerable<Supplier> GetSuppliers()
+        public async Task<IEnumerable<Supplier>> GetSuppliers()
         {
-            return _context.Suppliers.ToList();
+            return await _context.Suppliers.ToListAsync();
         }
     }
 }
