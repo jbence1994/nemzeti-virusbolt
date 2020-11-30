@@ -21,6 +21,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         )
         {
             InitializeComponent();
+
             _productRepository = productRepository;
             _supplierRepository = supplierRepository;
             _unitOfWork = unitOfWork;

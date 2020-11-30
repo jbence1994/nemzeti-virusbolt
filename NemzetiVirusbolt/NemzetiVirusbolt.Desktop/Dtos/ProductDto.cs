@@ -29,7 +29,6 @@ namespace NemzetiVirusbolt.Desktop.Dtos
         {
             return new Product
             {
-                Id = productDto.Id,
                 Name = productDto.Name,
                 Price = Convert.ToDouble(productDto.Price),
                 Unit = productDto.Unit,
