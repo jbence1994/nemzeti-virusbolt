@@ -41,10 +41,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async void ButtonAddProduct_Click(object sender, EventArgs e)
         {
-            var selectedSupplier = GetSelectedSupplier();
-
             var newProduct = GetProduct();
-            newProduct.SupplierId = selectedSupplier.Id;
+            newProduct.SupplierId = GetSelectedSupplierId();
 
             await _productRepository.AddProduct(newProduct);
             await _unitOfWork.CompleteAsync();
@@ -87,9 +85,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             }
         }
 
-        private SupplierDto GetSelectedSupplier()
+        private int GetSelectedSupplierId()
         {
-            return (SupplierDto) comboBoxSuppliers.SelectedItem;
+            var supplierDto = (SupplierDto) comboBoxSuppliers.SelectedItem;
+            return supplierDto.Id;
         }
 
         private Product GetProduct()
@@ -101,7 +100,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 Name = textBoxProductName.Text,
                 Price = textBoxProductPrice.Text,
                 Unit = textBoxProductUnit.Text,
-                Description = textBoxProductDescription.Text
+                Description = textBoxProductDescription.Text,
             };
 
             return ProductDto.ToModel(productDto);
