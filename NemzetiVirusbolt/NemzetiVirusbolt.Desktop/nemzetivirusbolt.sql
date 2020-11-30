@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS `nemzetivirusbolt`;
-CREATE DATABASE IF NOT EXISTS `nemzetivirusbolt` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS `nemzetivirusbolt` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
 
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
