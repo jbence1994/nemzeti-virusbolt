@@ -49,7 +49,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             await _productRepository.AddProduct(newProduct);
             await _unitOfWork.CompleteAsync();
 
-            await InitializeProducts();
+            // TODO: add new product's row to GUI ...
         }
 
         private async Task InitializeProducts()
