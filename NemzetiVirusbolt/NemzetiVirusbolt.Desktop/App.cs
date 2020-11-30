@@ -33,6 +33,7 @@ namespace NemzetiVirusbolt.Desktop
 
                     services.AddScoped<IProductRepository, ProductRepository>();
                     services.AddScoped<IStockRepository, StockRepository>();
+                    services.AddScoped<ISupplierRepository, SupplierRepository>();
 
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -48,7 +49,7 @@ namespace NemzetiVirusbolt.Desktop
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(host.Services.GetRequiredService<LoginWindow>());
+            Application.Run(host.Services.GetRequiredService<MainWindow>());
         }
     }
 }

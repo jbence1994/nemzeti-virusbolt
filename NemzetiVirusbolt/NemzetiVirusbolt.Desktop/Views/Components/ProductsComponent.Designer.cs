@@ -36,6 +36,9 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnProductUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonAddProduct = new System.Windows.Forms.Button();
+            this.comboBoxSuppliers = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,47 +74,84 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnProductId.DataPropertyName = "Id";
             this.ColumnProductId.HeaderText = "Azonosító";
             this.ColumnProductId.Name = "ColumnProductId";
+            this.ColumnProductId.ReadOnly = true;
             // 
             // ColumnProductName
             // 
             this.ColumnProductName.DataPropertyName = "Name";
             this.ColumnProductName.HeaderText = "Név";
             this.ColumnProductName.Name = "ColumnProductName";
+            this.ColumnProductName.ReadOnly = true;
             // 
             // ColumnProductPrice
             // 
             this.ColumnProductPrice.DataPropertyName = "Price";
             this.ColumnProductPrice.HeaderText = "Egységár";
             this.ColumnProductPrice.Name = "ColumnProductPrice";
+            this.ColumnProductPrice.ReadOnly = true;
             // 
             // ColumnProductUnit
             // 
             this.ColumnProductUnit.DataPropertyName = "Unit";
             this.ColumnProductUnit.HeaderText = "Mennyiségi egység";
             this.ColumnProductUnit.Name = "ColumnProductUnit";
+            this.ColumnProductUnit.ReadOnly = true;
             // 
             // ColumnProductDescription
             // 
             this.ColumnProductDescription.DataPropertyName = "Description";
             this.ColumnProductDescription.HeaderText = "Leírás";
             this.ColumnProductDescription.Name = "ColumnProductDescription";
+            this.ColumnProductDescription.ReadOnly = true;
             // 
             // ColumnSupplierName
             // 
             this.ColumnSupplierName.DataPropertyName = "SupplierName";
             this.ColumnSupplierName.HeaderText = "Beszállító";
             this.ColumnSupplierName.Name = "ColumnSupplierName";
+            this.ColumnSupplierName.ReadOnly = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(309, 615);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(292, 23);
+            this.textBox1.TabIndex = 1;
+            // 
+            // buttonAddProduct
+            // 
+            this.buttonAddProduct.Location = new System.Drawing.Point(309, 673);
+            this.buttonAddProduct.Name = "buttonAddProduct";
+            this.buttonAddProduct.Size = new System.Drawing.Size(292, 23);
+            this.buttonAddProduct.TabIndex = 2;
+            this.buttonAddProduct.Text = "Hozzáadás";
+            this.buttonAddProduct.UseVisualStyleBackColor = true;
+            this.buttonAddProduct.Click += new System.EventHandler(this.ButtonAddProduct_Click);
+            // 
+            // comboBoxSuppliers
+            // 
+            this.comboBoxSuppliers.DisplayMember = "Name";
+            this.comboBoxSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSuppliers.FormattingEnabled = true;
+            this.comboBoxSuppliers.Location = new System.Drawing.Point(309, 644);
+            this.comboBoxSuppliers.Name = "comboBoxSuppliers";
+            this.comboBoxSuppliers.Size = new System.Drawing.Size(292, 23);
+            this.comboBoxSuppliers.TabIndex = 3;
             // 
             // ProductsComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBoxSuppliers);
+            this.Controls.Add(this.buttonAddProduct);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridViewProducts);
             this.Name = "ProductsComponent";
             this.Size = new System.Drawing.Size(948, 813);
             this.Load += new System.EventHandler(this.ProductsComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -124,5 +164,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProductUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProductDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSupplierName;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonAddProduct;
+        private System.Windows.Forms.ComboBox comboBoxSuppliers;
     }
 }
