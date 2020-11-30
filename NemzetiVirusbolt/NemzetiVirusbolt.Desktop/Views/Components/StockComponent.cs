@@ -29,8 +29,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 (from stock in await _stockRepository.GetStocks()
                     select StockDto.ToDto(stock)).ToList();
 
-            dataGridViewStock.DataSource = stockDtos;
-            buttonLoadStock.Enabled = !buttonLoadStock.Enabled;
+            dataGridViewStocks.DataSource = stockDtos;
+            buttonLoadStocks.Enabled = !buttonLoadStocks.Enabled;
         }
     }
 }

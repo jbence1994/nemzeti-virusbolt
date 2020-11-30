@@ -29,38 +29,38 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewStock = new System.Windows.Forms.DataGridView();
+            this.dataGridViewStocks = new System.Windows.Forms.DataGridView();
             this.ColumnStockId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStockProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStockQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStockRecordedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonLoadStock = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
+            this.buttonLoadStocks = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewStock
+            // dataGridViewStocks
             // 
-            this.dataGridViewStock.AllowUserToAddRows = false;
-            this.dataGridViewStock.AllowUserToDeleteRows = false;
-            this.dataGridViewStock.AllowUserToResizeRows = false;
-            this.dataGridViewStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewStocks.AllowUserToAddRows = false;
+            this.dataGridViewStocks.AllowUserToDeleteRows = false;
+            this.dataGridViewStocks.AllowUserToResizeRows = false;
+            this.dataGridViewStocks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewStock.BackgroundColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewStocks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStocks.BackgroundColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dataGridViewStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnStockId,
             this.ColumnStockProductName,
             this.ColumnStockQuantity,
             this.ColumnStockRecordedDate});
-            this.dataGridViewStock.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewStock.MultiSelect = false;
-            this.dataGridViewStock.Name = "dataGridViewStock";
-            this.dataGridViewStock.ReadOnly = true;
-            this.dataGridViewStock.RowTemplate.Height = 25;
-            this.dataGridViewStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStock.Size = new System.Drawing.Size(948, 532);
-            this.dataGridViewStock.TabIndex = 0;
+            this.dataGridViewStocks.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewStocks.MultiSelect = false;
+            this.dataGridViewStocks.Name = "dataGridViewStocks";
+            this.dataGridViewStocks.ReadOnly = true;
+            this.dataGridViewStocks.RowTemplate.Height = 25;
+            this.dataGridViewStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewStocks.Size = new System.Drawing.Size(948, 532);
+            this.dataGridViewStocks.TabIndex = 0;
             // 
             // ColumnStockId
             // 
@@ -90,36 +90,36 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnStockRecordedDate.Name = "ColumnStockRecordedDate";
             this.ColumnStockRecordedDate.ReadOnly = true;
             // 
-            // buttonLoadStock
+            // buttonLoadStocks
             // 
-            this.buttonLoadStock.Location = new System.Drawing.Point(0, 538);
-            this.buttonLoadStock.Name = "buttonLoadStock";
-            this.buttonLoadStock.Size = new System.Drawing.Size(174, 23);
-            this.buttonLoadStock.TabIndex = 1;
-            this.buttonLoadStock.Text = "Raktárkészlet betöltése";
-            this.buttonLoadStock.UseVisualStyleBackColor = true;
-            this.buttonLoadStock.Click += new System.EventHandler(this.ButtonLoadStock_Click);
+            this.buttonLoadStocks.Location = new System.Drawing.Point(0, 538);
+            this.buttonLoadStocks.Name = "buttonLoadStocks";
+            this.buttonLoadStocks.Size = new System.Drawing.Size(174, 23);
+            this.buttonLoadStocks.TabIndex = 1;
+            this.buttonLoadStocks.Text = "Raktárkészlet betöltése";
+            this.buttonLoadStocks.UseVisualStyleBackColor = true;
+            this.buttonLoadStocks.Click += new System.EventHandler(this.ButtonLoadStock_Click);
             // 
             // StockComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonLoadStock);
-            this.Controls.Add(this.dataGridViewStock);
+            this.Controls.Add(this.buttonLoadStocks);
+            this.Controls.Add(this.dataGridViewStocks);
             this.Name = "StockComponent";
             this.Size = new System.Drawing.Size(948, 813);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewStock;
+        private System.Windows.Forms.DataGridView dataGridViewStocks;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStockId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStockProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStockQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStockRecordedDate;
-        private System.Windows.Forms.Button buttonLoadStock;
+        private System.Windows.Forms.Button buttonLoadStocks;
     }
 }

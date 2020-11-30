@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,10 +28,29 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             _unitOfWork = unitOfWork;
         }
 
-        private async void ProductsComponent_Load(object sender, EventArgs e)
+        public async void ProductsComponent_Load(object sender, EventArgs e)
+        {
+            buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
+            await InitializeSuppliers();
+        }
+
+        private async void ButtonLoadProducts_Click(object sender, EventArgs e)
         {
             await InitializeProducts();
-            await InitializeSuppliers();
+            buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
+        }
+
+        private async void ButtonAddProduct_Click(object sender, EventArgs e)
+        {
+            var selectedSupplier = GetSelectedSupplier();
+
+            var newProduct = GetProduct();
+            newProduct.SupplierId = selectedSupplier.Id;
+
+            await _productRepository.AddProduct(newProduct);
+            await _unitOfWork.CompleteAsync();
+
+            await InitializeProducts();
         }
 
         private async Task InitializeProducts()
@@ -73,26 +91,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             };
 
             return ProductDto.ToModel(productDto);
-        }
-
-        private async void ButtonAddProduct_Click(object sender, EventArgs e)
-        {
-            var selectedSupplier = GetSelectedSupplier();
-
-            var newProduct = GetProduct();
-            newProduct.SupplierId = selectedSupplier.Id;
-
-            await _productRepository.AddProduct(newProduct);
-            await _unitOfWork.CompleteAsync();
-
-            MessageBox.Show(
-                "Termék hozzáadásra került.",
-                string.Empty,
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
-
-            await InitializeProducts();
         }
     }
 }

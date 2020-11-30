@@ -42,7 +42,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.textBoxProductUnit = new System.Windows.Forms.TextBox();
             this.textBoxProductPrice = new System.Windows.Forms.TextBox();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
+            this.buttonLoadProducts = new System.Windows.Forms.Button();
+            this.groupBoxAddProduct = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
+            this.groupBoxAddProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewProducts
@@ -50,8 +53,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.dataGridViewProducts.AllowUserToAddRows = false;
             this.dataGridViewProducts.AllowUserToDeleteRows = false;
             this.dataGridViewProducts.AllowUserToResizeRows = false;
-            this.dataGridViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProducts.BackgroundColor = System.Drawing.SystemColors.AppWorkspace;
@@ -116,18 +118,18 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // 
             // textBoxProductDescription
             // 
-            this.textBoxProductDescription.Location = new System.Drawing.Point(35, 662);
+            this.textBoxProductDescription.Location = new System.Drawing.Point(63, 131);
             this.textBoxProductDescription.Name = "textBoxProductDescription";
             this.textBoxProductDescription.Size = new System.Drawing.Size(292, 23);
             this.textBoxProductDescription.TabIndex = 3;
             // 
             // buttonAddProduct
             // 
-            this.buttonAddProduct.Location = new System.Drawing.Point(35, 720);
+            this.buttonAddProduct.Location = new System.Drawing.Point(63, 189);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(292, 23);
             this.buttonAddProduct.TabIndex = 5;
-            this.buttonAddProduct.Text = "Hozzáadás";
+            this.buttonAddProduct.Text = "Rögzítés";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
             this.buttonAddProduct.Click += new System.EventHandler(this.ButtonAddProduct_Click);
             // 
@@ -136,49 +138,72 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.comboBoxSuppliers.DisplayMember = "Name";
             this.comboBoxSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSuppliers.FormattingEnabled = true;
-            this.comboBoxSuppliers.Location = new System.Drawing.Point(35, 691);
+            this.comboBoxSuppliers.Location = new System.Drawing.Point(63, 160);
             this.comboBoxSuppliers.Name = "comboBoxSuppliers";
             this.comboBoxSuppliers.Size = new System.Drawing.Size(292, 23);
             this.comboBoxSuppliers.TabIndex = 4;
             // 
             // textBoxProductUnit
             // 
-            this.textBoxProductUnit.Location = new System.Drawing.Point(35, 633);
+            this.textBoxProductUnit.Location = new System.Drawing.Point(63, 102);
             this.textBoxProductUnit.Name = "textBoxProductUnit";
             this.textBoxProductUnit.Size = new System.Drawing.Size(292, 23);
             this.textBoxProductUnit.TabIndex = 2;
             // 
             // textBoxProductPrice
             // 
-            this.textBoxProductPrice.Location = new System.Drawing.Point(35, 604);
+            this.textBoxProductPrice.Location = new System.Drawing.Point(63, 73);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
             this.textBoxProductPrice.Size = new System.Drawing.Size(292, 23);
             this.textBoxProductPrice.TabIndex = 1;
             // 
             // textBoxProductName
             // 
-            this.textBoxProductName.Location = new System.Drawing.Point(35, 575);
+            this.textBoxProductName.Location = new System.Drawing.Point(63, 44);
             this.textBoxProductName.Name = "textBoxProductName";
             this.textBoxProductName.Size = new System.Drawing.Size(292, 23);
             this.textBoxProductName.TabIndex = 0;
+            // 
+            // buttonLoadProducts
+            // 
+            this.buttonLoadProducts.Location = new System.Drawing.Point(0, 538);
+            this.buttonLoadProducts.Name = "buttonLoadProducts";
+            this.buttonLoadProducts.Size = new System.Drawing.Size(174, 23);
+            this.buttonLoadProducts.TabIndex = 7;
+            this.buttonLoadProducts.Text = "Terméklista betöltése";
+            this.buttonLoadProducts.UseVisualStyleBackColor = true;
+            this.buttonLoadProducts.Click += new System.EventHandler(this.ButtonLoadProducts_Click);
+            // 
+            // groupBoxAddProduct
+            // 
+            this.groupBoxAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxAddProduct.Controls.Add(this.textBoxProductName);
+            this.groupBoxAddProduct.Controls.Add(this.textBoxProductPrice);
+            this.groupBoxAddProduct.Controls.Add(this.buttonAddProduct);
+            this.groupBoxAddProduct.Controls.Add(this.comboBoxSuppliers);
+            this.groupBoxAddProduct.Controls.Add(this.textBoxProductUnit);
+            this.groupBoxAddProduct.Controls.Add(this.textBoxProductDescription);
+            this.groupBoxAddProduct.Location = new System.Drawing.Point(587, 538);
+            this.groupBoxAddProduct.Name = "groupBoxAddProduct";
+            this.groupBoxAddProduct.Size = new System.Drawing.Size(361, 275);
+            this.groupBoxAddProduct.TabIndex = 8;
+            this.groupBoxAddProduct.TabStop = false;
+            this.groupBoxAddProduct.Text = "Termékfelvétel";
             // 
             // ProductsComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBoxProductName);
-            this.Controls.Add(this.textBoxProductPrice);
-            this.Controls.Add(this.textBoxProductUnit);
-            this.Controls.Add(this.comboBoxSuppliers);
-            this.Controls.Add(this.buttonAddProduct);
-            this.Controls.Add(this.textBoxProductDescription);
+            this.Controls.Add(this.groupBoxAddProduct);
+            this.Controls.Add(this.buttonLoadProducts);
             this.Controls.Add(this.dataGridViewProducts);
             this.Name = "ProductsComponent";
             this.Size = new System.Drawing.Size(948, 813);
             this.Load += new System.EventHandler(this.ProductsComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
+            this.groupBoxAddProduct.ResumeLayout(false);
+            this.groupBoxAddProduct.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -197,5 +222,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.TextBox textBoxProductUnit;
         private System.Windows.Forms.TextBox textBoxProductPrice;
         private System.Windows.Forms.TextBox textBoxProductName;
+        private System.Windows.Forms.Button buttonLoadProducts;
+        private System.Windows.Forms.GroupBox groupBoxAddProduct;
     }
 }
