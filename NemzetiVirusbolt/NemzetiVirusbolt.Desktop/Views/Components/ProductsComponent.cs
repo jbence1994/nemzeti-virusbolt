@@ -47,16 +47,14 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             comboBoxSuppliers.DataSource = supplierDtos;
         }
 
+        private SupplierDto GetSelectedSupplier()
+        {
+            return (SupplierDto) comboBoxSuppliers.SelectedItem;
+        }
+
         private void ButtonAddProduct_Click(object sender, EventArgs e)
         {
-            var selectedSupplier = (SupplierDto) comboBoxSuppliers.SelectedItem;
-
-
-
-
-
-
-
+            var selectedSupplier = GetSelectedSupplier();
 
             MessageBox.Show(
                 "Termék hozzáadásra került.",
