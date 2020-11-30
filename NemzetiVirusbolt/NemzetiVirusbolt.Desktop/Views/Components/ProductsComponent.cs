@@ -6,6 +6,7 @@ using NemzetiVirusbolt.Core;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.Desktop.Dtos;
+using NemzetiVirusbolt.Desktop.Properties;
 
 namespace NemzetiVirusbolt.Desktop.Views.Components
 {
@@ -30,14 +31,12 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         public async void ProductsComponent_Load(object sender, EventArgs e)
         {
-            buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
             await InitializeSuppliers();
         }
 
         private async void ButtonLoadProducts_Click(object sender, EventArgs e)
         {
             await InitializeProducts();
-            buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
         }
 
         private async void ButtonAddProduct_Click(object sender, EventArgs e)
@@ -55,22 +54,37 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async Task InitializeProducts()
         {
-            var productDtos =
-                (from product in await _productRepository.GetProducts()
-                    select ProductDto.ToDto(product)).ToList();
+            try
+            {
+                var productDtos =
+                    (from product in await _productRepository.GetProducts()
+                        select ProductDto.ToDto(product)).ToList();
 
-            dataGridViewProducts.DataSource = null;
-            dataGridViewProducts.DataSource = productDtos;
+                dataGridViewProducts.DataSource = null;
+                dataGridViewProducts.DataSource = productDtos;
+                buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
+            }
+            catch
+            {
+                DisplayNetworkErrorMessage();
+            }
         }
 
         private async Task InitializeSuppliers()
         {
-            var supplierDtos =
-                (from supplier in await _supplierRepository.GetSuppliers()
-                    select SupplierDto.ToDto(supplier)).ToList();
+            try
+            {
+                var supplierDtos =
+                    (from supplier in await _supplierRepository.GetSuppliers()
+                        select SupplierDto.ToDto(supplier)).ToList();
 
-            comboBoxSuppliers.DataSource = null;
-            comboBoxSuppliers.DataSource = supplierDtos;
+                comboBoxSuppliers.DataSource = null;
+                comboBoxSuppliers.DataSource = supplierDtos;
+            }
+            catch
+            {
+                DisplayNetworkErrorMessage();
+            }
         }
 
         private SupplierDto GetSelectedSupplier()
@@ -91,6 +105,17 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             };
 
             return ProductDto.ToModel(productDto);
+        }
+
+        private static void DisplayNetworkErrorMessage()
+        {
+            MessageBox.Show
+            (
+                Resources.NetworkErrorMessage,
+                string.Empty,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
     }
 }

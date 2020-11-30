@@ -59,5 +59,23 @@ namespace NemzetiVirusbolt.Desktop.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Helytelen belépési adatok..
+        /// </summary>
+        internal static string LoginErrorMessage {
+            get {
+                return ResourceManager.GetString("LoginErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hiba az internet kapcsolatban..
+        /// </summary>
+        internal static string NetworkErrorMessage {
+            get {
+                return ResourceManager.GetString("NetworkErrorMessage", resourceCulture);
+            }
+        }
     }
 }

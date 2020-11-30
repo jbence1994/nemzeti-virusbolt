@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.Desktop.Dtos;
+using NemzetiVirusbolt.Desktop.Properties;
 
 namespace NemzetiVirusbolt.Desktop.Views.Components
 {
@@ -25,12 +26,25 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async Task InitializeStock()
         {
-            var stockDtos =
-                (from stock in await _stockRepository.GetStocks()
-                    select StockDto.ToDto(stock)).ToList();
+            try
+            {
+                var stockDtos =
+                    (from stock in await _stockRepository.GetStocks()
+                        select StockDto.ToDto(stock)).ToList();
 
-            dataGridViewStocks.DataSource = stockDtos;
-            buttonLoadStocks.Enabled = !buttonLoadStocks.Enabled;
+                dataGridViewStocks.DataSource = stockDtos;
+                buttonLoadStocks.Enabled = !buttonLoadStocks.Enabled;
+            }
+            catch
+            {
+                MessageBox.Show
+                (
+                    Resources.NetworkErrorMessage,
+                    string.Empty,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
     }
 }

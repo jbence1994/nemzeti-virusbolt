@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using NemzetiVirusbolt.Desktop.Exceptions;
 
 namespace NemzetiVirusbolt.Desktop.Services.Authentication
 {
@@ -16,7 +16,7 @@ namespace NemzetiVirusbolt.Desktop.Services.Authentication
         {
             if (GetUsername() != username &&
                 GetPassword() != password)
-                throw new Exception("Érvénytelen belépési adatok.");
+                throw new FailedLoginException();
         }
 
         private string GetUsername()

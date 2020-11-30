@@ -125,6 +125,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // 
             // buttonAddProduct
             // 
+            this.buttonAddProduct.Enabled = false;
             this.buttonAddProduct.Location = new System.Drawing.Point(63, 189);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(292, 23);
