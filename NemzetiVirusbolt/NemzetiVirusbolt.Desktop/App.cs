@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NemzetiVirusbolt.Desktop.Services.Authentication;
+using NemzetiVirusbolt.Desktop.Services.Products;
 using NemzetiVirusbolt.Desktop.Services.Suppliers;
 using NemzetiVirusbolt.Desktop.Views;
 using NemzetiVirusbolt.Desktop.Views.Components;
@@ -25,6 +26,7 @@ namespace NemzetiVirusbolt.Desktop
                 .ConfigureServices(services =>
                 {
                     services.AddScoped<IAuthenticationService, AuthenticationService>();
+                    services.AddScoped<IProductService, ProductService>();
                     services.AddScoped<ISupplierService, SupplierService>();
 
                     services.AddScoped<LoginWindow>();

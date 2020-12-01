@@ -10,7 +10,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
     {
         //private readonly IStockRepository _stockRepository;
 
-        public StockComponent(/*IStockRepository stockRepository*/)
+        public StockComponent( /*IStockRepository stockRepository*/)
         {
             InitializeComponent();
 
@@ -19,10 +19,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async void ButtonLoadStocks_Click(object sender, EventArgs e)
         {
-            await Task.Run(InitializeStocksTables);
+            await InitializeStocks();
         }
 
-        private async Task InitializeStocksTables()
+        private async Task InitializeStocks()
         {
             //try
             //{

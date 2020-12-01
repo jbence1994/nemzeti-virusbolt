@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NemzetiVirusbolt.Desktop.Dtos;
+using NemzetiVirusbolt.Desktop.Services.Products;
 using NemzetiVirusbolt.Desktop.Services.Suppliers;
 using NemzetiVirusbolt.Desktop.Views.Helpers;
 
@@ -9,32 +10,24 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 {
     public partial class ProductsComponent : UserControl
     {
+        private readonly IProductService _productService;
         private readonly ISupplierService _supplierService;
-        //private readonly IProductRepository _productRepository;
-        //private readonly IUnitOfWork _unitOfWork;
 
         public ProductsComponent(
-            //IProductRepository productRepository,
-            //IUnitOfWork unitOfWork
+            IProductService productService,
             ISupplierService supplierService
         )
         {
             InitializeComponent();
 
+            _productService = productService;
             _supplierService = supplierService;
-
-            //_productRepository = productRepository;
-            //_unitOfWork = unitOfWork;
         }
 
         public async void ProductsComponent_Load(object sender, EventArgs e)
         {
+            await InitializeProducts();
             await InitializeSuppliers();
-        }
-
-        private async void ButtonLoadProducts_Click(object sender, EventArgs e)
-        {
-            await Task.Run(InitializeProducts);
         }
 
         private async void ButtonAddProduct_Click(object sender, EventArgs e)
@@ -50,38 +43,28 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async Task InitializeProducts()
         {
-            //try
-            //{
-            //    var productDtos =
-            //        (from product in await _productRepository.GetProducts()
-            //            select ProductDto.ToDto(product)).ToList();
+            try
+            {
+                dataGridViewProducts.DataSource = null;
+                dataGridViewProducts.DataSource = await _productService.GetProducts();
 
-            //    dataGridViewProducts.DataSource = null;
-            //    dataGridViewProducts.DataSource = productDtos;
-
-            //    buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
-            //    buttonLoadProducts.Enabled = !buttonLoadProducts.Enabled;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    //ErrorMessage.DisplayNetworkErrorMessage();
-            //}
+                buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
+            }
+            catch
+            {
+                ErrorMessage.DisplayNetworkErrorMessage();
+            }
         }
 
         private async Task InitializeSuppliers()
         {
             try
             {
-                var supplierDtos =
-                    await _supplierService.GetSuppliers();
-
                 comboBoxSuppliers.DataSource = null;
-                comboBoxSuppliers.DataSource = supplierDtos;
+                comboBoxSuppliers.DataSource = await _supplierService.GetSuppliers();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
                 ErrorMessage.DisplayNetworkErrorMessage();
             }
         }

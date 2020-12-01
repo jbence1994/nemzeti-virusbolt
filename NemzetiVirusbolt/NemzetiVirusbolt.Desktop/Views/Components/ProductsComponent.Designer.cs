@@ -42,7 +42,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.textBoxProductUnit = new System.Windows.Forms.TextBox();
             this.textBoxProductPrice = new System.Windows.Forms.TextBox();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
-            this.buttonLoadProducts = new System.Windows.Forms.Button();
             this.groupBoxAddProduct = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.groupBoxAddProduct.SuspendLayout();
@@ -165,16 +164,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.textBoxProductName.Size = new System.Drawing.Size(292, 23);
             this.textBoxProductName.TabIndex = 0;
             // 
-            // buttonLoadProducts
-            // 
-            this.buttonLoadProducts.Location = new System.Drawing.Point(0, 538);
-            this.buttonLoadProducts.Name = "buttonLoadProducts";
-            this.buttonLoadProducts.Size = new System.Drawing.Size(174, 23);
-            this.buttonLoadProducts.TabIndex = 7;
-            this.buttonLoadProducts.Text = "Terméklista betöltése";
-            this.buttonLoadProducts.UseVisualStyleBackColor = true;
-            this.buttonLoadProducts.Click += new System.EventHandler(this.ButtonLoadProducts_Click);
-            // 
             // groupBoxAddProduct
             // 
             this.groupBoxAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -196,7 +185,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBoxAddProduct);
-            this.Controls.Add(this.buttonLoadProducts);
             this.Controls.Add(this.dataGridViewProducts);
             this.Name = "ProductsComponent";
             this.Size = new System.Drawing.Size(948, 813);
@@ -223,7 +211,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.TextBox textBoxProductUnit;
         private System.Windows.Forms.TextBox textBoxProductPrice;
         private System.Windows.Forms.TextBox textBoxProductName;
-        private System.Windows.Forms.Button buttonLoadProducts;
         private System.Windows.Forms.GroupBox groupBoxAddProduct;
     }
 }
