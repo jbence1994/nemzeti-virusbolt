@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using NemzetiVirusbolt.Desktop.Services.Authentication;
-using NemzetiVirusbolt.Desktop.Properties;
+using NemzetiVirusbolt.Desktop.Views.Helpers;
 
 namespace NemzetiVirusbolt.Desktop.Views
 {
@@ -34,13 +34,7 @@ namespace NemzetiVirusbolt.Desktop.Views
             }
             catch
             {
-                MessageBox.Show
-                (
-                    Resources.LoginErrorMessage,
-                    string.Empty,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                ErrorMessage.DisplayLoginErrorMessage();
             }
         }
 

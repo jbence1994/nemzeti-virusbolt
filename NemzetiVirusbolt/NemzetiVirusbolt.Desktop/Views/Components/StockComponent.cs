@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.Desktop.Dtos;
-using NemzetiVirusbolt.Desktop.Properties;
+using NemzetiVirusbolt.Desktop.Views.Helpers;
 
 namespace NemzetiVirusbolt.Desktop.Views.Components
 {
@@ -22,6 +22,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private async void ButtonLoadStock_Click(object sender, EventArgs e)
         {
             await InitializeStock();
+            InitializeMergedStock();
         }
 
         private async Task InitializeStock()
@@ -37,13 +38,23 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             }
             catch
             {
-                MessageBox.Show
-                (
-                    Resources.NetworkErrorMessage,
-                    string.Empty,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                ErrorMessage.DisplayNetworkErrorMessage();
+            }
+        }
+
+        private void InitializeMergedStock()
+        {
+            try
+            {
+                var mergedStockDtos =
+                    (from stock in _stockRepository.GetMergedStocks()
+                        select MergedStockDto.ToDto(stock.Key, stock.Value)).ToList();
+
+                dataGridViewMergedStocks.DataSource = mergedStockDtos;
+            }
+            catch
+            {
+                ErrorMessage.DisplayNetworkErrorMessage();
             }
         }
     }

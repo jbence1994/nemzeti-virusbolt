@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Core.Models;
@@ -20,6 +21,21 @@ namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
             return await _context.Stocks
                 .Include(s => s.Product)
                 .ToListAsync();
+        }
+
+        public Dictionary<string, int> GetMergedStocks()
+        {
+            var mergedStock = new Dictionary<string, int>();
+
+            foreach (var stock in _context.Stocks.ToList())
+            {
+                if (mergedStock.ContainsKey(stock.Product.Name))
+                    mergedStock[stock.Product.Name] += stock.Quantity;
+                else
+                    mergedStock.Add(stock.Product.Name, stock.Quantity);
+            }
+
+            return mergedStock;
         }
 
         public async Task AddStock(Stock stock)
