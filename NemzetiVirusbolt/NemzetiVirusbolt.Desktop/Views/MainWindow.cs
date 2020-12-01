@@ -12,6 +12,7 @@ namespace NemzetiVirusbolt.Desktop.Views
         public MainWindow(StockComponent stockComponent, ProductsComponent productsComponent)
         {
             InitializeComponent();
+
             _stockComponent = stockComponent;
             _productsComponent = productsComponent;
         }
