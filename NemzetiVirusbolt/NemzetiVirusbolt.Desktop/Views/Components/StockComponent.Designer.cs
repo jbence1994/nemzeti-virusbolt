@@ -103,7 +103,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.buttonLoadStocks.TabIndex = 1;
             this.buttonLoadStocks.Text = "Raktárkészlet betöltése";
             this.buttonLoadStocks.UseVisualStyleBackColor = true;
-            this.buttonLoadStocks.Click += new System.EventHandler(this.ButtonLoadStock_Click);
+            this.buttonLoadStocks.Click += new System.EventHandler(this.ButtonLoadStocks_Click);
             // 
             // dataGridViewMergedStocks
             // 

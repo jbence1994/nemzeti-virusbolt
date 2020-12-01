@@ -19,13 +19,12 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             _stockRepository = stockRepository;
         }
 
-        private async void ButtonLoadStock_Click(object sender, EventArgs e)
+        private async void ButtonLoadStocks_Click(object sender, EventArgs e)
         {
-            await InitializeStock();
-            InitializeMergedStock();
+            await InitializeStocks();
         }
 
-        private async Task InitializeStock()
+        private async Task InitializeStocks()
         {
             try
             {
@@ -33,22 +32,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                     (from stock in await _stockRepository.GetStocks()
                         select StockDto.ToDto(stock)).ToList();
 
-                // TODO: is it the good place for him... ???
-                buttonLoadStocks.Enabled = !buttonLoadStocks.Enabled;
-            }
-            catch
-            {
-                ErrorMessage.DisplayNetworkErrorMessage();
-            }
-        }
-
-        private void InitializeMergedStock()
-        {
-            try
-            {
                 dataGridViewMergedStocks.DataSource =
                     (from stock in _stockRepository.GetMergedStocks()
                         select MergedStockDto.ToDto(stock.Key, stock.Value)).ToList();
+
+                buttonLoadStocks.Enabled = !buttonLoadStocks.Enabled;
             }
             catch
             {
