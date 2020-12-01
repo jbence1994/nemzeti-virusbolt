@@ -28,7 +28,7 @@ namespace NemzetiVirusbolt.API.Controllers
             var suppliers = await _supplierRepository.GetSuppliers();
 
             var supplierResources =
-                _mapper.Map<IEnumerable<Supplier>, IEnumerable<SupplierResource>>(suppliers);
+                _mapper.Map<IEnumerable<Supplier>, IEnumerable<GetSupplierResource>>(suppliers);
 
             return Ok(supplierResources);
         }

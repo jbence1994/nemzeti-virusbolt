@@ -11,12 +11,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
     {
         private readonly ISupplierService _supplierService;
         //private readonly IProductRepository _productRepository;
-        //private readonly ISupplierRepository _supplierRepository;
         //private readonly IUnitOfWork _unitOfWork;
 
         public ProductsComponent(
             //IProductRepository productRepository,
-            //ISupplierRepository supplierRepository,
             //IUnitOfWork unitOfWork
             ISupplierService supplierService
         )
@@ -26,7 +24,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             _supplierService = supplierService;
 
             //_productRepository = productRepository;
-            //_supplierRepository = supplierRepository;
             //_unitOfWork = unitOfWork;
         }
 
