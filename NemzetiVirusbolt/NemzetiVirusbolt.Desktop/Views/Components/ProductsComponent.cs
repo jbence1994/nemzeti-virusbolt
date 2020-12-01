@@ -31,12 +31,12 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         public async void ProductsComponent_Load(object sender, EventArgs e)
         {
-            await InitializeSuppliers();
+            await Task.Run(InitializeSuppliers);
         }
 
         private async void ButtonLoadProducts_Click(object sender, EventArgs e)
         {
-            await InitializeProducts();
+            await Task.Run(InitializeProducts);
         }
 
         private async void ButtonAddProduct_Click(object sender, EventArgs e)
@@ -64,9 +64,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
                 buttonLoadProducts.Enabled = !buttonLoadProducts.Enabled;
             }
-            catch
+            catch (Exception ex)
             {
-                ErrorMessage.DisplayNetworkErrorMessage();
+                MessageBox.Show(ex.Message, ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //ErrorMessage.DisplayNetworkErrorMessage();
             }
         }
 

@@ -29,7 +29,9 @@ namespace NemzetiVirusbolt.Desktop
                 .ConfigureServices(services =>
                 {
                     services.AddDbContext<ApplicationDbContext>(options =>
-                        options.UseMySQL(configuration.GetConnectionString("Default")));
+                            options.UseMySQL(configuration.GetConnectionString("Default")),
+                        ServiceLifetime.Transient,
+                        ServiceLifetime.Transient);
 
                     services.AddScoped<IProductRepository, ProductRepository>();
                     services.AddScoped<IStockRepository, StockRepository>();

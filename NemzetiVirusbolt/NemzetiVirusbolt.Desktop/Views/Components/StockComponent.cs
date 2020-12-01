@@ -21,7 +21,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async void ButtonLoadStocks_Click(object sender, EventArgs e)
         {
-            await InitializeStocksTables();
+            await Task.Run(InitializeStocksTables);
         }
 
         private async Task InitializeStocksTables()
