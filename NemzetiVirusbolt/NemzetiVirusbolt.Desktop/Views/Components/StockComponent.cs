@@ -21,10 +21,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async void ButtonLoadStocks_Click(object sender, EventArgs e)
         {
-            await InitializeStocks();
+            await InitializeStocksTables();
         }
 
-        private async Task InitializeStocks()
+        private async Task InitializeStocksTables()
         {
             try
             {
