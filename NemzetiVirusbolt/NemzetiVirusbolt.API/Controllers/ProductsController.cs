@@ -34,7 +34,7 @@ namespace NemzetiVirusbolt.API.Controllers
             return Ok(productResources);
         }
 
-        // GET api/products/1
+        // GET: api/products/1
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int id)
         {
@@ -45,9 +45,9 @@ namespace NemzetiVirusbolt.API.Controllers
             return Ok(productResource);
         }
 
-        // POST api/products
+        // POST: api/products
         [HttpPost]
-        public void AddProduct([FromBody] SaveProductResource productResource)
+        public async Task<IActionResult> AddProduct([FromBody] SaveProductResource productResource)
         {
             throw new NotImplementedException();
         }

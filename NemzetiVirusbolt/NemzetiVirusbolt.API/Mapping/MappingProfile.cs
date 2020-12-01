@@ -9,10 +9,13 @@ namespace NemzetiVirusbolt.API.Mapping
         public MappingProfile()
         {
             // Domain model to API Resource
+
             CreateMap<Supplier, GetSupplierResource>();
             CreateMap<Product, GetProductResource>();
+            CreateMap<Stock, GetStockResource>();
 
             // API Resource to Domain model
+
             CreateMap<SaveProductResource, Product>();
         }
     }
