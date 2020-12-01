@@ -143,7 +143,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.comboBoxSuppliers.Name = "comboBoxSuppliers";
             this.comboBoxSuppliers.Size = new System.Drawing.Size(292, 23);
             this.comboBoxSuppliers.TabIndex = 4;
-            this.comboBoxSuppliers.DropDown += new System.EventHandler(this.ComboBoxSuppliers_DropDown);
             // 
             // textBoxProductUnit
             // 
