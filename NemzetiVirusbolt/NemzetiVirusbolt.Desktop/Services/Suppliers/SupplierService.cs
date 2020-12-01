@@ -10,7 +10,7 @@ namespace NemzetiVirusbolt.Desktop.Services.Suppliers
     public class SupplierService : ISupplierService
     {
         private readonly HttpClient _apiClient;
-        private const string SuppliersEndPoint = "https://localhost:44339/api/suppliers";
+        private const string SuppliersEndPoint = "https://localhost:44399/api/suppliers";
 
         public SupplierService()
         {

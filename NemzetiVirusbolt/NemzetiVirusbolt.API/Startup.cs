@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,8 @@ namespace NemzetiVirusbolt.API
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("Default")));
+
+            services.AddAutoMapper();
 
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IStockRepository, StockRepository>();
