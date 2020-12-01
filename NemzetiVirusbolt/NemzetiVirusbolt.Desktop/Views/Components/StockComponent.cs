@@ -29,11 +29,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         {
             try
             {
-                var stockDtos =
+                dataGridViewStocks.DataSource =
                     (from stock in await _stockRepository.GetStocks()
                         select StockDto.ToDto(stock)).ToList();
 
-                dataGridViewStocks.DataSource = stockDtos;
+                // TODO: is it the good place for him... ???
                 buttonLoadStocks.Enabled = !buttonLoadStocks.Enabled;
             }
             catch
@@ -46,11 +46,9 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         {
             try
             {
-                var mergedStockDtos =
+                dataGridViewMergedStocks.DataSource =
                     (from stock in _stockRepository.GetMergedStocks()
                         select MergedStockDto.ToDto(stock.Key, stock.Value)).ToList();
-
-                dataGridViewMergedStocks.DataSource = mergedStockDtos;
             }
             catch
             {
