@@ -34,7 +34,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnStockProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStockQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStockRecordedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonLoadStocks = new System.Windows.Forms.Button();
             this.dataGridViewMergedStocks = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,17 +93,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnStockRecordedDate.Name = "ColumnStockRecordedDate";
             this.ColumnStockRecordedDate.ReadOnly = true;
             // 
-            // buttonLoadStocks
-            // 
-            this.buttonLoadStocks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonLoadStocks.Location = new System.Drawing.Point(0, 779);
-            this.buttonLoadStocks.Name = "buttonLoadStocks";
-            this.buttonLoadStocks.Size = new System.Drawing.Size(174, 23);
-            this.buttonLoadStocks.TabIndex = 1;
-            this.buttonLoadStocks.Text = "Raktárkészlet betöltése";
-            this.buttonLoadStocks.UseVisualStyleBackColor = true;
-            this.buttonLoadStocks.Click += new System.EventHandler(this.ButtonLoadStocks_Click);
-            // 
             // dataGridViewMergedStocks
             // 
             this.dataGridViewMergedStocks.AllowUserToAddRows = false;
@@ -125,7 +113,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.dataGridViewMergedStocks.ReadOnly = true;
             this.dataGridViewMergedStocks.RowTemplate.Height = 25;
             this.dataGridViewMergedStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMergedStocks.Size = new System.Drawing.Size(948, 350);
+            this.dataGridViewMergedStocks.Size = new System.Drawing.Size(948, 390);
             this.dataGridViewMergedStocks.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn2
@@ -147,10 +135,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridViewMergedStocks);
-            this.Controls.Add(this.buttonLoadStocks);
             this.Controls.Add(this.dataGridViewStocks);
             this.Name = "StockComponent";
             this.Size = new System.Drawing.Size(948, 813);
+            this.Load += new System.EventHandler(this.StockComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMergedStocks)).EndInit();
             this.ResumeLayout(false);
@@ -164,7 +152,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStockProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStockQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStockRecordedDate;
-        private System.Windows.Forms.Button buttonLoadStocks;
         private System.Windows.Forms.DataGridView dataGridViewMergedStocks;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
