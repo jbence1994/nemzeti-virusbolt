@@ -1,5 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
+using NemzetiVirusbolt.API.Resources;
+using NemzetiVirusbolt.Core.Models;
+using NemzetiVirusbolt.Core.Repositories;
 
 namespace NemzetiVirusbolt.API.Controllers
 {
@@ -7,24 +13,43 @@ namespace NemzetiVirusbolt.API.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        private readonly IProductRepository _productRepository;
+        private readonly IMapper _mapper;
+
+        public ProductsController(IProductRepository productRepository, IMapper mapper)
+        {
+            _productRepository = productRepository;
+            _mapper = mapper;
+        }
+
         // GET: api/products
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> GetProducts()
         {
-            return new string[] {"value1", "value2"};
+            var products = await _productRepository.GetProducts();
+
+            var productResources =
+                _mapper.Map<IEnumerable<Product>, IEnumerable<GetProductResource>>(products);
+
+            return Ok(productResources);
         }
 
-        // GET api/<ProductsController>/5
+        // GET api/products/1
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> GetProduct(int id)
         {
-            return "value";
+            var product = await _productRepository.GetProduct(id);
+
+            var productResource = _mapper.Map<Product, GetProductResource>(product);
+
+            return Ok(productResource);
         }
 
-        // POST api/<ProductsController>
+        // POST api/products
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void AddProduct([FromBody] SaveProductResource productResource)
         {
+            throw new NotImplementedException();
         }
     }
 }
