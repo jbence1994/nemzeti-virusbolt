@@ -1,15 +1,11 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NemzetiVirusbolt.Core;
-using NemzetiVirusbolt.Core.Repositories;
-using NemzetiVirusbolt.Desktop.Persistence;
-using NemzetiVirusbolt.Desktop.Persistence.Repositories;
 using NemzetiVirusbolt.Desktop.Services.Authentication;
+using NemzetiVirusbolt.Desktop.Services.Suppliers;
 using NemzetiVirusbolt.Desktop.Views;
 using NemzetiVirusbolt.Desktop.Views.Components;
 
@@ -28,18 +24,8 @@ namespace NemzetiVirusbolt.Desktop
             var host = Host.CreateDefaultBuilder()
                 .ConfigureServices(services =>
                 {
-                    services.AddDbContext<ApplicationDbContext>(options =>
-                            options.UseMySQL(configuration.GetConnectionString("Default")),
-                        ServiceLifetime.Transient,
-                        ServiceLifetime.Transient);
-
-                    services.AddScoped<IProductRepository, ProductRepository>();
-                    services.AddScoped<IStockRepository, StockRepository>();
-                    services.AddScoped<ISupplierRepository, SupplierRepository>();
-
-                    services.AddScoped<IUnitOfWork, UnitOfWork>();
-
                     services.AddScoped<IAuthenticationService, AuthenticationService>();
+                    services.AddScoped<ISupplierService, SupplierService>();
 
                     services.AddScoped<LoginWindow>();
                     services.AddScoped<MainWindow>();

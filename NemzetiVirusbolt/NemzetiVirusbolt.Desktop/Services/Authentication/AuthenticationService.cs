@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using NemzetiVirusbolt.Desktop.Exceptions;
 
 namespace NemzetiVirusbolt.Desktop.Services.Authentication
 {

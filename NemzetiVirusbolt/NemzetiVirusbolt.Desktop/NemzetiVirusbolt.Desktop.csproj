@@ -21,10 +21,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\NemzetiVirusbolt.Core\NemzetiVirusbolt.Core.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
 
   <ItemGroup>

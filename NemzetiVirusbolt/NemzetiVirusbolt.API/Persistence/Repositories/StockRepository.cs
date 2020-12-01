@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
 
-namespace NemzetiVirusbolt.Desktop.Persistence.Repositories
+namespace NemzetiVirusbolt.API.Persistence.Repositories
 {
     public class StockRepository : IStockRepository
     {

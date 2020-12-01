@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NemzetiVirusbolt.Desktop.Exceptions
+namespace NemzetiVirusbolt.Desktop.Services.Authentication
 {
     public sealed class FailedLoginException : Exception
     {
