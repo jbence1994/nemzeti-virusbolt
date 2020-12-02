@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using NemzetiVirusbolt.Desktop.Dtos;
 using Newtonsoft.Json;
@@ -14,9 +13,6 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
         public async Task<IEnumerable<StockDto>> GetStocks()
         {
             var stocks = new List<StockDto>();
-
-            ApiClient.DefaultRequestHeaders.Accept.Clear();
-            ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             using var response = await ApiClient.GetAsync(StocksEndPoint);
 
