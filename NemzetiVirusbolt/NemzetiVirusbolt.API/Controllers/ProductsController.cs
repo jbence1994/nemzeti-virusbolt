@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using NemzetiVirusbolt.API.Resources;
+using NemzetiVirusbolt.Core;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
 
@@ -14,11 +15,13 @@ namespace NemzetiVirusbolt.API.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductRepository _productRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public ProductsController(IProductRepository productRepository, IMapper mapper)
+        public ProductsController(IProductRepository productRepository, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _productRepository = productRepository;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
@@ -49,7 +52,10 @@ namespace NemzetiVirusbolt.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromBody] SaveProductResource productResource)
         {
-            throw new NotImplementedException();
+            await _productRepository.AddProduct(new Product());
+            await _unitOfWork.CompleteAsync();
+
+            return Ok();
         }
     }
 }

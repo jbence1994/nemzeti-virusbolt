@@ -7,7 +7,7 @@ namespace NemzetiVirusbolt.Core.Repositories
     public interface IStockRepository
     {
         Task<IEnumerable<Stock>> GetStocks();
-        Dictionary<string, int> GetMergedStocks();
+        Task<IEnumerable<MergedStock>> GetMergedStocks();
         Task AddStock(Stock stock);
     }
 }

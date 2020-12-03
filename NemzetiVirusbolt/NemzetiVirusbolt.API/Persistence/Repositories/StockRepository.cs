@@ -23,11 +23,11 @@ namespace NemzetiVirusbolt.API.Persistence.Repositories
                 .ToListAsync();
         }
 
-        public Dictionary<string, int> GetMergedStocks()
+        public async Task<IEnumerable<MergedStock>> GetMergedStocks()
         {
             var mergedStock = new Dictionary<string, int>();
 
-            foreach (var stock in _context.Stocks.ToList())
+            foreach (var stock in await GetStocks())
             {
                 if (mergedStock.ContainsKey(stock.Product.Name))
                     mergedStock[stock.Product.Name] += stock.Quantity;
@@ -35,7 +35,9 @@ namespace NemzetiVirusbolt.API.Persistence.Repositories
                     mergedStock.Add(stock.Product.Name, stock.Quantity);
             }
 
-            return mergedStock;
+            return mergedStock
+                .Select(pair =>
+                    new MergedStock {ProductName = pair.Key, Quantity = pair.Value});
         }
 
         public async Task AddStock(Stock stock)
