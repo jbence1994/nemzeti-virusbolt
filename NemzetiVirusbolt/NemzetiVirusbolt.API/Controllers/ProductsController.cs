@@ -52,7 +52,9 @@ namespace NemzetiVirusbolt.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromBody] SaveProductResource productResource)
         {
-            await _productRepository.AddProduct(new Product());
+            var product = _mapper.Map<Product>(productResource);
+
+            await _productRepository.AddProduct(product);
             await _unitOfWork.CompleteAsync();
 
             return Ok();

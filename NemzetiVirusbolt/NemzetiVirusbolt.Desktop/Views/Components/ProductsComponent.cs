@@ -32,11 +32,12 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async void ButtonAddProduct_Click(object sender, EventArgs e)
         {
-            var newProduct = GetProduct();
-            //newProduct.SupplierId = GetSelectedSupplier().Id;
+            var productToSave = GetProduct();
+            var selectedSupplier = GetSelectedSupplier();
 
-            //await _productRepository.AddProduct(newProduct);
-            //await _unitOfWork.CompleteAsync();
+            productToSave.SupplierId = selectedSupplier.Id;
+
+            await _productService.AddProduct(productToSave);
 
             // TODO: add new product's row to GUI ...
         }
@@ -74,11 +75,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             return (SupplierDto) comboBoxSuppliers.SelectedItem;
         }
 
-        private ProductDto GetProduct()
+        private SaveProductDto GetProduct()
         {
             // TODO: this is the application's boundary, need to validate data ...
 
-            return new ProductDto
+            return new SaveProductDto
             {
                 Name = textBoxProductName.Text,
                 Price = textBoxProductPrice.Text,
