@@ -6,12 +6,14 @@ namespace NemzetiVirusbolt.Desktop.Services.Helpers
     public static class ApiHelper
     {
         public static HttpClient ApiClient { get; set; }
+        public const string MediaType = "application/json";
 
         static ApiHelper()
         {
             ApiClient = new HttpClient();
 
-            ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            ApiClient.DefaultRequestHeaders.Accept
+                .Add(new MediaTypeWithQualityHeaderValue(MediaType));
         }
     }
 }
