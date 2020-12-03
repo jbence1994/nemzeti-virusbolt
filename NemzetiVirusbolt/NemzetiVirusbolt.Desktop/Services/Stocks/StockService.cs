@@ -11,28 +11,28 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
         private const string StocksEndPoint = "https://localhost:44399/api/stocks";
         private const string MergedStocksEndPoint = "https://localhost:44399/api/stocks/merge";
 
-        public async Task<IEnumerable<StockDto>> GetStocks()
+        public async Task<IEnumerable<GetStockDto>> GetStocks()
         {
-            var stocks = new List<StockDto>();
+            var stocks = new List<GetStockDto>();
 
             using var response = await ApiClient.GetAsync(StocksEndPoint);
 
             if (response.IsSuccessStatusCode)
-                stocks = JsonConvert.DeserializeObject<List<StockDto>>(
+                stocks = JsonConvert.DeserializeObject<List<GetStockDto>>(
                     await response.Content.ReadAsStringAsync());
 
             return stocks;
         }
 
-        public async Task<IEnumerable<MergedStockDto>> GetMergedStocks()
+        public async Task<IEnumerable<GetMergedStockDto>> GetMergedStocks()
         {
-            var mergedStocks = new List<MergedStockDto>();
+            var mergedStocks = new List<GetMergedStockDto>();
 
             using var response = await ApiClient.GetAsync(MergedStocksEndPoint);
 
             if (response.IsSuccessStatusCode)
                 mergedStocks =
-                    JsonConvert.DeserializeObject<List<MergedStockDto>>(await response.Content.ReadAsStringAsync());
+                    JsonConvert.DeserializeObject<List<GetMergedStockDto>>(await response.Content.ReadAsStringAsync());
 
             return mergedStocks;
         }

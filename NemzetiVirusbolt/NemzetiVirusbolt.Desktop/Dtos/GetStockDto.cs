@@ -2,7 +2,7 @@
 
 namespace NemzetiVirusbolt.Desktop.Dtos
 {
-    public class StockDto
+    public class GetStockDto
     {
         public int Id { get; set; }
         public string ProductName { get; set; }

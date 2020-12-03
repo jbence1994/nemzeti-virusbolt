@@ -6,7 +6,7 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
 {
     public interface IStockService
     {
-        Task<IEnumerable<StockDto>> GetStocks();
-        Task<IEnumerable<MergedStockDto>> GetMergedStocks();
+        Task<IEnumerable<GetStockDto>> GetStocks();
+        Task<IEnumerable<GetMergedStockDto>> GetMergedStocks();
     }
 }

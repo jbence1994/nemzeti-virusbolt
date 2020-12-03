@@ -70,9 +70,9 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             }
         }
 
-        private SupplierDto GetSelectedSupplier()
+        private GetSupplierDto GetSelectedSupplier()
         {
-            return (SupplierDto) comboBoxSuppliers.SelectedItem;
+            return (GetSupplierDto) comboBoxSuppliers.SelectedItem;
         }
 
         private SaveProductDto GetProduct()

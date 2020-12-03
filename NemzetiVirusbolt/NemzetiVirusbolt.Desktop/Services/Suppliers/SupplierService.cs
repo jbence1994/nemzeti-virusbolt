@@ -10,14 +10,14 @@ namespace NemzetiVirusbolt.Desktop.Services.Suppliers
     {
         private const string SuppliersEndPoint = "https://localhost:44399/api/suppliers";
 
-        public async Task<IEnumerable<SupplierDto>> GetSuppliers()
+        public async Task<IEnumerable<GetSupplierDto>> GetSuppliers()
         {
-            var suppliers = new List<SupplierDto>();
+            var suppliers = new List<GetSupplierDto>();
 
             using var response = await ApiClient.GetAsync(SuppliersEndPoint);
 
             if (response.IsSuccessStatusCode)
-                suppliers = JsonConvert.DeserializeObject<List<SupplierDto>>(
+                suppliers = JsonConvert.DeserializeObject<List<GetSupplierDto>>(
                     await response.Content.ReadAsStringAsync());
 
             return suppliers;

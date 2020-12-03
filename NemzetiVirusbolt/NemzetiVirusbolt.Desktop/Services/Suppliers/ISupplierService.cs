@@ -6,6 +6,6 @@ namespace NemzetiVirusbolt.Desktop.Services.Suppliers
 {
     public interface ISupplierService
     {
-        Task<IEnumerable<SupplierDto>> GetSuppliers();
+        Task<IEnumerable<GetSupplierDto>> GetSuppliers();
     }
 }
