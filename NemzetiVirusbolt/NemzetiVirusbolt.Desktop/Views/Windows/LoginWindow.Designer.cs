@@ -1,4 +1,4 @@
-﻿namespace NemzetiVirusbolt.Desktop.Views
+﻿namespace NemzetiVirusbolt.Desktop.Views.Windows
 {
     partial class LoginWindow
     {

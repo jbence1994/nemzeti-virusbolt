@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using NemzetiVirusbolt.Desktop.Views.Components;
 
-namespace NemzetiVirusbolt.Desktop.Views
+namespace NemzetiVirusbolt.Desktop.Views.Windows
 {
     public partial class MainWindow : Form
     {

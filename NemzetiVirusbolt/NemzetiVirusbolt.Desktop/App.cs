@@ -6,8 +6,8 @@ using NemzetiVirusbolt.Desktop.Services.Authentication;
 using NemzetiVirusbolt.Desktop.Services.Products;
 using NemzetiVirusbolt.Desktop.Services.Stocks;
 using NemzetiVirusbolt.Desktop.Services.Suppliers;
-using NemzetiVirusbolt.Desktop.Views;
 using NemzetiVirusbolt.Desktop.Views.Components;
+using NemzetiVirusbolt.Desktop.Views.Windows;
 
 namespace NemzetiVirusbolt.Desktop
 {
@@ -34,7 +34,7 @@ namespace NemzetiVirusbolt.Desktop
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(host.Services.GetRequiredService<MainWindow>());
+            Application.Run(host.Services.GetRequiredService<LoginWindow>());
         }
     }
 }

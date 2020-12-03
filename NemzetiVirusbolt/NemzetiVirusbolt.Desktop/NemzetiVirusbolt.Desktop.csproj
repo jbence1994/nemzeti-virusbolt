@@ -29,16 +29,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Views\LoginWindow.cs">
+    <Compile Update="Views\Windows\LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\LoginWindow.Designer.cs">
+    <Compile Update="Views\Windows\LoginWindow.Designer.cs">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
-    <Compile Update="Views\MainWindow.cs">
+    <Compile Update="Views\Windows\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\MainWindow.Designer.cs">
+    <Compile Update="Views\Windows\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
   </ItemGroup>
