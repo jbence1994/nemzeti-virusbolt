@@ -27,7 +27,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             try
             {
                 dataGridViewStocks.DataSource = await _stockService.GetStocks();
-                //dataGridViewMergedStocks.DataSource = await _stockService.GetMergedStocks();
+                dataGridViewMergedStocks.DataSource = await _stockService.GetMergedStocks();
             }
             catch
             {

@@ -9,6 +9,7 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
     public class StockService : IStockService
     {
         private const string StocksEndPoint = "https://localhost:44399/api/stocks";
+        private const string MergedStocksEndPoint = "https://localhost:44399/api/stocks/merge";
 
         public async Task<IEnumerable<StockDto>> GetStocks()
         {
@@ -23,9 +24,17 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
             return stocks;
         }
 
-        public Task<IEnumerable<MergedStockDto>> GetMergedStocks()
+        public async Task<IEnumerable<MergedStockDto>> GetMergedStocks()
         {
-            return null;
+            var mergedStocks = new List<MergedStockDto>();
+
+            using var response = await ApiClient.GetAsync(MergedStocksEndPoint);
+
+            if (response.IsSuccessStatusCode)
+                mergedStocks =
+                    JsonConvert.DeserializeObject<List<MergedStockDto>>(await response.Content.ReadAsStringAsync());
+
+            return mergedStocks;
         }
     }
 }
