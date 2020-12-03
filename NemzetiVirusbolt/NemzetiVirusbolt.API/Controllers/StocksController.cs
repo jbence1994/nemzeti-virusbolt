@@ -52,7 +52,6 @@ namespace NemzetiVirusbolt.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddStock([FromBody] SaveStockResource stockResource)
         {
-
             var stock = _mapper.Map<Stock>(stockResource);
 
             await _stockRepository.AddStock(stock);

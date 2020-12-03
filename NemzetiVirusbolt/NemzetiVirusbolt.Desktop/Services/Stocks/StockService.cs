@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using NemzetiVirusbolt.Desktop.Dtos;
 using Newtonsoft.Json;
@@ -35,6 +37,20 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
                     JsonConvert.DeserializeObject<List<GetMergedStockDto>>(await response.Content.ReadAsStringAsync());
 
             return mergedStocks;
+        }
+
+        public async Task AddStock(SaveStockDto stock)
+        {
+            await ApiClient.PostAsync
+            (
+                StocksEndPoint,
+                new StringContent
+                (
+                    JsonConvert.SerializeObject(stock),
+                    Encoding.UTF8,
+                    MediaType
+                )
+            );
         }
     }
 }

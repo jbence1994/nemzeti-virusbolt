@@ -1,6 +1,6 @@
-﻿namespace NemzetiVirusbolt.API.Resources
+﻿namespace NemzetiVirusbolt.Desktop.Dtos
 {
-    public class SaveStockResource
+    public class SaveStockDto
     {
         public int ProductId { get; set; }
         public int Quantity { get; set; }

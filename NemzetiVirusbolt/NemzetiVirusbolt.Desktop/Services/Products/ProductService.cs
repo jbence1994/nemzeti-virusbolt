@@ -29,10 +29,16 @@ namespace NemzetiVirusbolt.Desktop.Services.Products
 
         public async Task AddProduct(SaveProductDto product)
         {
-            var vmi = JsonConvert.SerializeObject(product);
-
-            await ApiClient.PostAsync(ProductsEndPoint,
-                new StringContent(vmi, Encoding.UTF8, MediaType));
+            await ApiClient.PostAsync
+            (
+                ProductsEndPoint,
+                new StringContent
+                (
+                    JsonConvert.SerializeObject(product),
+                    Encoding.UTF8,
+                    MediaType
+                )
+            );
         }
     }
 }
