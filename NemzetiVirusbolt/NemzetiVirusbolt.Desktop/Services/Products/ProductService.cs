@@ -3,7 +3,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using NemzetiVirusbolt.Desktop.Dtos;
-using NemzetiVirusbolt.Desktop.Services.Helpers;
 using Newtonsoft.Json;
 using static NemzetiVirusbolt.Desktop.Services.Helpers.ApiHelper;
 
