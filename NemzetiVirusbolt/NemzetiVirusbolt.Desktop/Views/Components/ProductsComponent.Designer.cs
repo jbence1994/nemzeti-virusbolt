@@ -43,11 +43,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.textBoxProductPrice = new System.Windows.Forms.TextBox();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.groupBoxAddProduct = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.unitLabel = new System.Windows.Forms.Label();
+            this.supplierLabel = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.groupBoxAddProduct.SuspendLayout();
             this.SuspendLayout();
@@ -186,11 +186,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // groupBoxAddProduct
             // 
             this.groupBoxAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxAddProduct.Controls.Add(this.label5);
-            this.groupBoxAddProduct.Controls.Add(this.label4);
-            this.groupBoxAddProduct.Controls.Add(this.label3);
-            this.groupBoxAddProduct.Controls.Add(this.label2);
-            this.groupBoxAddProduct.Controls.Add(this.label1);
+            this.groupBoxAddProduct.Controls.Add(this.descriptionLabel);
+            this.groupBoxAddProduct.Controls.Add(this.supplierLabel);
+            this.groupBoxAddProduct.Controls.Add(this.unitLabel);
+            this.groupBoxAddProduct.Controls.Add(this.priceLabel);
+            this.groupBoxAddProduct.Controls.Add(this.nameLabel);
             this.groupBoxAddProduct.Controls.Add(this.textBoxProductName);
             this.groupBoxAddProduct.Controls.Add(this.textBoxProductPrice);
             this.groupBoxAddProduct.Controls.Add(this.buttonAddProduct);
@@ -206,50 +206,50 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.groupBoxAddProduct.TabStop = false;
             this.groupBoxAddProduct.Text = "Termékfelvétel";
             // 
-            // label1
+            // nameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Azonosító";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(15, 70);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(35, 20);
+            this.nameLabel.TabIndex = 7;
+            this.nameLabel.Text = "Név";
             // 
-            // label2
+            // priceLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 109);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Név";
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Location = new System.Drawing.Point(15, 109);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(69, 20);
+            this.priceLabel.TabIndex = 8;
+            this.priceLabel.Text = "Egységár";
             // 
-            // label3
+            // unitLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Egységár";
+            this.unitLabel.AutoSize = true;
+            this.unitLabel.Location = new System.Drawing.Point(15, 148);
+            this.unitLabel.Name = "unitLabel";
+            this.unitLabel.Size = new System.Drawing.Size(135, 20);
+            this.unitLabel.TabIndex = 9;
+            this.unitLabel.Text = "Mennyiségi egység";
             // 
-            // label4
+            // supplierLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 187);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Mennyiségi egység";
+            this.supplierLabel.AutoSize = true;
+            this.supplierLabel.Location = new System.Drawing.Point(15, 226);
+            this.supplierLabel.Name = "supplierLabel";
+            this.supplierLabel.Size = new System.Drawing.Size(73, 20);
+            this.supplierLabel.TabIndex = 10;
+            this.supplierLabel.Text = "Beszállító";
             // 
-            // label5
+            // descriptionLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 226);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Beszállító";
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Location = new System.Drawing.Point(15, 187);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(47, 20);
+            this.descriptionLabel.TabIndex = 11;
+            this.descriptionLabel.Text = "Leírás";
             // 
             // ProductsComponent
             // 
@@ -284,10 +284,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.TextBox textBoxProductPrice;
         private System.Windows.Forms.TextBox textBoxProductName;
         private System.Windows.Forms.GroupBox groupBoxAddProduct;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label unitLabel;
+        private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label supplierLabel;
+        private System.Windows.Forms.Label descriptionLabel;
     }
 }
