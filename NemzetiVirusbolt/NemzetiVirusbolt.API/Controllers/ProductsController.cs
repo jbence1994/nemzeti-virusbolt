@@ -36,17 +36,6 @@ namespace NemzetiVirusbolt.API.Controllers
             return Ok(productResources);
         }
 
-        // GET: api/products/1
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetProduct(int id)
-        {
-            var product = await _productRepository.GetProduct(id);
-
-            var productResource = _mapper.Map<Product, GetProductResource>(product);
-
-            return Ok(productResource);
-        }
-
         // POST: api/products
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromBody] SaveProductResource productResource)

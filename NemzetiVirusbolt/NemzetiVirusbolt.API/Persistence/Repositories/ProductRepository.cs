@@ -22,13 +22,6 @@ namespace NemzetiVirusbolt.API.Persistence.Repositories
                 .ToListAsync();
         }
 
-        public async Task<Product> GetProduct(int id)
-        {
-            return await _context.Products
-                .Include(p => p.Supplier)
-                .SingleOrDefaultAsync(p => p.Id == id);
-        }
-
         public async Task AddProduct(Product product)
         {
             await _context.Products.AddAsync(product);
