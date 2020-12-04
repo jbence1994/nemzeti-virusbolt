@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using FluentValidation;
+using NemzetiVirusbolt.Desktop.Dtos;
 
 namespace NemzetiVirusbolt.Desktop.Validation
 {
-    class ProductValidator
+    public class ProductValidator : AbstractValidator<SaveProductDto>
     {
     }
 }
