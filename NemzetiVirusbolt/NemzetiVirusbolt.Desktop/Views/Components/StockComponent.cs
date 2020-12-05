@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NemzetiVirusbolt.Desktop.Dtos;
 using NemzetiVirusbolt.Desktop.Services.Stocks;
 using NemzetiVirusbolt.Desktop.Views.Helpers;
 
@@ -33,6 +34,18 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             {
                 ErrorMessage.DisplayNetworkErrorMessage();
             }
+        }
+
+        private GetProductDto GetSelectedProduct()
+        {
+            return (GetProductDto) comboBoxProducts.SelectedItem;
+        }
+
+        private void ButtonAddProduct_Click(object sender, EventArgs e)
+        {
+            // TODO: make a SaveStockDto obj ...
+
+            _stockService.AddStock(new SaveStockDto());
         }
     }
 }

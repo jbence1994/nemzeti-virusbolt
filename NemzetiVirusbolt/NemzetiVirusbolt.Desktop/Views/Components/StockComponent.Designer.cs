@@ -35,8 +35,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnStockQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStockRecordedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewMergedStocks = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxProducts = new System.Windows.Forms.ComboBox();
+            this.buttonAddStock = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumnProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMergedStocks)).BeginInit();
             this.SuspendLayout();
@@ -105,35 +107,57 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.dataGridViewMergedStocks.BackgroundColor = System.Drawing.SystemColors.AppWorkspace;
             this.dataGridViewMergedStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMergedStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dataGridViewMergedStocks.Location = new System.Drawing.Point(0, 423);
+            this.dataGridViewTextBoxColumnProduct,
+            this.dataGridViewTextBoxColumnQuantity});
+            this.dataGridViewMergedStocks.Location = new System.Drawing.Point(0, 503);
             this.dataGridViewMergedStocks.MultiSelect = false;
             this.dataGridViewMergedStocks.Name = "dataGridViewMergedStocks";
             this.dataGridViewMergedStocks.ReadOnly = true;
             this.dataGridViewMergedStocks.RowTemplate.Height = 25;
             this.dataGridViewMergedStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMergedStocks.Size = new System.Drawing.Size(948, 390);
+            this.dataGridViewMergedStocks.Size = new System.Drawing.Size(948, 310);
             this.dataGridViewMergedStocks.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn2
+            // comboBoxProducts
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Termék";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.comboBoxProducts.DisplayMember = "Name";
+            this.comboBoxProducts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProducts.FormattingEnabled = true;
+            this.comboBoxProducts.Location = new System.Drawing.Point(0, 423);
+            this.comboBoxProducts.Name = "comboBoxProducts";
+            this.comboBoxProducts.Size = new System.Drawing.Size(306, 23);
+            this.comboBoxProducts.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn3
+            // buttonAddStock
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Quantity";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Mennyiség";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.buttonAddStock.Location = new System.Drawing.Point(519, 422);
+            this.buttonAddStock.Name = "buttonAddStock";
+            this.buttonAddStock.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddStock.TabIndex = 4;
+            this.buttonAddStock.Text = "button1";
+            this.buttonAddStock.UseVisualStyleBackColor = true;
+            this.buttonAddStock.Click += new System.EventHandler(this.ButtonAddProduct_Click);
+            // 
+            // dataGridViewTextBoxColumnProduct
+            // 
+            this.dataGridViewTextBoxColumnProduct.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumnProduct.HeaderText = "Termék";
+            this.dataGridViewTextBoxColumnProduct.Name = "dataGridViewTextBoxColumnProduct";
+            this.dataGridViewTextBoxColumnProduct.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumnQuantity
+            // 
+            this.dataGridViewTextBoxColumnQuantity.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumnQuantity.HeaderText = "Mennyiség";
+            this.dataGridViewTextBoxColumnQuantity.Name = "dataGridViewTextBoxColumnQuantity";
+            this.dataGridViewTextBoxColumnQuantity.ReadOnly = true;
             // 
             // StockComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonAddStock);
+            this.Controls.Add(this.comboBoxProducts);
             this.Controls.Add(this.dataGridViewMergedStocks);
             this.Controls.Add(this.dataGridViewStocks);
             this.Name = "StockComponent";
@@ -153,7 +177,9 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStockQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStockRecordedDate;
         private System.Windows.Forms.DataGridView dataGridViewMergedStocks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.ComboBox comboBoxProducts;
+        private System.Windows.Forms.Button buttonAddStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnQuantity;
     }
 }
