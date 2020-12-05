@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NemzetiVirusbolt.Desktop.Dtos;
 using Newtonsoft.Json;
-using static NemzetiVirusbolt.Desktop.Services.Helpers.ApiHelper;
+using static NemzetiVirusbolt.Desktop.Services.ApiHelper;
 
 namespace NemzetiVirusbolt.Desktop.Services.Products
 {

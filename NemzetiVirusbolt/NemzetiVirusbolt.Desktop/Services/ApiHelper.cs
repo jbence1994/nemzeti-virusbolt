@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace NemzetiVirusbolt.Desktop.Services.Helpers
+namespace NemzetiVirusbolt.Desktop.Services
 {
     public static class ApiHelper
     {
