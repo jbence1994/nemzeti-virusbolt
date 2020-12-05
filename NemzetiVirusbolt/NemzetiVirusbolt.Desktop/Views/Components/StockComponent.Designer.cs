@@ -111,13 +111,13 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.dataGridViewMergedStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumnProduct,
             this.dataGridViewTextBoxColumnQuantity});
-            this.dataGridViewMergedStocks.Location = new System.Drawing.Point(0, 503);
+            this.dataGridViewMergedStocks.Location = new System.Drawing.Point(0, 452);
             this.dataGridViewMergedStocks.MultiSelect = false;
             this.dataGridViewMergedStocks.Name = "dataGridViewMergedStocks";
             this.dataGridViewMergedStocks.ReadOnly = true;
             this.dataGridViewMergedStocks.RowTemplate.Height = 25;
             this.dataGridViewMergedStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMergedStocks.Size = new System.Drawing.Size(948, 310);
+            this.dataGridViewMergedStocks.Size = new System.Drawing.Size(948, 361);
             this.dataGridViewMergedStocks.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumnProduct
@@ -146,9 +146,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // 
             // buttonAddStock
             // 
-            this.buttonAddStock.Location = new System.Drawing.Point(519, 422);
+            this.buttonAddStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddStock.Location = new System.Drawing.Point(642, 423);
             this.buttonAddStock.Name = "buttonAddStock";
-            this.buttonAddStock.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddStock.Size = new System.Drawing.Size(306, 23);
             this.buttonAddStock.TabIndex = 4;
             this.buttonAddStock.Text = "Felvitel";
             this.buttonAddStock.UseVisualStyleBackColor = true;
@@ -156,9 +157,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // 
             // numericUpDownQuantity
             // 
-            this.numericUpDownQuantity.Location = new System.Drawing.Point(0, 452);
+            this.numericUpDownQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(312, 423);
             this.numericUpDownQuantity.Name = "numericUpDownQuantity";
-            this.numericUpDownQuantity.Size = new System.Drawing.Size(306, 23);
+            this.numericUpDownQuantity.Size = new System.Drawing.Size(324, 23);
             this.numericUpDownQuantity.TabIndex = 5;
             // 
             // StockComponent
