@@ -17,7 +17,6 @@ namespace NemzetiVirusbolt.ValidationTests
 
             var productToSave = new SaveProductDto
             {
-                Id = 1,
                 Name = "",
                 Description = "...",
                 Price = "3500",
@@ -43,7 +42,6 @@ namespace NemzetiVirusbolt.ValidationTests
 
             var productToSave = new SaveProductDto
             {
-                Id = 1,
                 Name = "FFP3 maszk",
                 Description = "...",
                 Price = "",
@@ -69,7 +67,6 @@ namespace NemzetiVirusbolt.ValidationTests
 
             var productToSave = new SaveProductDto
             {
-                Id = 1,
                 Name = "FFP3 maszk",
                 Description = "...",
                 Price = "1200d",
@@ -95,7 +92,6 @@ namespace NemzetiVirusbolt.ValidationTests
 
             var productToSave = new SaveProductDto
             {
-                Id = 1,
                 Name = "FFP3 maszk",
                 Description = "...",
                 Price = "3500",
