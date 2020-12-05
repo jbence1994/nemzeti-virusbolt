@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentValidation.TestHelper;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NemzetiVirusbolt.Desktop.Dtos;
 using NemzetiVirusbolt.Validation;
 
@@ -8,7 +9,7 @@ namespace NemzetiVirusbolt.ValidationTests
     public class StockValidatorTests
     {
         [TestMethod]
-        public void StockValidatorTest_InCaseQuantityIsZero_ShouldHaveAtLeastOneError()
+        public void StockValidatorTest_InCaseStockQuantityIsZero_ShouldHaveErrorForStockQuantity()
         {
             // Arrange
 
@@ -22,11 +23,35 @@ namespace NemzetiVirusbolt.ValidationTests
 
             // Act
 
-            var validationResult = stockValidator.Validate(stockToSave);
+            var validationResult = stockValidator.TestValidate(stockToSave);
 
             // Assert
 
-            Assert.AreEqual(1, validationResult.Errors.Count);
+            validationResult.ShouldNotHaveValidationErrorFor(stock => stock.ProductId);
+            validationResult.ShouldHaveValidationErrorFor(stock => stock.Quantity);
+        }
+
+        [TestMethod]
+        public void StockValidatorTest_InCaseEveryPropertyOk_ShouldNotHaveAnyErrors()
+        {
+            // Arrange
+
+            var stockValidator = new StockValidator();
+
+            var stockToSave = new SaveStockDto
+            {
+                ProductId = 1,
+                Quantity = 1
+            };
+
+            // Act
+
+            var validationResult = stockValidator.TestValidate(stockToSave);
+
+            // Assert
+
+            validationResult.ShouldNotHaveValidationErrorFor(stock => stock.ProductId);
+            validationResult.ShouldNotHaveValidationErrorFor(stock => stock.Quantity);
         }
     }
 }
