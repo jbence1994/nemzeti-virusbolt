@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NemzetiVirusbolt.Desktop\NemzetiVirusbolt.Desktop.csproj" />
+    <ProjectReference Include="..\NemzetiVirusbolt.Validation\NemzetiVirusbolt.Validation.csproj" />
   </ItemGroup>
 
 </Project>

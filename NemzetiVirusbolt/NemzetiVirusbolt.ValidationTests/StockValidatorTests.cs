@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NemzetiVirusbolt.Desktop.Dtos;
-using NemzetiVirusbolt.Desktop.Validation;
+using NemzetiVirusbolt.Validation;
 
-namespace NemzetiVirusbolt.DesktopTests.Validation
+namespace NemzetiVirusbolt.ValidationTests
 {
     [TestClass]
     public class StockValidatorTests
@@ -13,7 +13,7 @@ namespace NemzetiVirusbolt.DesktopTests.Validation
             // Arrange
 
             var stockValidator = new StockValidator();
-            
+
             var stockToSave = new SaveStockDto
             {
                 ProductId = 1,
