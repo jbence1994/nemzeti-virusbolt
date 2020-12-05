@@ -7,6 +7,8 @@ namespace NemzetiVirusbolt.Desktop.Validation
     {
         public StockValidator()
         {
+            RuleFor(stock => stock.Quantity)
+                .GreaterThan(0);
         }
     }
 }
