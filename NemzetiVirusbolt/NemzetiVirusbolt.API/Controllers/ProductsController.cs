@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -40,12 +41,23 @@ namespace NemzetiVirusbolt.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromBody] SaveProductResource productResource)
         {
-            var product = _mapper.Map<Product>(productResource);
+            try
+            {
+                var product = _mapper.Map<Product>(productResource);
 
-            await _productRepository.AddProduct(product);
-            await _unitOfWork.CompleteAsync();
+                await _productRepository.AddProduct(product);
+                await _unitOfWork.CompleteAsync();
 
-            return Ok();
+                product = await _productRepository.GetProduct(product.Id);
+
+                var result = _mapper.Map<Product, GetProductResource>(product);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

@@ -42,7 +42,14 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
             productToSave.SupplierId = selectedSupplier.Id;
 
-            // TODO: this is the application's boundary, need to validate data ...
+            var validationResult =
+                await _productValidator.ValidateAsync(productToSave);
+
+            if (!validationResult.IsValid)
+            {
+                //MessageBox.Show("Test");
+                return;
+            }
 
             await _productService.AddProduct(productToSave);
 
