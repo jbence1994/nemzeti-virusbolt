@@ -16,13 +16,11 @@ namespace NemzetiVirusbolt.Desktop.Services.Products
         {
             var products = new List<GetProductDto>();
 
-            using var response =
-                await ApiClient.GetAsync(ProductsEndPoint);
-
-            if (response.IsSuccessStatusCode)
-                products = JsonConvert
-                    .DeserializeObject<List<GetProductDto>>
-                        (await response.Content.ReadAsStringAsync());
+            using (var response = await ApiClient.GetAsync(ProductsEndPoint))
+                if (response.IsSuccessStatusCode)
+                    products = JsonConvert
+                        .DeserializeObject<List<GetProductDto>>
+                            (await response.Content.ReadAsStringAsync());
 
             return products;
         }

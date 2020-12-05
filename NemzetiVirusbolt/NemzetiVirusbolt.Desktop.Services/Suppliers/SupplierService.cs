@@ -14,11 +14,10 @@ namespace NemzetiVirusbolt.Desktop.Services.Suppliers
         {
             var suppliers = new List<GetSupplierDto>();
 
-            using var response = await ApiClient.GetAsync(SuppliersEndPoint);
-
-            if (response.IsSuccessStatusCode)
-                suppliers = JsonConvert.DeserializeObject<List<GetSupplierDto>>(
-                    await response.Content.ReadAsStringAsync());
+            using (var response = await ApiClient.GetAsync(SuppliersEndPoint))
+                if (response.IsSuccessStatusCode)
+                    suppliers = JsonConvert.DeserializeObject<List<GetSupplierDto>>(
+                        await response.Content.ReadAsStringAsync());
 
             return suppliers;
         }

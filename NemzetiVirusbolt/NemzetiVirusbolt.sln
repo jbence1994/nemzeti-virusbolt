@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NemzetiVirusbolt.Desktop", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NemzetiVirusbolt.API", "NemzetiVirusbolt.API\NemzetiVirusbolt.API.csproj", "{3557D12B-7182-4488-908C-6E3FBF792553}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.Validation", "NemzetiVirusbolt.Validation\NemzetiVirusbolt.Validation.csproj", "{7F341656-45CA-4B8C-94BE-C2123588A723}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NemzetiVirusbolt.Validation", "NemzetiVirusbolt.Validation\NemzetiVirusbolt.Validation.csproj", "{7F341656-45CA-4B8C-94BE-C2123588A723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.Desktop.Dtos", "NemzetiVirusbolt.Desktop.Dtos\NemzetiVirusbolt.Desktop.Dtos.csproj", "{5615C2FC-DA03-4409-A8DC-0020A1E50957}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NemzetiVirusbolt.Desktop.Dtos", "NemzetiVirusbolt.Desktop.Dtos\NemzetiVirusbolt.Desktop.Dtos.csproj", "{5615C2FC-DA03-4409-A8DC-0020A1E50957}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.ValidationTests", "NemzetiVirusbolt.ValidationTests\NemzetiVirusbolt.ValidationTests.csproj", "{8D4FD7AF-98F5-49D7-B5B9-0D2717F197BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NemzetiVirusbolt.ValidationTests", "NemzetiVirusbolt.ValidationTests\NemzetiVirusbolt.ValidationTests.csproj", "{8D4FD7AF-98F5-49D7-B5B9-0D2717F197BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.Desktop.Services", "NemzetiVirusbolt.Desktop.Services\NemzetiVirusbolt.Desktop.Services.csproj", "{94E10EA8-0C73-497B-A69D-DBA556C0E1B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8D4FD7AF-98F5-49D7-B5B9-0D2717F197BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D4FD7AF-98F5-49D7-B5B9-0D2717F197BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D4FD7AF-98F5-49D7-B5B9-0D2717F197BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E10EA8-0C73-497B-A69D-DBA556C0E1B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E10EA8-0C73-497B-A69D-DBA556C0E1B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E10EA8-0C73-497B-A69D-DBA556C0E1B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E10EA8-0C73-497B-A69D-DBA556C0E1B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

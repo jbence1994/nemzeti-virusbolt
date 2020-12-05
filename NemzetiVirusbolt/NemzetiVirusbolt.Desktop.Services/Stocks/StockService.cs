@@ -17,11 +17,10 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
         {
             var stocks = new List<GetStockDto>();
 
-            using var response = await ApiClient.GetAsync(StocksEndPoint);
-
-            if (response.IsSuccessStatusCode)
-                stocks = JsonConvert.DeserializeObject<List<GetStockDto>>(
-                    await response.Content.ReadAsStringAsync());
+            using (var response = await ApiClient.GetAsync(StocksEndPoint))
+                if (response.IsSuccessStatusCode)
+                    stocks = JsonConvert.DeserializeObject<List<GetStockDto>>(
+                        await response.Content.ReadAsStringAsync());
 
             return stocks;
         }
@@ -30,11 +29,11 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
         {
             var mergedStocks = new List<GetMergedStockDto>();
 
-            using var response = await ApiClient.GetAsync(MergedStocksEndPoint);
-
-            if (response.IsSuccessStatusCode)
-                mergedStocks =
-                    JsonConvert.DeserializeObject<List<GetMergedStockDto>>(await response.Content.ReadAsStringAsync());
+            using (var response = await ApiClient.GetAsync(MergedStocksEndPoint))
+                if (response.IsSuccessStatusCode)
+                    mergedStocks =
+                        JsonConvert.DeserializeObject<List<GetMergedStockDto>>(
+                            await response.Content.ReadAsStringAsync());
 
             return mergedStocks;
         }
