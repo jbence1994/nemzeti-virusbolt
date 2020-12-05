@@ -35,12 +35,14 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnStockQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStockRecordedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewMergedStocks = new System.Windows.Forms.DataGridView();
-            this.comboBoxProducts = new System.Windows.Forms.ComboBox();
-            this.buttonAddStock = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumnProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumnQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxProducts = new System.Windows.Forms.ComboBox();
+            this.buttonAddStock = new System.Windows.Forms.Button();
+            this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMergedStocks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewStocks
@@ -118,6 +120,20 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.dataGridViewMergedStocks.Size = new System.Drawing.Size(948, 310);
             this.dataGridViewMergedStocks.TabIndex = 2;
             // 
+            // dataGridViewTextBoxColumnProduct
+            // 
+            this.dataGridViewTextBoxColumnProduct.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumnProduct.HeaderText = "Termék";
+            this.dataGridViewTextBoxColumnProduct.Name = "dataGridViewTextBoxColumnProduct";
+            this.dataGridViewTextBoxColumnProduct.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumnQuantity
+            // 
+            this.dataGridViewTextBoxColumnQuantity.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumnQuantity.HeaderText = "Mennyiség";
+            this.dataGridViewTextBoxColumnQuantity.Name = "dataGridViewTextBoxColumnQuantity";
+            this.dataGridViewTextBoxColumnQuantity.ReadOnly = true;
+            // 
             // comboBoxProducts
             // 
             this.comboBoxProducts.DisplayMember = "Name";
@@ -134,28 +150,22 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.buttonAddStock.Name = "buttonAddStock";
             this.buttonAddStock.Size = new System.Drawing.Size(75, 23);
             this.buttonAddStock.TabIndex = 4;
-            this.buttonAddStock.Text = "button1";
+            this.buttonAddStock.Text = "Felvitel";
             this.buttonAddStock.UseVisualStyleBackColor = true;
             this.buttonAddStock.Click += new System.EventHandler(this.ButtonAddProduct_Click);
             // 
-            // dataGridViewTextBoxColumnProduct
+            // numericUpDownQuantity
             // 
-            this.dataGridViewTextBoxColumnProduct.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumnProduct.HeaderText = "Termék";
-            this.dataGridViewTextBoxColumnProduct.Name = "dataGridViewTextBoxColumnProduct";
-            this.dataGridViewTextBoxColumnProduct.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumnQuantity
-            // 
-            this.dataGridViewTextBoxColumnQuantity.DataPropertyName = "Quantity";
-            this.dataGridViewTextBoxColumnQuantity.HeaderText = "Mennyiség";
-            this.dataGridViewTextBoxColumnQuantity.Name = "dataGridViewTextBoxColumnQuantity";
-            this.dataGridViewTextBoxColumnQuantity.ReadOnly = true;
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(0, 452);
+            this.numericUpDownQuantity.Name = "numericUpDownQuantity";
+            this.numericUpDownQuantity.Size = new System.Drawing.Size(306, 23);
+            this.numericUpDownQuantity.TabIndex = 5;
             // 
             // StockComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.numericUpDownQuantity);
             this.Controls.Add(this.buttonAddStock);
             this.Controls.Add(this.comboBoxProducts);
             this.Controls.Add(this.dataGridViewMergedStocks);
@@ -165,6 +175,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.Load += new System.EventHandler(this.StockComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMergedStocks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,5 +192,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.Button buttonAddStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnQuantity;
+        private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
     }
 }
