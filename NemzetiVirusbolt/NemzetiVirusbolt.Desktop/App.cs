@@ -6,6 +6,7 @@ using NemzetiVirusbolt.Desktop.Services.Authentication;
 using NemzetiVirusbolt.Desktop.Services.Products;
 using NemzetiVirusbolt.Desktop.Services.Stocks;
 using NemzetiVirusbolt.Desktop.Services.Suppliers;
+using NemzetiVirusbolt.Desktop.Validation;
 using NemzetiVirusbolt.Desktop.Views.Components;
 using NemzetiVirusbolt.Desktop.Views.Windows;
 
@@ -23,6 +24,9 @@ namespace NemzetiVirusbolt.Desktop
                     services.AddScoped<IProductService, ProductService>();
                     services.AddScoped<IStockService, StockService>();
                     services.AddScoped<ISupplierService, SupplierService>();
+
+                    services.AddScoped<ProductValidator>();
+                    services.AddScoped<StockValidator>();
 
                     services.AddScoped<LoginWindow>();
                     services.AddScoped<MainWindow>();

@@ -123,4 +123,7 @@
   <data name="NetworkErrorMessage" xml:space="preserve">
     <value>Hiba az internet kapcsolatban.</value>
   </data>
+  <data name="ZeroStockQuantity" xml:space="preserve">
+    <value>Nem lehet nulla a rögzített mennyiség.</value>
+  </data>
 </root>

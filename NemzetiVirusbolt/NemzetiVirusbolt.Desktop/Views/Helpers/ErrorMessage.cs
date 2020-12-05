@@ -26,5 +26,16 @@ namespace NemzetiVirusbolt.Desktop.Views.Helpers
                 MessageBoxIcon.Information
             );
         }
+
+        public static void DisplayZeroStockQuantityErrorMessage()
+        {
+            MessageBox.Show
+            (
+                Resources.ZeroStockQuantity,
+                string.Empty,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            );
+        }
     }
 }

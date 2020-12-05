@@ -77,5 +77,14 @@ namespace NemzetiVirusbolt.Desktop.Properties {
                 return ResourceManager.GetString("NetworkErrorMessage", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nem lehet nulla a rögzített mennyiség..
+        /// </summary>
+        internal static string ZeroStockQuantity {
+            get {
+                return ResourceManager.GetString("ZeroStockQuantity", resourceCulture);
+            }
+        }
     }
 }

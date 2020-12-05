@@ -13,13 +13,20 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
     {
         private readonly IStockService _stockService;
         private readonly IProductService _productService;
+        private readonly StockValidator _stockValidator;
 
-        public StockComponent(IStockService stockService, IProductService productService)
+        public StockComponent
+        (
+            IStockService stockService,
+            IProductService productService,
+            StockValidator stockValidator
+        )
         {
             InitializeComponent();
 
             _stockService = stockService;
             _productService = productService;
+            _stockValidator = stockValidator;
         }
 
         private async void StockComponent_Load(object sender, EventArgs e)
@@ -38,16 +45,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 Quantity = GetQuantity()
             };
 
+            var validationResult = await _stockValidator.ValidateAsync(stockToSave);
 
-            // TODO: inject this, because of tightly coupled ...
-
-            var stockValidator = new StockValidator();
-            var result = await stockValidator.ValidateAsync(stockToSave);
-
-            // extract error message to method ...
-            if (!result.IsValid)
+            if (!validationResult.IsValid)
             {
-                MessageBox.Show(result.Errors.ToString());
+                ErrorMessage.DisplayZeroStockQuantityErrorMessage();
                 return;
             }
 
