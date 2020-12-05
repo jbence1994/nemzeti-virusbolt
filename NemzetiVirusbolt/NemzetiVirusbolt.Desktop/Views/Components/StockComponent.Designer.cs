@@ -151,7 +151,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.buttonAddStock.Name = "buttonAddStock";
             this.buttonAddStock.Size = new System.Drawing.Size(306, 23);
             this.buttonAddStock.TabIndex = 4;
-            this.buttonAddStock.Text = "Felvitel";
+            this.buttonAddStock.Text = "Rögzítés";
             this.buttonAddStock.UseVisualStyleBackColor = true;
             this.buttonAddStock.Click += new System.EventHandler(this.ButtonAddStock_Click);
             // 
