@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace NemzetiVirusbolt.Desktop.Services.Authentication
+namespace NemzetiVirusbolt.Desktop.Authentication
 {
     public class AuthenticationService : IAuthenticationService
     {

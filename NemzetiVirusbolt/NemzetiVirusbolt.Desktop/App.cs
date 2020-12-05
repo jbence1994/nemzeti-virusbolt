@@ -2,7 +2,7 @@ using System;
 using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NemzetiVirusbolt.Desktop.Services.Authentication;
+using NemzetiVirusbolt.Desktop.Authentication;
 using NemzetiVirusbolt.Desktop.Services.Products;
 using NemzetiVirusbolt.Desktop.Services.Stocks;
 using NemzetiVirusbolt.Desktop.Services.Suppliers;

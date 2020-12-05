@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using NemzetiVirusbolt.Desktop.Services.Authentication;
+using NemzetiVirusbolt.Desktop.Authentication;
 using NemzetiVirusbolt.Desktop.Views.Helpers;
 
 namespace NemzetiVirusbolt.Desktop.Views.Windows

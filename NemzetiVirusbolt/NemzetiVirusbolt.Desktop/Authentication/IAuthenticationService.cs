@@ -1,4 +1,4 @@
-﻿namespace NemzetiVirusbolt.Desktop.Services.Authentication
+﻿namespace NemzetiVirusbolt.Desktop.Authentication
 {
     public interface IAuthenticationService
     {
