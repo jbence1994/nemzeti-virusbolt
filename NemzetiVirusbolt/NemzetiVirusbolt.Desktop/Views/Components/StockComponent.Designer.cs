@@ -153,7 +153,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.buttonAddStock.TabIndex = 4;
             this.buttonAddStock.Text = "Felvitel";
             this.buttonAddStock.UseVisualStyleBackColor = true;
-            this.buttonAddStock.Click += new System.EventHandler(this.ButtonAddProduct_Click);
+            this.buttonAddStock.Click += new System.EventHandler(this.ButtonAddStock_Click);
             // 
             // numericUpDownQuantity
             // 
