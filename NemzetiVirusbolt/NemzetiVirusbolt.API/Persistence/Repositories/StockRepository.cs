@@ -40,6 +40,13 @@ namespace NemzetiVirusbolt.API.Persistence.Repositories
                     new MergedStock {ProductName = pair.Key, Quantity = pair.Value});
         }
 
+        public async Task<Stock> GetStock(int id)
+        {
+            return await _context.Stocks
+                .Include(s => s.Product)
+                .SingleOrDefaultAsync();
+        }
+
         public async Task AddStock(Stock stock)
         {
             await _context.Stocks.AddAsync(stock);

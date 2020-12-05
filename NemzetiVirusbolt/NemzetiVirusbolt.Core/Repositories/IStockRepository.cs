@@ -8,6 +8,7 @@ namespace NemzetiVirusbolt.Core.Repositories
     {
         Task<IEnumerable<Stock>> GetStocks();
         Task<IEnumerable<MergedStock>> GetMergedStocks();
+        Task<Stock> GetStock(int id);
         Task AddStock(Stock stock);
     }
 }
