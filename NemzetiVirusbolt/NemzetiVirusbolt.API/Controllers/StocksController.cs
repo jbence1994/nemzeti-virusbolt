@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -52,6 +53,8 @@ namespace NemzetiVirusbolt.API.Controllers
         public async Task<IActionResult> AddStock([FromBody] SaveStockResource stockResource)
         {
             var stock = _mapper.Map<Stock>(stockResource);
+
+            stock.DateRecorded = DateTime.Now;
 
             await _stockRepository.AddStock(stock);
             await _unitOfWork.CompleteAsync();
