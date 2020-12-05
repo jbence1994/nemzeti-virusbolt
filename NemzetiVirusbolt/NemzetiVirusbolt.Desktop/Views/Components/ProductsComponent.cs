@@ -5,6 +5,7 @@ using NemzetiVirusbolt.Desktop.Dtos;
 using NemzetiVirusbolt.Desktop.Services.Products;
 using NemzetiVirusbolt.Desktop.Services.Suppliers;
 using NemzetiVirusbolt.Desktop.Views.Helpers;
+using NemzetiVirusbolt.Validation;
 
 namespace NemzetiVirusbolt.Desktop.Views.Components
 {
@@ -12,16 +13,20 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
     {
         private readonly IProductService _productService;
         private readonly ISupplierService _supplierService;
+        private readonly ProductValidator _productValidator;
 
-        public ProductsComponent(
+        public ProductsComponent
+        (
             IProductService productService,
-            ISupplierService supplierService
+            ISupplierService supplierService,
+            ProductValidator productValidator
         )
         {
             InitializeComponent();
 
             _productService = productService;
             _supplierService = supplierService;
+            _productValidator = productValidator;
         }
 
         public async void ProductsComponent_Load(object sender, EventArgs e)
@@ -36,6 +41,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             var selectedSupplier = GetSelectedSupplier();
 
             productToSave.SupplierId = selectedSupplier.Id;
+
+            // TODO: this is the application's boundary, need to validate data ...
 
             await _productService.AddProduct(productToSave);
 
@@ -77,8 +84,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private SaveProductDto GetProduct()
         {
-            // TODO: this is the application's boundary, need to validate data ...
-
             return new SaveProductDto
             {
                 Name = textBoxProductName.Text,
