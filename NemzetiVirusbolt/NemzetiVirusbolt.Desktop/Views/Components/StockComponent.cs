@@ -74,7 +74,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private int GetQuantity()
         {
-            // TODO: validate is it negative ...
+            // TODO: validate is it zero or string ...
 
             return (int) numericUpDownQuantity.Value;
         }
