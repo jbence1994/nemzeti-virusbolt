@@ -43,11 +43,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.textBoxProductPrice = new System.Windows.Forms.TextBox();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.groupBoxAddProduct = new System.Windows.Forms.GroupBox();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.priceLabel = new System.Windows.Forms.Label();
-            this.unitLabel = new System.Windows.Forms.Label();
-            this.supplierLabel = new System.Windows.Forms.Label();
-            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.labelProductDescription = new System.Windows.Forms.Label();
+            this.labelProductSupplier = new System.Windows.Forms.Label();
+            this.labelProductUnit = new System.Windows.Forms.Label();
+            this.labelProductPrice = new System.Windows.Forms.Label();
+            this.labelProductName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.groupBoxAddProduct.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.dataGridViewProducts.AllowUserToAddRows = false;
             this.dataGridViewProducts.AllowUserToDeleteRows = false;
             this.dataGridViewProducts.AllowUserToResizeRows = false;
-            this.dataGridViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProducts.BackgroundColor = System.Drawing.SystemColors.AppWorkspace;
@@ -70,14 +71,13 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.ColumnProductDescription,
             this.ColumnSupplierName});
             this.dataGridViewProducts.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewProducts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewProducts.MultiSelect = false;
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.ReadOnly = true;
             this.dataGridViewProducts.RowHeadersWidth = 51;
             this.dataGridViewProducts.RowTemplate.Height = 25;
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(1083, 709);
+            this.dataGridViewProducts.Size = new System.Drawing.Size(948, 532);
             this.dataGridViewProducts.TabIndex = 6;
             // 
             // ColumnProductId
@@ -130,21 +130,19 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // 
             // textBoxProductDescription
             // 
-            this.textBoxProductDescription.Location = new System.Drawing.Point(176, 180);
-            this.textBoxProductDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxProductDescription.Location = new System.Drawing.Point(154, 135);
             this.textBoxProductDescription.Name = "textBoxProductDescription";
-            this.textBoxProductDescription.Size = new System.Drawing.Size(333, 27);
+            this.textBoxProductDescription.Size = new System.Drawing.Size(292, 23);
             this.textBoxProductDescription.TabIndex = 3;
             // 
             // buttonAddProduct
             // 
             this.buttonAddProduct.Enabled = false;
-            this.buttonAddProduct.Location = new System.Drawing.Point(176, 257);
-            this.buttonAddProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAddProduct.Location = new System.Drawing.Point(154, 193);
             this.buttonAddProduct.Name = "buttonAddProduct";
-            this.buttonAddProduct.Size = new System.Drawing.Size(334, 31);
+            this.buttonAddProduct.Size = new System.Drawing.Size(292, 23);
             this.buttonAddProduct.TabIndex = 5;
-            this.buttonAddProduct.Text = "Rögzítés";
+            this.buttonAddProduct.Text = "Termék rögzítése";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
             this.buttonAddProduct.Click += new System.EventHandler(this.ButtonAddProduct_Click);
             // 
@@ -153,113 +151,107 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.comboBoxSuppliers.DisplayMember = "Name";
             this.comboBoxSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSuppliers.FormattingEnabled = true;
-            this.comboBoxSuppliers.Location = new System.Drawing.Point(176, 218);
-            this.comboBoxSuppliers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxSuppliers.Location = new System.Drawing.Point(154, 164);
             this.comboBoxSuppliers.Name = "comboBoxSuppliers";
-            this.comboBoxSuppliers.Size = new System.Drawing.Size(333, 28);
+            this.comboBoxSuppliers.Size = new System.Drawing.Size(292, 23);
             this.comboBoxSuppliers.TabIndex = 4;
             // 
             // textBoxProductUnit
             // 
-            this.textBoxProductUnit.Location = new System.Drawing.Point(176, 141);
-            this.textBoxProductUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxProductUnit.Location = new System.Drawing.Point(154, 106);
             this.textBoxProductUnit.Name = "textBoxProductUnit";
-            this.textBoxProductUnit.Size = new System.Drawing.Size(333, 27);
+            this.textBoxProductUnit.Size = new System.Drawing.Size(292, 23);
             this.textBoxProductUnit.TabIndex = 2;
             // 
             // textBoxProductPrice
             // 
-            this.textBoxProductPrice.Location = new System.Drawing.Point(176, 102);
-            this.textBoxProductPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxProductPrice.Location = new System.Drawing.Point(154, 76);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
-            this.textBoxProductPrice.Size = new System.Drawing.Size(333, 27);
+            this.textBoxProductPrice.Size = new System.Drawing.Size(292, 23);
             this.textBoxProductPrice.TabIndex = 1;
             // 
             // textBoxProductName
             // 
-            this.textBoxProductName.Location = new System.Drawing.Point(176, 64);
-            this.textBoxProductName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxProductName.Location = new System.Drawing.Point(154, 48);
             this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(333, 27);
+            this.textBoxProductName.Size = new System.Drawing.Size(292, 23);
             this.textBoxProductName.TabIndex = 0;
             // 
             // groupBoxAddProduct
             // 
-            this.groupBoxAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxAddProduct.Controls.Add(this.descriptionLabel);
-            this.groupBoxAddProduct.Controls.Add(this.supplierLabel);
-            this.groupBoxAddProduct.Controls.Add(this.unitLabel);
-            this.groupBoxAddProduct.Controls.Add(this.priceLabel);
-            this.groupBoxAddProduct.Controls.Add(this.nameLabel);
+            this.groupBoxAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxAddProduct.Controls.Add(this.labelProductDescription);
+            this.groupBoxAddProduct.Controls.Add(this.labelProductSupplier);
+            this.groupBoxAddProduct.Controls.Add(this.labelProductUnit);
+            this.groupBoxAddProduct.Controls.Add(this.labelProductPrice);
+            this.groupBoxAddProduct.Controls.Add(this.labelProductName);
             this.groupBoxAddProduct.Controls.Add(this.textBoxProductName);
             this.groupBoxAddProduct.Controls.Add(this.textBoxProductPrice);
             this.groupBoxAddProduct.Controls.Add(this.buttonAddProduct);
             this.groupBoxAddProduct.Controls.Add(this.comboBoxSuppliers);
             this.groupBoxAddProduct.Controls.Add(this.textBoxProductUnit);
             this.groupBoxAddProduct.Controls.Add(this.textBoxProductDescription);
-            this.groupBoxAddProduct.Location = new System.Drawing.Point(545, 717);
-            this.groupBoxAddProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBoxAddProduct.Location = new System.Drawing.Point(0, 538);
             this.groupBoxAddProduct.Name = "groupBoxAddProduct";
-            this.groupBoxAddProduct.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxAddProduct.Size = new System.Drawing.Size(538, 367);
+            this.groupBoxAddProduct.Size = new System.Drawing.Size(948, 275);
             this.groupBoxAddProduct.TabIndex = 8;
             this.groupBoxAddProduct.TabStop = false;
             this.groupBoxAddProduct.Text = "Termékfelvétel";
             // 
-            // nameLabel
+            // labelProductDescription
             // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(15, 70);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(35, 20);
-            this.nameLabel.TabIndex = 7;
-            this.nameLabel.Text = "Név";
+            this.labelProductDescription.AutoSize = true;
+            this.labelProductDescription.Location = new System.Drawing.Point(111, 138);
+            this.labelProductDescription.Name = "labelProductDescription";
+            this.labelProductDescription.Size = new System.Drawing.Size(37, 15);
+            this.labelProductDescription.TabIndex = 11;
+            this.labelProductDescription.Text = "Leírás";
             // 
-            // priceLabel
+            // labelProductSupplier
             // 
-            this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(15, 109);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(69, 20);
-            this.priceLabel.TabIndex = 8;
-            this.priceLabel.Text = "Egységár";
+            this.labelProductSupplier.AutoSize = true;
+            this.labelProductSupplier.Location = new System.Drawing.Point(92, 167);
+            this.labelProductSupplier.Name = "labelProductSupplier";
+            this.labelProductSupplier.Size = new System.Drawing.Size(56, 15);
+            this.labelProductSupplier.TabIndex = 10;
+            this.labelProductSupplier.Text = "Beszállító";
             // 
-            // unitLabel
+            // labelProductUnit
             // 
-            this.unitLabel.AutoSize = true;
-            this.unitLabel.Location = new System.Drawing.Point(15, 148);
-            this.unitLabel.Name = "unitLabel";
-            this.unitLabel.Size = new System.Drawing.Size(135, 20);
-            this.unitLabel.TabIndex = 9;
-            this.unitLabel.Text = "Mennyiségi egység";
+            this.labelProductUnit.AutoSize = true;
+            this.labelProductUnit.Location = new System.Drawing.Point(40, 114);
+            this.labelProductUnit.Name = "labelProductUnit";
+            this.labelProductUnit.Size = new System.Drawing.Size(108, 15);
+            this.labelProductUnit.TabIndex = 9;
+            this.labelProductUnit.Text = "Mennyiségi egység";
             // 
-            // supplierLabel
+            // labelProductPrice
             // 
-            this.supplierLabel.AutoSize = true;
-            this.supplierLabel.Location = new System.Drawing.Point(15, 226);
-            this.supplierLabel.Name = "supplierLabel";
-            this.supplierLabel.Size = new System.Drawing.Size(73, 20);
-            this.supplierLabel.TabIndex = 10;
-            this.supplierLabel.Text = "Beszállító";
+            this.labelProductPrice.AutoSize = true;
+            this.labelProductPrice.Location = new System.Drawing.Point(94, 84);
+            this.labelProductPrice.Name = "labelProductPrice";
+            this.labelProductPrice.Size = new System.Drawing.Size(54, 15);
+            this.labelProductPrice.TabIndex = 8;
+            this.labelProductPrice.Text = "Egységár";
             // 
-            // descriptionLabel
+            // labelProductName
             // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(15, 187);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(47, 20);
-            this.descriptionLabel.TabIndex = 11;
-            this.descriptionLabel.Text = "Leírás";
+            this.labelProductName.AutoSize = true;
+            this.labelProductName.Location = new System.Drawing.Point(120, 51);
+            this.labelProductName.Name = "labelProductName";
+            this.labelProductName.Size = new System.Drawing.Size(28, 15);
+            this.labelProductName.TabIndex = 7;
+            this.labelProductName.Text = "Név";
             // 
             // ProductsComponent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBoxAddProduct);
             this.Controls.Add(this.dataGridViewProducts);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductsComponent";
-            this.Size = new System.Drawing.Size(1083, 1084);
+            this.Size = new System.Drawing.Size(948, 813);
             this.Load += new System.EventHandler(this.ProductsComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             this.groupBoxAddProduct.ResumeLayout(false);
@@ -284,10 +276,10 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.TextBox textBoxProductPrice;
         private System.Windows.Forms.TextBox textBoxProductName;
         private System.Windows.Forms.GroupBox groupBoxAddProduct;
-        private System.Windows.Forms.Label unitLabel;
-        private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label supplierLabel;
-        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Label labelProductUnit;
+        private System.Windows.Forms.Label labelProductPrice;
+        private System.Windows.Forms.Label labelProductName;
+        private System.Windows.Forms.Label labelProductSupplier;
+        private System.Windows.Forms.Label labelProductDescription;
     }
 }
