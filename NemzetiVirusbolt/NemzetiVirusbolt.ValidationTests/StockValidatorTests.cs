@@ -28,6 +28,7 @@ namespace NemzetiVirusbolt.ValidationTests
             // Assert
 
             validationResult.ShouldNotHaveValidationErrorFor(stock => stock.ProductId);
+
             validationResult.ShouldHaveValidationErrorFor(stock => stock.Quantity);
         }
 
@@ -51,6 +52,7 @@ namespace NemzetiVirusbolt.ValidationTests
             // Assert
 
             validationResult.ShouldNotHaveValidationErrorFor(stock => stock.ProductId);
+
             validationResult.ShouldNotHaveValidationErrorFor(stock => stock.Quantity);
         }
     }

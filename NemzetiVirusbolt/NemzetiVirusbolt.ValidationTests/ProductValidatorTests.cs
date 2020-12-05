@@ -35,6 +35,58 @@ namespace NemzetiVirusbolt.ValidationTests
         }
 
         [TestMethod]
+        public void ProductValidatorTest_InCaseProductPriceIsEmpty_ShouldHaveErrorForProductPrice()
+        {
+            // Arrange
+
+            var productValidator = new ProductValidator();
+
+            var productToSave = new SaveProductDto
+            {
+                Id = 1,
+                Name = "FFP3 maszk",
+                Description = "...",
+                Price = "",
+                SupplierId = 1,
+                Unit = "db"
+            };
+
+            // Act
+
+            var validationResult = productValidator.TestValidate(productToSave);
+
+            // Assert
+
+            validationResult.ShouldHaveValidationErrorFor(product => product.Price);
+        }
+
+        [TestMethod]
+        public void ProductValidatorTest_InCaseProductPriceContainsLetters_ShouldHaveErrorForProductPrice()
+        {
+            // Arrange
+
+            var productValidator = new ProductValidator();
+
+            var productToSave = new SaveProductDto
+            {
+                Id = 1,
+                Name = "FFP3 maszk",
+                Description = "...",
+                Price = "1200d",
+                SupplierId = 1,
+                Unit = "db"
+            };
+
+            // Act
+
+            var validationResult = productValidator.TestValidate(productToSave);
+
+            // Assert
+
+            validationResult.ShouldHaveValidationErrorFor(product => product.Price);
+        }
+
+        [TestMethod]
         public void ProductValidatorTest_InCaseProductUnitIsEmpty_ShouldHaveErrorForProductUnit()
         {
             // Arrange
