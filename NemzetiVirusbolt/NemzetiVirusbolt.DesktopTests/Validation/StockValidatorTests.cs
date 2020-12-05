@@ -13,6 +13,7 @@ namespace NemzetiVirusbolt.DesktopTests.Validation
             // Arrange
 
             var stockValidator = new StockValidator();
+            
             var stockToSave = new SaveStockDto
             {
                 ProductId = 1,
