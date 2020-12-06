@@ -170,6 +170,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.numericUpDownQuantity.Name = "numericUpDownQuantity";
             this.numericUpDownQuantity.Size = new System.Drawing.Size(292, 23);
             this.numericUpDownQuantity.TabIndex = 5;
+            this.numericUpDownQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // groupBoxAddStock
             // 
@@ -224,7 +229,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.textBoxTotalValue.Location = new System.Drawing.Point(536, 772);
             this.textBoxTotalValue.Multiline = true;
             this.textBoxTotalValue.Name = "textBoxTotalValue";
-            this.textBoxTotalValue.PlaceholderText = "0";
             this.textBoxTotalValue.ReadOnly = true;
             this.textBoxTotalValue.Size = new System.Drawing.Size(412, 41);
             this.textBoxTotalValue.TabIndex = 9;

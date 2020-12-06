@@ -59,7 +59,8 @@ namespace NemzetiVirusbolt.API.Persistence.Repositories
 
             return new StockTotalValue
             {
-                TotalValue = stocks.Sum(s => s.Product.Price)
+                TotalValue =
+                    stocks.Sum(s => s.Product.Price * s.Quantity)
             };
         }
     }
