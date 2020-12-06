@@ -220,7 +220,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // labelProductUnit
             // 
             this.labelProductUnit.AutoSize = true;
-            this.labelProductUnit.Location = new System.Drawing.Point(40, 114);
+            this.labelProductUnit.Location = new System.Drawing.Point(40, 109);
             this.labelProductUnit.Name = "labelProductUnit";
             this.labelProductUnit.Size = new System.Drawing.Size(108, 15);
             this.labelProductUnit.TabIndex = 9;
@@ -229,7 +229,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // labelProductPrice
             // 
             this.labelProductPrice.AutoSize = true;
-            this.labelProductPrice.Location = new System.Drawing.Point(94, 84);
+            this.labelProductPrice.Location = new System.Drawing.Point(94, 79);
             this.labelProductPrice.Name = "labelProductPrice";
             this.labelProductPrice.Size = new System.Drawing.Size(54, 15);
             this.labelProductPrice.TabIndex = 8;
