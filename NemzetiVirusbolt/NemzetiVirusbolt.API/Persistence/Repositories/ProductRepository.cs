@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Core.Models;
@@ -26,6 +27,7 @@ namespace NemzetiVirusbolt.API.Persistence.Repositories
         {
             return await _context.Products
                 .Include(p => p.Supplier)
+                .Where(p => p.Id == id)
                 .SingleOrDefaultAsync();
         }
 

@@ -36,11 +36,12 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 await InitializeProducts();
                 await InitializeSuppliers();
 
-                buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
+                buttonAddProduct.Enabled =
+                    !buttonAddProduct.Enabled;
             }
             catch
             {
-                ErrorMessage.DisplayNetworkErrorMessage();
+                PopupMessage.DisplayNetworkErrorMessage();
             }
         }
 
@@ -56,25 +57,36 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
             if (!validationResult.IsValid)
             {
-                //MessageBox.Show("Test");
+                // TODO: show PopupMessage ....
                 return;
             }
 
-            await _productService.AddProduct(productToSave);
+            try
+            {
+                var result =
+                    await _productService.AddProduct(productToSave);
 
-            // TODO: add new product's row to GUI ...
+                MessageBox.Show(result.ToString());
+                // TODO: wrap mbox ...
+
+                await InitializeProducts();
+            }
+            catch
+            {
+                PopupMessage.DisplayNetworkErrorMessage();
+            }
         }
 
         private async Task InitializeProducts()
         {
-            dataGridViewProducts.DataSource = null;
-            dataGridViewProducts.DataSource = await _productService.GetProducts();
+            dataGridViewProducts.DataSource =
+                await _productService.GetProducts();
         }
 
         private async Task InitializeSuppliers()
         {
-            comboBoxSuppliers.DataSource = null;
-            comboBoxSuppliers.DataSource = await _supplierService.GetSuppliers();
+            comboBoxSuppliers.DataSource =
+                await _supplierService.GetSuppliers();
         }
 
         private GetSupplierDto GetSelectedSupplier()

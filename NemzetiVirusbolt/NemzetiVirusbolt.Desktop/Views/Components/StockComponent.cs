@@ -82,6 +82,12 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             }
         }
 
+        private async void ComboBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // TODO: Improper event handler !!!
+            //await InitializeProducts();
+        }
+
         private async Task InitializeStocks()
         {
             dataGridViewStocks.DataSource =
