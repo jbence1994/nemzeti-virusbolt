@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using FluentValidation.Results;
 using NemzetiVirusbolt.Desktop.Dtos;
@@ -65,9 +66,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Helpers
 
         public static void DisplayProductValidationErrors(IList<ValidationFailure> validationResultErrors)
         {
+            var errors = validationResultErrors.Aggregate(string.Empty, (current, error) => current + error + "\n");
+
             MessageBox.Show
             (
-                validationResultErrors.ToString(),
+                errors,
                 string.Empty,
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information

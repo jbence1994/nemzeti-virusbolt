@@ -57,7 +57,9 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
             if (!validationResult.IsValid)
             {
-                PopupMessage.DisplayProductValidationErrors(validationResult.Errors);
+                PopupMessage
+                    .DisplayProductValidationErrors(validationResult.Errors);
+
                 return;
             }
 
