@@ -8,7 +8,7 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
     {
         Task<IEnumerable<GetStockDto>> GetStocks();
         Task<IEnumerable<GetMergedStockDto>> GetMergedStocks();
-        Task AddStock(SaveStockDto stock);
+        Task<GetStockDto> AddStock(SaveStockDto stock);
         Task<StockTotalValue> GetStockTotalValue();
     }
 }

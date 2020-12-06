@@ -43,9 +43,9 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
                     throw new Exception();
         }
 
-        public async Task AddStock(SaveStockDto stock)
+        public async Task<GetStockDto> AddStock(SaveStockDto stock)
         {
-            await ApiClient.PostAsync
+            var response = await ApiClient.PostAsync
             (
                 StocksEndPoint,
                 new StringContent
@@ -55,6 +55,12 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
                     MediaType
                 )
             );
+
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<GetStockDto>
+                    (await response.Content.ReadAsStringAsync());
+
+            throw new Exception();
         }
 
         public async Task<StockTotalValue> GetStockTotalValue()

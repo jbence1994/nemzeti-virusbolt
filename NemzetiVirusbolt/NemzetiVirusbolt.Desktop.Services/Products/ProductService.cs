@@ -27,9 +27,9 @@ namespace NemzetiVirusbolt.Desktop.Services.Products
                     throw new Exception();
         }
 
-        public async Task AddProduct(SaveProductDto product)
+        public async Task<GetProductDto> AddProduct(SaveProductDto product)
         {
-            await ApiClient.PostAsync
+            var response = await ApiClient.PostAsync
             (
                 ProductsEndPoint,
                 new StringContent
@@ -39,6 +39,12 @@ namespace NemzetiVirusbolt.Desktop.Services.Products
                     MediaType
                 )
             );
+
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<GetProductDto>
+                    (await response.Content.ReadAsStringAsync());
+
+            throw new Exception();
         }
     }
 }

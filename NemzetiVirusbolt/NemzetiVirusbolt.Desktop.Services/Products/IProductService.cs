@@ -7,6 +7,6 @@ namespace NemzetiVirusbolt.Desktop.Services.Products
     public interface IProductService
     {
         Task<IEnumerable<GetProductDto>> GetProducts();
-        Task AddProduct(SaveProductDto product);
+        Task<GetProductDto> AddProduct(SaveProductDto product);
     }
 }
