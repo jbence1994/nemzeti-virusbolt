@@ -48,6 +48,13 @@ namespace NemzetiVirusbolt.API.Controllers
             return Ok(mergedStocks);
         }
 
+        // GET: api/stocks/total
+        [HttpGet("total")]
+        public async Task<IActionResult> GetTotalStockValue()
+        {
+            return Ok(await _stockRepository.GetTotalStockValue());
+        }
+
         // POST: api/stocks
         [HttpPost]
         public async Task<IActionResult> AddStock([FromBody] SaveStockResource stockResource)
