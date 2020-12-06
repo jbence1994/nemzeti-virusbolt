@@ -40,9 +40,11 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.comboBoxProducts = new System.Windows.Forms.ComboBox();
             this.buttonAddStock = new System.Windows.Forms.Button();
             this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
+            this.groupBoxAddStock = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMergedStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
+            this.groupBoxAddStock.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewStocks
@@ -66,7 +68,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.dataGridViewStocks.ReadOnly = true;
             this.dataGridViewStocks.RowTemplate.Height = 25;
             this.dataGridViewStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStocks.Size = new System.Drawing.Size(948, 417);
+            this.dataGridViewStocks.Size = new System.Drawing.Size(948, 350);
             this.dataGridViewStocks.TabIndex = 0;
             // 
             // ColumnStockId
@@ -111,13 +113,13 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.dataGridViewMergedStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumnProduct,
             this.dataGridViewTextBoxColumnQuantity});
-            this.dataGridViewMergedStocks.Location = new System.Drawing.Point(0, 452);
+            this.dataGridViewMergedStocks.Location = new System.Drawing.Point(0, 356);
             this.dataGridViewMergedStocks.MultiSelect = false;
             this.dataGridViewMergedStocks.Name = "dataGridViewMergedStocks";
             this.dataGridViewMergedStocks.ReadOnly = true;
             this.dataGridViewMergedStocks.RowTemplate.Height = 25;
             this.dataGridViewMergedStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMergedStocks.Size = new System.Drawing.Size(948, 361);
+            this.dataGridViewMergedStocks.Size = new System.Drawing.Size(530, 457);
             this.dataGridViewMergedStocks.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumnProduct
@@ -139,17 +141,17 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.comboBoxProducts.DisplayMember = "Name";
             this.comboBoxProducts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProducts.FormattingEnabled = true;
-            this.comboBoxProducts.Location = new System.Drawing.Point(0, 423);
+            this.comboBoxProducts.Location = new System.Drawing.Point(76, 208);
             this.comboBoxProducts.Name = "comboBoxProducts";
-            this.comboBoxProducts.Size = new System.Drawing.Size(306, 23);
+            this.comboBoxProducts.Size = new System.Drawing.Size(268, 23);
             this.comboBoxProducts.TabIndex = 3;
             // 
             // buttonAddStock
             // 
             this.buttonAddStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddStock.Location = new System.Drawing.Point(642, 423);
+            this.buttonAddStock.Location = new System.Drawing.Point(76, 266);
             this.buttonAddStock.Name = "buttonAddStock";
-            this.buttonAddStock.Size = new System.Drawing.Size(306, 23);
+            this.buttonAddStock.Size = new System.Drawing.Size(268, 23);
             this.buttonAddStock.TabIndex = 4;
             this.buttonAddStock.Text = "Rögzítés";
             this.buttonAddStock.UseVisualStyleBackColor = true;
@@ -159,18 +161,30 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // 
             this.numericUpDownQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownQuantity.Location = new System.Drawing.Point(312, 423);
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(76, 237);
             this.numericUpDownQuantity.Name = "numericUpDownQuantity";
-            this.numericUpDownQuantity.Size = new System.Drawing.Size(324, 23);
+            this.numericUpDownQuantity.Size = new System.Drawing.Size(268, 23);
             this.numericUpDownQuantity.TabIndex = 5;
+            // 
+            // groupBoxAddStock
+            // 
+            this.groupBoxAddStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxAddStock.Controls.Add(this.buttonAddStock);
+            this.groupBoxAddStock.Controls.Add(this.numericUpDownQuantity);
+            this.groupBoxAddStock.Controls.Add(this.comboBoxProducts);
+            this.groupBoxAddStock.Location = new System.Drawing.Point(536, 356);
+            this.groupBoxAddStock.Name = "groupBoxAddStock";
+            this.groupBoxAddStock.Size = new System.Drawing.Size(412, 457);
+            this.groupBoxAddStock.TabIndex = 6;
+            this.groupBoxAddStock.TabStop = false;
+            this.groupBoxAddStock.Text = "Raktárkészlet bővítése";
             // 
             // StockComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.numericUpDownQuantity);
-            this.Controls.Add(this.buttonAddStock);
-            this.Controls.Add(this.comboBoxProducts);
+            this.Controls.Add(this.groupBoxAddStock);
             this.Controls.Add(this.dataGridViewMergedStocks);
             this.Controls.Add(this.dataGridViewStocks);
             this.Name = "StockComponent";
@@ -179,6 +193,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMergedStocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
+            this.groupBoxAddStock.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -196,5 +211,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnQuantity;
         private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
+        private System.Windows.Forms.GroupBox groupBoxAddStock;
     }
 }
