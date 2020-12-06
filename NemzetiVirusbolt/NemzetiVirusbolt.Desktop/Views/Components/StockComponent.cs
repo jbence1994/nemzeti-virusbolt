@@ -82,10 +82,9 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             }
         }
 
-        private async void ComboBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
+        private async void ComboBoxProducts_DropDown(object sender, EventArgs e)
         {
-            // TODO: Improper event handler !!!
-            //await InitializeProducts();
+            await InitializeProducts();
         }
 
         private async Task InitializeStocks()

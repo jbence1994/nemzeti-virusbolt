@@ -149,7 +149,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.comboBoxProducts.Name = "comboBoxProducts";
             this.comboBoxProducts.Size = new System.Drawing.Size(292, 23);
             this.comboBoxProducts.TabIndex = 3;
-            this.comboBoxProducts.SelectedIndexChanged += new System.EventHandler(this.ComboBoxProducts_SelectedIndexChanged);
+            this.comboBoxProducts.DropDown += new System.EventHandler(this.ComboBoxProducts_DropDown);
             // 
             // buttonAddStock
             // 

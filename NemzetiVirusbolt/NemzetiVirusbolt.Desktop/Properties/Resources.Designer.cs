@@ -61,11 +61,20 @@ namespace NemzetiVirusbolt.Desktop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Termék hozzáadva: {0}, gyártó: {1}.
+        /// </summary>
+        internal static string AddProductMessage {
+            get {
+                return ResourceManager.GetString("AddProductMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Termék bevételezve: {0}, mennyiség: {1}.
         /// </summary>
-        internal static string AddStock {
+        internal static string AddStockMessage {
             get {
-                return ResourceManager.GetString("AddStock", resourceCulture);
+                return ResourceManager.GetString("AddStockMessage", resourceCulture);
             }
         }
         
@@ -90,9 +99,9 @@ namespace NemzetiVirusbolt.Desktop.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Nem lehet nulla a rögzített mennyiség..
         /// </summary>
-        internal static string ZeroStockQuantity {
+        internal static string ZeroStockQuantityMessage {
             get {
-                return ResourceManager.GetString("ZeroStockQuantity", resourceCulture);
+                return ResourceManager.GetString("ZeroStockQuantityMessage", resourceCulture);
             }
         }
     }

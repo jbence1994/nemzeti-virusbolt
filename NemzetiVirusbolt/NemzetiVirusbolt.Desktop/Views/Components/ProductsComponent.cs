@@ -57,7 +57,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
             if (!validationResult.IsValid)
             {
-                // TODO: show PopupMessage ....
+                PopupMessage.DisplayProductValidationErrors(validationResult.Errors);
                 return;
             }
 
@@ -66,8 +66,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 var result =
                     await _productService.AddProduct(productToSave);
 
-                MessageBox.Show(result.ToString());
-                // TODO: wrap mbox ...
+                PopupMessage.DisplayAddProductMessage(result);
 
                 await InitializeProducts();
             }
