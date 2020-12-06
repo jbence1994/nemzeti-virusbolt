@@ -29,7 +29,9 @@ namespace NemzetiVirusbolt.Desktop.Views.Windows
                 _authenticationService
                     .Authenticate(textBoxUsername.Text, textBoxPassword.Text);
 
-                _mainWindow.Show();
+                Hide();
+                _mainWindow.ShowDialog();
+                Environment.Exit(exitCode: 0);
             }
             catch
             {

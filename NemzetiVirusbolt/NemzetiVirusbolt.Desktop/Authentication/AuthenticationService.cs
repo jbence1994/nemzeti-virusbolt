@@ -13,7 +13,7 @@ namespace NemzetiVirusbolt.Desktop.Authentication
 
         public void Authenticate(string username, string password)
         {
-            if (GetUsername() != username &&
+            if (GetUsername() != username ||
                 GetPassword() != password)
                 throw new FailedLoginException();
         }
