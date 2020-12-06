@@ -37,7 +37,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 await InitializeProducts();
                 await InitializeStockTotalValue();
 
-                buttonAddStock.Enabled = !buttonAddStock.Enabled;
+                buttonAddStock.Enabled =
+                    !buttonAddStock.Enabled;
             }
             catch
             {
@@ -47,7 +48,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async void ButtonAddStock_Click(object sender, EventArgs e)
         {
-            var selectedProduct = GetSelectedProduct();
+            var selectedProduct =
+                GetSelectedProduct();
 
             var stockToSave = new SaveStockDto
             {
@@ -66,7 +68,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
             try
             {
-                var result = await _stockService.AddStock(stockToSave);
+                var result =
+                    await _stockService.AddStock(stockToSave);
 
                 PopupMessage.DisplayAddStockMessage(result);
 
@@ -81,19 +84,26 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async Task InitializeStocks()
         {
-            dataGridViewStocks.DataSource = await _stockService.GetStocks();
-            dataGridViewMergedStocks.DataSource = await _stockService.GetMergedStocks();
+            dataGridViewStocks.DataSource =
+                await _stockService.GetStocks();
+
+            dataGridViewMergedStocks.DataSource =
+                await _stockService.GetMergedStocks();
         }
 
         private async Task InitializeProducts()
         {
-            comboBoxProducts.DataSource = await _productService.GetProducts();
+            comboBoxProducts.DataSource =
+                await _productService.GetProducts();
         }
 
         private async Task InitializeStockTotalValue()
         {
-            var stockTotalValue = await _stockService.GetStockTotalValue();
-            textBoxTotalValue.Text = stockTotalValue.TotalValue.ToString("C0");
+            var stockTotalValue =
+                await _stockService.GetStockTotalValue();
+
+            textBoxTotalValue.Text =
+                stockTotalValue.TotalValue.ToString("C0");
         }
 
         private GetProductDto GetSelectedProduct()
