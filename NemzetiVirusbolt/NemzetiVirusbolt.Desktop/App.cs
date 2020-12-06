@@ -38,7 +38,7 @@ namespace NemzetiVirusbolt.Desktop
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(host.Services.GetRequiredService<LoginWindow>());
+            Application.Run(host.Services.GetRequiredService<MainWindow>());
         }
     }
 }
