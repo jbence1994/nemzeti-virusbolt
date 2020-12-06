@@ -44,6 +44,7 @@ namespace NemzetiVirusbolt.API.Persistence.Repositories
         {
             return await _context.Stocks
                 .Include(s => s.Product)
+                .Where(s => s.Id == id)
                 .SingleOrDefaultAsync();
         }
 

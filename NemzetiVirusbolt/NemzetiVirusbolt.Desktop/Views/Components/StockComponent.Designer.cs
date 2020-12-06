@@ -41,8 +41,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.buttonAddStock = new System.Windows.Forms.Button();
             this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
             this.groupBoxAddStock = new System.Windows.Forms.GroupBox();
-            this.labelProduct = new System.Windows.Forms.Label();
             this.labelQuantity = new System.Windows.Forms.Label();
+            this.labelProduct = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMergedStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
@@ -151,6 +151,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             // buttonAddStock
             // 
             this.buttonAddStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddStock.Enabled = false;
             this.buttonAddStock.Location = new System.Drawing.Point(90, 267);
             this.buttonAddStock.Name = "buttonAddStock";
             this.buttonAddStock.Size = new System.Drawing.Size(292, 23);
@@ -184,15 +185,6 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.groupBoxAddStock.TabStop = false;
             this.groupBoxAddStock.Text = "Raktárkészlet bővítése";
             // 
-            // labelProduct
-            // 
-            this.labelProduct.AutoSize = true;
-            this.labelProduct.Location = new System.Drawing.Point(39, 212);
-            this.labelProduct.Name = "labelProduct";
-            this.labelProduct.Size = new System.Drawing.Size(45, 15);
-            this.labelProduct.TabIndex = 6;
-            this.labelProduct.Text = "Termék";
-            // 
             // labelQuantity
             // 
             this.labelQuantity.AutoSize = true;
@@ -201,6 +193,15 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             this.labelQuantity.Size = new System.Drawing.Size(65, 15);
             this.labelQuantity.TabIndex = 7;
             this.labelQuantity.Text = "Mennyiség";
+            // 
+            // labelProduct
+            // 
+            this.labelProduct.AutoSize = true;
+            this.labelProduct.Location = new System.Drawing.Point(39, 212);
+            this.labelProduct.Name = "labelProduct";
+            this.labelProduct.Size = new System.Drawing.Size(45, 15);
+            this.labelProduct.TabIndex = 6;
+            this.labelProduct.Text = "Termék";
             // 
             // StockComponent
             // 

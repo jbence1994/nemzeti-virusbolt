@@ -33,6 +33,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         {
             await InitializeStocks();
             await InitializeProducts();
+
+            buttonAddStock.Enabled = !buttonAddStock.Enabled;
         }
 
         private async void ButtonAddStock_Click(object sender, EventArgs e)
