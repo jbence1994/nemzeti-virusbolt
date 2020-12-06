@@ -63,7 +63,7 @@
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(240, 50);
             this.labelTitle.TabIndex = 6;
-            this.labelTitle.Text = "Raktárkészlet nyilvántartó\r\nv0.1 Demo\r\n";
+            this.labelTitle.Text = "Raktárkészlet nyilvántartó\r\nv1.0 Demo\r\n";
             // 
             // buttonExit
             // 
