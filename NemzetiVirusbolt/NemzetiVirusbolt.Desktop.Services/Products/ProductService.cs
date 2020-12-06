@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,15 +15,16 @@ namespace NemzetiVirusbolt.Desktop.Services.Products
 
         public async Task<IEnumerable<GetProductDto>> GetProducts()
         {
-            var products = new List<GetProductDto>();
-
             using (var response = await ApiClient.GetAsync(ProductsEndPoint))
                 if (response.IsSuccessStatusCode)
-                    products = JsonConvert
-                        .DeserializeObject<List<GetProductDto>>
-                            (await response.Content.ReadAsStringAsync());
+                {
+                    var products = JsonConvert.DeserializeObject<List<GetProductDto>>
+                        (await response.Content.ReadAsStringAsync());
 
-            return products;
+                    return products;
+                }
+                else
+                    throw new Exception();
         }
 
         public async Task AddProduct(SaveProductDto product)

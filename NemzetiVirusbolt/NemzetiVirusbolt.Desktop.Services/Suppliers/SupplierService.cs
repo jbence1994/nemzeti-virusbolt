@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using NemzetiVirusbolt.Desktop.Dtos;
 using Newtonsoft.Json;
@@ -12,14 +13,15 @@ namespace NemzetiVirusbolt.Desktop.Services.Suppliers
 
         public async Task<IEnumerable<GetSupplierDto>> GetSuppliers()
         {
-            var suppliers = new List<GetSupplierDto>();
-
             using (var response = await ApiClient.GetAsync(SuppliersEndPoint))
                 if (response.IsSuccessStatusCode)
-                    suppliers = JsonConvert.DeserializeObject<List<GetSupplierDto>>
+                {
+                    var suppliers = JsonConvert.DeserializeObject<List<GetSupplierDto>>
                         (await response.Content.ReadAsStringAsync());
-
-            return suppliers;
+                    return suppliers;
+                }
+                else
+                    throw new Exception();
         }
     }
 }

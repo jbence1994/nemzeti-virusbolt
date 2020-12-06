@@ -31,13 +31,20 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async void StockComponent_Load(object sender, EventArgs e)
         {
-            await InitializeStocks();
-            await InitializeProducts();
+            try
+            {
+                await InitializeStocks();
+                await InitializeProducts();
 
-            var stockTotalValue = await _stockService.GetStockTotalValue();
-            textBoxTotalValue.Text = stockTotalValue.TotalValue.ToString("C0");
+                var stockTotalValue = await _stockService.GetStockTotalValue();
+                textBoxTotalValue.Text = stockTotalValue.TotalValue.ToString("C0");
 
-            buttonAddStock.Enabled = !buttonAddStock.Enabled;
+                buttonAddStock.Enabled = !buttonAddStock.Enabled;
+            }
+            catch
+            {
+                ErrorMessage.DisplayNetworkErrorMessage();
+            }
         }
 
         private async void ButtonAddStock_Click(object sender, EventArgs e)
@@ -65,27 +72,13 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async Task InitializeStocks()
         {
-            try
-            {
-                dataGridViewStocks.DataSource = await _stockService.GetStocks();
-                dataGridViewMergedStocks.DataSource = await _stockService.GetMergedStocks();
-            }
-            catch
-            {
-                ErrorMessage.DisplayNetworkErrorMessage();
-            }
+            dataGridViewStocks.DataSource = await _stockService.GetStocks();
+            dataGridViewMergedStocks.DataSource = await _stockService.GetMergedStocks();
         }
 
         private async Task InitializeProducts()
         {
-            try
-            {
-                comboBoxProducts.DataSource = await _productService.GetProducts();
-            }
-            catch
-            {
-                ErrorMessage.DisplayNetworkErrorMessage();
-            }
+            comboBoxProducts.DataSource = await _productService.GetProducts();
         }
 
         private GetProductDto GetSelectedProduct()

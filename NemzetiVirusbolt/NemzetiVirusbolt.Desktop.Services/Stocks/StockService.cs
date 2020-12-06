@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,27 +17,30 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
 
         public async Task<IEnumerable<GetStockDto>> GetStocks()
         {
-            var stocks = new List<GetStockDto>();
-
             using (var response = await ApiClient.GetAsync(StocksEndPoint))
                 if (response.IsSuccessStatusCode)
-                    stocks = JsonConvert.DeserializeObject<List<GetStockDto>>
+                {
+                    var stocks = JsonConvert.DeserializeObject<List<GetStockDto>>
                         (await response.Content.ReadAsStringAsync());
 
-            return stocks;
+                    return stocks;
+                }
+                else
+                    throw new Exception();
         }
 
         public async Task<IEnumerable<GetMergedStockDto>> GetMergedStocks()
         {
-            var mergedStocks = new List<GetMergedStockDto>();
-
             using (var response = await ApiClient.GetAsync(MergedStocksEndPoint))
                 if (response.IsSuccessStatusCode)
-                    mergedStocks =
-                        JsonConvert.DeserializeObject<List<GetMergedStockDto>>
-                            (await response.Content.ReadAsStringAsync());
+                {
+                    var mergedStocks = JsonConvert.DeserializeObject<List<GetMergedStockDto>>
+                        (await response.Content.ReadAsStringAsync());
 
-            return mergedStocks;
+                    return mergedStocks;
+                }
+                else
+                    throw new Exception();
         }
 
         public async Task AddStock(SaveStockDto stock)

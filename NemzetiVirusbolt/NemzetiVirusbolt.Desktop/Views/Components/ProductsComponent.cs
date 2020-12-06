@@ -31,8 +31,17 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         public async void ProductsComponent_Load(object sender, EventArgs e)
         {
-            await InitializeProducts();
-            await InitializeSuppliers();
+            try
+            {
+                await InitializeProducts();
+                await InitializeSuppliers();
+
+                buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
+            }
+            catch
+            {
+                ErrorMessage.DisplayNetworkErrorMessage();
+            }
         }
 
         private async void ButtonAddProduct_Click(object sender, EventArgs e)
@@ -58,30 +67,14 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
         private async Task InitializeProducts()
         {
-            try
-            {
-                dataGridViewProducts.DataSource = null;
-                dataGridViewProducts.DataSource = await _productService.GetProducts();
-
-                buttonAddProduct.Enabled = !buttonAddProduct.Enabled;
-            }
-            catch
-            {
-                ErrorMessage.DisplayNetworkErrorMessage();
-            }
+            dataGridViewProducts.DataSource = null;
+            dataGridViewProducts.DataSource = await _productService.GetProducts();
         }
 
         private async Task InitializeSuppliers()
         {
-            try
-            {
-                comboBoxSuppliers.DataSource = null;
-                comboBoxSuppliers.DataSource = await _supplierService.GetSuppliers();
-            }
-            catch
-            {
-                ErrorMessage.DisplayNetworkErrorMessage();
-            }
+            comboBoxSuppliers.DataSource = null;
+            comboBoxSuppliers.DataSource = await _supplierService.GetSuppliers();
         }
 
         private GetSupplierDto GetSelectedSupplier()
