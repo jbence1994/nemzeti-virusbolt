@@ -12,6 +12,7 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
     {
         private const string StocksEndPoint = "https://localhost:44399/api/stocks";
         private const string MergedStocksEndPoint = "https://localhost:44399/api/stocks/merge";
+        private const string StockTotalValueEndPoint = "https://localhost:44399/api/stocks/total";
 
         public async Task<IEnumerable<GetStockDto>> GetStocks()
         {
@@ -19,8 +20,8 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
 
             using (var response = await ApiClient.GetAsync(StocksEndPoint))
                 if (response.IsSuccessStatusCode)
-                    stocks = JsonConvert.DeserializeObject<List<GetStockDto>>(
-                        await response.Content.ReadAsStringAsync());
+                    stocks = JsonConvert.DeserializeObject<List<GetStockDto>>
+                        (await response.Content.ReadAsStringAsync());
 
             return stocks;
         }
@@ -32,8 +33,8 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
             using (var response = await ApiClient.GetAsync(MergedStocksEndPoint))
                 if (response.IsSuccessStatusCode)
                     mergedStocks =
-                        JsonConvert.DeserializeObject<List<GetMergedStockDto>>(
-                            await response.Content.ReadAsStringAsync());
+                        JsonConvert.DeserializeObject<List<GetMergedStockDto>>
+                            (await response.Content.ReadAsStringAsync());
 
             return mergedStocks;
         }
@@ -50,6 +51,19 @@ namespace NemzetiVirusbolt.Desktop.Services.Stocks
                     MediaType
                 )
             );
+        }
+
+        public async Task<StockTotalValue> GetStockTotalValue()
+        {
+            var totalValue = new StockTotalValue();
+
+            using (var response = await ApiClient.GetAsync(StockTotalValueEndPoint))
+                if (response.IsSuccessStatusCode)
+                    totalValue =
+                        JsonConvert.DeserializeObject<StockTotalValue>
+                            (await response.Content.ReadAsStringAsync());
+
+            return totalValue;
         }
     }
 }

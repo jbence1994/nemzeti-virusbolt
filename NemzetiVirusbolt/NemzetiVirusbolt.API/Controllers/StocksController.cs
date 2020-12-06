@@ -52,7 +52,12 @@ namespace NemzetiVirusbolt.API.Controllers
         [HttpGet("total")]
         public async Task<IActionResult> GetTotalStockValue()
         {
-            return Ok(await _stockRepository.GetTotalStockValue());
+            var stockTotalValue = await _stockRepository.GetTotalStockValue();
+
+            var stockTotalValueResource =
+                _mapper.Map<StockTotalValue, GetStockTotalValueResource>(stockTotalValue);
+
+            return Ok(stockTotalValueResource);
         }
 
         // POST: api/stocks

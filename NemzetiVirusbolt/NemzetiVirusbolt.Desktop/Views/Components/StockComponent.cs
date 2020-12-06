@@ -34,6 +34,9 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             await InitializeStocks();
             await InitializeProducts();
 
+            var stockTotalValue = await _stockService.GetStockTotalValue();
+            textBoxTotalValue.Text = stockTotalValue.TotalValue.ToString("C0");
+
             buttonAddStock.Enabled = !buttonAddStock.Enabled;
         }
 

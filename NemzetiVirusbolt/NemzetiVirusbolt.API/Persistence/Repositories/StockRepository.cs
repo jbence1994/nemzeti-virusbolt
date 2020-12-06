@@ -53,10 +53,14 @@ namespace NemzetiVirusbolt.API.Persistence.Repositories
             await _context.Stocks.AddAsync(stock);
         }
 
-        public async Task<double> GetTotalStockValue()
+        public async Task<StockTotalValue> GetTotalStockValue()
         {
-            return
-                (await GetStocks()).Sum(s => s.Product.Price);
+            var stocks = await GetStocks();
+
+            return new StockTotalValue
+            {
+                TotalValue = stocks.Sum(s => s.Product.Price)
+            };
         }
     }
 }

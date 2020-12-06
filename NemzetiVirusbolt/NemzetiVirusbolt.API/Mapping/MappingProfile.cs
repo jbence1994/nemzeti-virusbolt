@@ -14,6 +14,7 @@ namespace NemzetiVirusbolt.API.Mapping
             CreateMap<Product, GetProductResource>();
             CreateMap<Stock, GetStockResource>();
             CreateMap<MergedStock, GetMergedStockResource>();
+            CreateMap<StockTotalValue, GetStockTotalValueResource>();
 
             // API Resource to Domain model
 

@@ -16,8 +16,8 @@ namespace NemzetiVirusbolt.Desktop.Services.Suppliers
 
             using (var response = await ApiClient.GetAsync(SuppliersEndPoint))
                 if (response.IsSuccessStatusCode)
-                    suppliers = JsonConvert.DeserializeObject<List<GetSupplierDto>>(
-                        await response.Content.ReadAsStringAsync());
+                    suppliers = JsonConvert.DeserializeObject<List<GetSupplierDto>>
+                        (await response.Content.ReadAsStringAsync());
 
             return suppliers;
         }
