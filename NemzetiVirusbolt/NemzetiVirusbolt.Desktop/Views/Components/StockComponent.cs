@@ -35,9 +35,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             {
                 await InitializeStocks();
                 await InitializeProducts();
-
-                var stockTotalValue = await _stockService.GetStockTotalValue();
-                textBoxTotalValue.Text = stockTotalValue.TotalValue.ToString("C0");
+                await InitializeStockTotalValue();
 
                 buttonAddStock.Enabled = !buttonAddStock.Enabled;
             }
@@ -57,7 +55,8 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 Quantity = GetQuantity()
             };
 
-            var validationResult = await _stockValidator.ValidateAsync(stockToSave);
+            var validationResult =
+                await _stockValidator.ValidateAsync(stockToSave);
 
             if (!validationResult.IsValid)
             {
@@ -65,9 +64,20 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
                 return;
             }
 
-            await _stockService.AddStock(stockToSave);
+            try
+            {
+                var result = await _stockService.AddStock(stockToSave);
 
-            // TODO: re-init tables ...
+                MessageBox.Show(result.ProductName); // TODO: wrap mbox ...
+
+                await InitializeStocks();
+                await InitializeStockTotalValue();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                ErrorMessage.DisplayNetworkErrorMessage();
+            }
         }
 
         private async Task InitializeStocks()
@@ -79,6 +89,12 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
         private async Task InitializeProducts()
         {
             comboBoxProducts.DataSource = await _productService.GetProducts();
+        }
+
+        private async Task InitializeStockTotalValue()
+        {
+            var stockTotalValue = await _stockService.GetStockTotalValue();
+            textBoxTotalValue.Text = stockTotalValue.TotalValue.ToString("C0");
         }
 
         private GetProductDto GetSelectedProduct()
