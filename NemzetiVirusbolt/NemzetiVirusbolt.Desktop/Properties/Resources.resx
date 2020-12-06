@@ -126,4 +126,7 @@
   <data name="ZeroStockQuantity" xml:space="preserve">
     <value>Nem lehet nulla a rögzített mennyiség.</value>
   </data>
+  <data name="AddStock" xml:space="preserve">
+    <value>Termék bevételezve: {0}, mennyiség: {1}</value>
+  </data>
 </root>

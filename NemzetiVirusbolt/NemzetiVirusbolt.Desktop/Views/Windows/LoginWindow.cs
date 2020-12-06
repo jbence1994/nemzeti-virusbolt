@@ -35,7 +35,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Windows
             }
             catch
             {
-                ErrorMessage.DisplayLoginErrorMessage();
+                PopupMessage.DisplayLoginErrorMessage();
             }
         }
 

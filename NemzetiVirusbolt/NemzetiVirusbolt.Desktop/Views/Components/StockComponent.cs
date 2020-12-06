@@ -41,7 +41,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             }
             catch
             {
-                ErrorMessage.DisplayNetworkErrorMessage();
+                PopupMessage.DisplayNetworkErrorMessage();
             }
         }
 
@@ -60,7 +60,7 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
 
             if (!validationResult.IsValid)
             {
-                ErrorMessage.DisplayZeroStockQuantityErrorMessage();
+                PopupMessage.DisplayZeroStockQuantityErrorMessage();
                 return;
             }
 
@@ -68,15 +68,14 @@ namespace NemzetiVirusbolt.Desktop.Views.Components
             {
                 var result = await _stockService.AddStock(stockToSave);
 
-                MessageBox.Show(result.ProductName); // TODO: wrap mbox ...
+                PopupMessage.DisplayAddStockMessage(result);
 
                 await InitializeStocks();
                 await InitializeStockTotalValue();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
-                ErrorMessage.DisplayNetworkErrorMessage();
+                PopupMessage.DisplayNetworkErrorMessage();
             }
         }
 

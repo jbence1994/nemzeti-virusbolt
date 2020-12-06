@@ -1,9 +1,10 @@
 ﻿using System.Windows.Forms;
+using NemzetiVirusbolt.Desktop.Dtos;
 using NemzetiVirusbolt.Desktop.Properties;
 
 namespace NemzetiVirusbolt.Desktop.Views.Helpers
 {
-    public static class ErrorMessage
+    public static class PopupMessage
     {
         public static void DisplayLoginErrorMessage()
         {
@@ -35,6 +36,17 @@ namespace NemzetiVirusbolt.Desktop.Views.Helpers
                 string.Empty,
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
+            );
+        }
+
+        public static void DisplayAddStockMessage(GetStockDto stock)
+        {
+            MessageBox.Show
+            (
+                string.Format(Resources.AddStock, stock.ProductName, stock.Quantity),
+                string.Empty,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
             );
         }
     }

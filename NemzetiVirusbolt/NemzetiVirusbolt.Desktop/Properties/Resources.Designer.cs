@@ -61,6 +61,15 @@ namespace NemzetiVirusbolt.Desktop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Termék bevételezve: {0}, mennyiség: {1}.
+        /// </summary>
+        internal static string AddStock {
+            get {
+                return ResourceManager.GetString("AddStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Helytelen belépési adatok..
         /// </summary>
         internal static string LoginErrorMessage {
