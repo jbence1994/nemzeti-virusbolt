@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using NemzetiVirusbolt.Core;
 
-namespace NemzetiVirusbolt.API.Persistence
+namespace NemzetiVirusbolt.Api.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using NemzetiVirusbolt.API.Resources;
+using NemzetiVirusbolt.Api.Resources;
 using NemzetiVirusbolt.Core.Models;
 
-namespace NemzetiVirusbolt.API.Mapping
+namespace NemzetiVirusbolt.Api.Mapping
 {
     public class MappingProfile : Profile
     {
