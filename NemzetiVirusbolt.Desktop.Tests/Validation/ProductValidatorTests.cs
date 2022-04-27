@@ -8,7 +8,7 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
     [TestClass]
     public class ProductValidatorTests
     {
-        private readonly ProductValidator _productValidator = new ProductValidator();
+        private readonly ProductValidator _productValidator = new();
 
         [TestMethod]
         public void ProductValidatorTest_InCaseProductNameIsEmpty_ShouldHaveErrorForProductName()
