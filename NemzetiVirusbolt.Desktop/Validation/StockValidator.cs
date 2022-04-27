@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using NemzetiVirusbolt.Desktop.Dtos;
 
-namespace NemzetiVirusbolt.Validation
+namespace NemzetiVirusbolt.Desktop.Validation
 {
     public class StockValidator : AbstractValidator<SaveStockDto>
     {

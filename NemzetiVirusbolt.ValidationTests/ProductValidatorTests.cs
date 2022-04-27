@@ -1,7 +1,7 @@
 ﻿using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NemzetiVirusbolt.Desktop.Dtos;
-using NemzetiVirusbolt.Validation;
+using NemzetiVirusbolt.Desktop.Validation;
 
 namespace NemzetiVirusbolt.ValidationTests
 {

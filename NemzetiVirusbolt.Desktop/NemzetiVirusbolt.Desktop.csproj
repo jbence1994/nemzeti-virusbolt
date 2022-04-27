@@ -7,15 +7,11 @@
   </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="10.4.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\NemzetiVirusbolt.Desktop.Dtos\NemzetiVirusbolt.Desktop.Dtos.csproj" />
-      <ProjectReference Include="..\NemzetiVirusbolt.Desktop.Services\NemzetiVirusbolt.Desktop.Services.csproj" />
-      <ProjectReference Include="..\NemzetiVirusbolt.Validation\NemzetiVirusbolt.Validation.csproj" />
+      <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     </ItemGroup>
 
     <ItemGroup>
