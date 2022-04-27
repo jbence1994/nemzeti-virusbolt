@@ -1,6 +1,6 @@
 ﻿using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NemzetiVirusbolt.Desktop.Dtos;
+using NemzetiVirusbolt.Desktop.Tests.TestBuilders.Dtos;
 using NemzetiVirusbolt.Desktop.Validation;
 
 namespace NemzetiVirusbolt.Desktop.Tests.Validation
@@ -8,51 +8,27 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
     [TestClass]
     public class StockValidatorTests
     {
+        private readonly StockValidator _stockValidator = new();
+
         [TestMethod]
         public void StockValidatorTest_InCaseStockQuantityIsZero_ShouldHaveErrorForStockQuantity()
         {
-            // Arrange
+            var stockToSave = SaveStockDtoTestBuilder.WithZeroQuantity;
 
-            var stockValidator = new StockValidator();
-
-            var stockToSave = new SaveStockDto
-            {
-                ProductId = 1,
-                Quantity = 0
-            };
-
-            // Act
-
-            var validationResult = stockValidator.TestValidate(stockToSave);
-
-            // Assert
+            var validationResult = _stockValidator.TestValidate(stockToSave);
 
             validationResult.ShouldNotHaveValidationErrorFor(stock => stock.ProductId);
-
             validationResult.ShouldHaveValidationErrorFor(stock => stock.Quantity);
         }
 
         [TestMethod]
         public void StockValidatorTest_InCaseEveryPropertyOk_ShouldNotHaveAnyErrors()
         {
-            // Arrange
+            var stockToSave = SaveStockDtoTestBuilder.Default;
 
-            var stockValidator = new StockValidator();
-
-            var stockToSave = new SaveStockDto
-            {
-                ProductId = 1,
-                Quantity = 1
-            };
-
-            // Act
-
-            var validationResult = stockValidator.TestValidate(stockToSave);
-
-            // Assert
+            var validationResult = _stockValidator.TestValidate(stockToSave);
 
             validationResult.ShouldNotHaveValidationErrorFor(stock => stock.ProductId);
-
             validationResult.ShouldNotHaveValidationErrorFor(stock => stock.Quantity);
         }
     }
