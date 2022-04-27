@@ -1,4 +1,4 @@
-﻿namespace NemzetiVirusbolt.API.Resources
+﻿namespace NemzetiVirusbolt.Api.Resources
 {
     public class GetProductResource
     {
