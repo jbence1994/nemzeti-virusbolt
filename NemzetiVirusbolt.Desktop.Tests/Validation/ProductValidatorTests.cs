@@ -1,6 +1,6 @@
 ﻿using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NemzetiVirusbolt.Desktop.Dtos;
+using NemzetiVirusbolt.Desktop.Tests.TestBuilders.Dtos;
 using NemzetiVirusbolt.Desktop.Validation;
 
 namespace NemzetiVirusbolt.Desktop.Tests.Validation
@@ -8,27 +8,14 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
     [TestClass]
     public class ProductValidatorTests
     {
+        private readonly ProductValidator _productValidator = new ProductValidator();
+
         [TestMethod]
         public void ProductValidatorTest_InCaseProductNameIsEmpty_ShouldHaveErrorForProductName()
         {
-            // Arrange
+            var productToSave = SaveProductDtoTestBuilder.WithEmptyName;
 
-            var productValidator = new ProductValidator();
-
-            var productToSave = new SaveProductDto
-            {
-                Name = "",
-                Description = "...",
-                Price = "3500",
-                SupplierId = 1,
-                Unit = "db"
-            };
-
-            // Act
-
-            var validationResult = productValidator.TestValidate(productToSave);
-
-            // Assert
+            var validationResult = _productValidator.TestValidate(productToSave);
 
             validationResult.ShouldHaveValidationErrorFor(product => product.Name);
         }
@@ -36,24 +23,9 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
         [TestMethod]
         public void ProductValidatorTest_InCaseProductPriceIsEmpty_ShouldHaveErrorForProductPrice()
         {
-            // Arrange
+            var productToSave = SaveProductDtoTestBuilder.WithEmptyPrice;
 
-            var productValidator = new ProductValidator();
-
-            var productToSave = new SaveProductDto
-            {
-                Name = "FFP3 maszk",
-                Description = "...",
-                Price = "",
-                SupplierId = 1,
-                Unit = "db"
-            };
-
-            // Act
-
-            var validationResult = productValidator.TestValidate(productToSave);
-
-            // Assert
+            var validationResult = _productValidator.TestValidate(productToSave);
 
             validationResult.ShouldHaveValidationErrorFor(product => product.Price);
         }
@@ -61,24 +33,9 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
         [TestMethod]
         public void ProductValidatorTest_InCaseProductPriceContainsLetters_ShouldHaveErrorForProductPrice()
         {
-            // Arrange
+            var productToSave = SaveProductDtoTestBuilder.WithLettersInPrice;
 
-            var productValidator = new ProductValidator();
-
-            var productToSave = new SaveProductDto
-            {
-                Name = "FFP3 maszk",
-                Description = "...",
-                Price = "1200d",
-                SupplierId = 1,
-                Unit = "db"
-            };
-
-            // Act
-
-            var validationResult = productValidator.TestValidate(productToSave);
-
-            // Assert
+            var validationResult = _productValidator.TestValidate(productToSave);
 
             validationResult.ShouldHaveValidationErrorFor(product => product.Price);
         }
@@ -86,24 +43,9 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
         [TestMethod]
         public void ProductValidatorTest_InCaseProductUnitIsEmpty_ShouldHaveErrorForProductUnit()
         {
-            // Arrange
+            var productToSave = SaveProductDtoTestBuilder.WithEmptyUnit;
 
-            var productValidator = new ProductValidator();
-
-            var productToSave = new SaveProductDto
-            {
-                Name = "FFP3 maszk",
-                Description = "...",
-                Price = "3500",
-                SupplierId = 1,
-                Unit = ""
-            };
-
-            // Act
-
-            var validationResult = productValidator.TestValidate(productToSave);
-
-            // Assert
+            var validationResult = _productValidator.TestValidate(productToSave);
 
             validationResult.ShouldHaveValidationErrorFor(product => product.Unit);
         }
