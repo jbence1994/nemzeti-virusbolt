@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using NemzetiVirusbolt.Core;
+using NemzetiVirusbolt.Api.Core;
 
 namespace NemzetiVirusbolt.Api.Persistence
 {

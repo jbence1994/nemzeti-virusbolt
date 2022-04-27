@@ -6,10 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using NemzetiVirusbolt.Api.Core;
+using NemzetiVirusbolt.Api.Core.Repositories;
 using NemzetiVirusbolt.Api.Persistence;
 using NemzetiVirusbolt.Api.Persistence.Repositories;
-using NemzetiVirusbolt.Core;
-using NemzetiVirusbolt.Core.Repositories;
 
 namespace NemzetiVirusbolt.Api
 {
