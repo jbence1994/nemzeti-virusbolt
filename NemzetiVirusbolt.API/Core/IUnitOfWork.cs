@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace NemzetiVirusbolt.Core
+namespace NemzetiVirusbolt.Api.Core
 {
     public interface IUnitOfWork
     {

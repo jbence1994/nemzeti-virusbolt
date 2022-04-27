@@ -1,4 +1,4 @@
-﻿namespace NemzetiVirusbolt.Core.Models
+﻿namespace NemzetiVirusbolt.Api.Core.Models
 {
     public class MergedStock
     {
