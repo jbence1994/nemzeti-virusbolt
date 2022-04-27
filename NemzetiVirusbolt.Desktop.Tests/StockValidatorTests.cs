@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NemzetiVirusbolt.Desktop.Dtos;
 using NemzetiVirusbolt.Desktop.Validation;
 
-namespace NemzetiVirusbolt.ValidationTests
+namespace NemzetiVirusbolt.Desktop.Tests
 {
     [TestClass]
     public class StockValidatorTests
