@@ -1,16 +1,16 @@
 ﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NemzetiVirusbolt.Desktop.Tests.TestBuilders.Dtos;
 using NemzetiVirusbolt.Desktop.Validation;
+using NUnit.Framework;
 
 namespace NemzetiVirusbolt.Desktop.Tests.Validation
 {
-    [TestClass]
+    [TestFixture]
     public class StockValidatorTests
     {
         private readonly StockValidator _stockValidator = new();
 
-        [TestMethod]
+        [Test]
         public void StockValidatorTest_InCaseStockQuantityIsZero_ShouldHaveErrorForStockQuantity()
         {
             var stockToSave = SaveStockDtoTestBuilder.WithZeroQuantity;
@@ -21,7 +21,7 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
             validationResult.ShouldHaveValidationErrorFor(stock => stock.Quantity);
         }
 
-        [TestMethod]
+        [Test]
         public void StockValidatorTest_InCaseEveryPropertyOk_ShouldNotHaveAnyErrors()
         {
             var stockToSave = SaveStockDtoTestBuilder.Default;

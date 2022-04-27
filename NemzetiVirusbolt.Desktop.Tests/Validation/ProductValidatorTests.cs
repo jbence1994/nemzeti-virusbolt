@@ -1,16 +1,16 @@
 ﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NemzetiVirusbolt.Desktop.Tests.TestBuilders.Dtos;
 using NemzetiVirusbolt.Desktop.Validation;
+using NUnit.Framework;
 
 namespace NemzetiVirusbolt.Desktop.Tests.Validation
 {
-    [TestClass]
+    [TestFixture]
     public class ProductValidatorTests
     {
         private readonly ProductValidator _productValidator = new();
 
-        [TestMethod]
+        [Test]
         public void ProductValidatorTest_InCaseProductNameIsEmpty_ShouldHaveErrorForProductName()
         {
             var productToSave = SaveProductDtoTestBuilder.WithEmptyName;
@@ -20,7 +20,7 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
             validationResult.ShouldHaveValidationErrorFor(product => product.Name);
         }
 
-        [TestMethod]
+        [Test]
         public void ProductValidatorTest_InCaseProductPriceIsEmpty_ShouldHaveErrorForProductPrice()
         {
             var productToSave = SaveProductDtoTestBuilder.WithEmptyPrice;
@@ -30,7 +30,7 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
             validationResult.ShouldHaveValidationErrorFor(product => product.Price);
         }
 
-        [TestMethod]
+        [Test]
         public void ProductValidatorTest_InCaseProductPriceContainsLetters_ShouldHaveErrorForProductPrice()
         {
             var productToSave = SaveProductDtoTestBuilder.WithLettersInPrice;
@@ -40,7 +40,7 @@ namespace NemzetiVirusbolt.Desktop.Tests.Validation
             validationResult.ShouldHaveValidationErrorFor(product => product.Price);
         }
 
-        [TestMethod]
+        [Test]
         public void ProductValidatorTest_InCaseProductUnitIsEmpty_ShouldHaveErrorForProductUnit()
         {
             var productToSave = SaveProductDtoTestBuilder.WithEmptyUnit;
