@@ -31,8 +31,8 @@ namespace NemzetiVirusbolt.Api
             services.AddAutoMapper();
 
             services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IStockRepository, StockRepository>();
-            services.AddScoped<ISupplierRepository, SupplierRepository>();
+            services.AddScoped<ISupplyRepository, SupplyRepository>();
+            services.AddScoped<IMerchantRepository, MerchantRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

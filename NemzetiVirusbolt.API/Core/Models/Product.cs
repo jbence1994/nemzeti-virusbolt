@@ -10,13 +10,13 @@ namespace NemzetiVirusbolt.Api.Core.Models
         public double Price { get; set; }
         public string Unit { get; set; }
         public string Description { get; set; }
-        public int SupplierId { get; set; }
-        public Supplier Supplier { get; set; }
-        public ICollection<Stock> Stocks { get; set; }
+        public int MerchantId { get; set; }
+        public Merchant Merchant { get; set; }
+        public ICollection<Supply> Supplies { get; set; }
 
         public Product()
         {
-            Stocks = new Collection<Stock>();
+            Supplies = new Collection<Supply>();
         }
     }
 }

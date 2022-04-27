@@ -45,7 +45,7 @@ namespace NemzetiVirusbolt.Api.Controllers
             {
                 var product = _mapper.Map<Product>(productResource);
 
-                await _productRepository.AddProduct(product);
+                await _productRepository.Add(product);
                 await _unitOfWork.CompleteAsync();
 
                 product = await _productRepository.GetProduct(product.Id);

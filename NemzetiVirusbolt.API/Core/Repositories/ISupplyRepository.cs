@@ -4,12 +4,12 @@ using NemzetiVirusbolt.Api.Core.Models;
 
 namespace NemzetiVirusbolt.Api.Core.Repositories
 {
-    public interface IStockRepository
+    public interface ISupplyRepository
     {
-        Task<IEnumerable<Stock>> GetStocks();
+        Task<IEnumerable<Supply>> GetSupplies();
+        Task<Supply> GetSupply(int id);
+        Task Add(Supply stock);
         Task<IEnumerable<MergedStock>> GetMergedStocks();
-        Task<Stock> GetStock(int id);
-        Task AddStock(Stock stock);
         Task<StockTotalValue> GetTotalStockValue();
     }
 }

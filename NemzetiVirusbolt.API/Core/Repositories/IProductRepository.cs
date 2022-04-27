@@ -8,6 +8,6 @@ namespace NemzetiVirusbolt.Api.Core.Repositories
     {
         Task<IEnumerable<Product>> GetProducts();
         Task<Product> GetProduct(int id);
-        Task AddProduct(Product product);
+        Task Add(Product product);
     }
 }

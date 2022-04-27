@@ -10,16 +10,16 @@ namespace NemzetiVirusbolt.Api.Mapping
         {
             // Domain model to API Resource
 
-            CreateMap<Supplier, GetSupplierResource>();
-            CreateMap<Product, GetProductResource>();
-            CreateMap<Stock, GetStockResource>();
+            CreateMap<Merchant, GetSupplierResource>();
             CreateMap<MergedStock, GetMergedStockResource>();
+            CreateMap<Product, GetProductResource>();
             CreateMap<StockTotalValue, GetStockTotalValueResource>();
+            CreateMap<Supply, GetStockResource>();
 
             // API Resource to Domain model
 
             CreateMap<SaveProductResource, Product>();
-            CreateMap<SaveStockResource, Stock>();
+            CreateMap<SaveStockResource, Supply>();
         }
     }
 }

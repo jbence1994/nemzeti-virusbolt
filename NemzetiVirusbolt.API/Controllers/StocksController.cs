@@ -14,11 +14,11 @@ namespace NemzetiVirusbolt.Api.Controllers
     [ApiController]
     public class StocksController : ControllerBase
     {
-        private readonly IStockRepository _stockRepository;
+        private readonly ISupplyRepository _stockRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public StocksController(IStockRepository stockRepository, IUnitOfWork unitOfWork, IMapper mapper)
+        public StocksController(ISupplyRepository stockRepository, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _stockRepository = stockRepository;
             _unitOfWork = unitOfWork;
@@ -29,10 +29,10 @@ namespace NemzetiVirusbolt.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetStocks()
         {
-            var stocks = await _stockRepository.GetStocks();
+            var stocks = await _stockRepository.GetSupplies();
 
             var stockResources =
-                _mapper.Map<IEnumerable<Stock>, IEnumerable<GetStockResource>>(stocks);
+                _mapper.Map<IEnumerable<Supply>, IEnumerable<GetStockResource>>(stocks);
 
             return Ok(stockResources);
         }
@@ -66,15 +66,15 @@ namespace NemzetiVirusbolt.Api.Controllers
         {
             try
             {
-                var stock = _mapper.Map<Stock>(stockResource);
-                stock.DateRecorded = DateTime.Now;
+                var stock = _mapper.Map<Supply>(stockResource);
+                stock.CreatedDateTime = DateTime.Now;
 
-                await _stockRepository.AddStock(stock);
+                await _stockRepository.Add(stock);
                 await _unitOfWork.CompleteAsync();
 
-                stock = await _stockRepository.GetStock(stock.Id);
+                stock = await _stockRepository.GetSupply(stock.Id);
 
-                var result = _mapper.Map<Stock, GetStockResource>(stock);
+                var result = _mapper.Map<Supply, GetStockResource>(stock);
 
                 return Ok(result);
             }

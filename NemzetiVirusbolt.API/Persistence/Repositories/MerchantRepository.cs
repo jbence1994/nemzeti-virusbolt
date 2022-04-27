@@ -6,18 +6,18 @@ using NemzetiVirusbolt.Api.Core.Repositories;
 
 namespace NemzetiVirusbolt.Api.Persistence.Repositories
 {
-    public class SupplierRepository : ISupplierRepository
+    public class MerchantRepository : IMerchantRepository
     {
         private readonly ApplicationDbContext _context;
 
-        public SupplierRepository(ApplicationDbContext context)
+        public MerchantRepository(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IEnumerable<Supplier>> GetSuppliers()
+        public async Task<IEnumerable<Merchant>> GetMerchants()
         {
-            return await _context.Suppliers.ToListAsync();
+            return await _context.Merchants.ToListAsync();
         }
     }
 }

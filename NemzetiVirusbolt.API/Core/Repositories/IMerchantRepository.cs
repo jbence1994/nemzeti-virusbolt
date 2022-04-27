@@ -4,8 +4,8 @@ using NemzetiVirusbolt.Api.Core.Models;
 
 namespace NemzetiVirusbolt.Api.Core.Repositories
 {
-    public interface ISupplierRepository
+    public interface IMerchantRepository
     {
-        Task<IEnumerable<Supplier>> GetSuppliers();
+        Task<IEnumerable<Merchant>> GetMerchants();
     }
 }

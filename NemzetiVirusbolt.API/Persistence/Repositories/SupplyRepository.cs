@@ -7,27 +7,39 @@ using NemzetiVirusbolt.Api.Core.Repositories;
 
 namespace NemzetiVirusbolt.Api.Persistence.Repositories
 {
-    public class StockRepository : IStockRepository
+    public class SupplyRepository : ISupplyRepository
     {
         private readonly ApplicationDbContext _context;
 
-        public StockRepository(ApplicationDbContext context)
+        public SupplyRepository(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IEnumerable<Stock>> GetStocks()
+        public async Task<IEnumerable<Supply>> GetSupplies()
         {
-            return await _context.Stocks
-                .Include(s => s.Product)
+            return await _context.Supplies
+                .Include(supply => supply.Product)
                 .ToListAsync();
+        }
+
+        public async Task<Supply> GetSupply(int id)
+        {
+            return await _context.Supplies
+                .Include(supply => supply.Product)
+                .SingleOrDefaultAsync(supply => supply.Id == id);
+        }
+
+        public async Task Add(Supply stock)
+        {
+            await _context.Supplies.AddAsync(stock);
         }
 
         public async Task<IEnumerable<MergedStock>> GetMergedStocks()
         {
             var mergedStock = new Dictionary<string, int>();
 
-            foreach (var stock in await GetStocks())
+            foreach (var stock in await GetSupplies())
             {
                 if (mergedStock.ContainsKey(stock.Product.Name))
                     mergedStock[stock.Product.Name] += stock.Quantity;
@@ -40,22 +52,9 @@ namespace NemzetiVirusbolt.Api.Persistence.Repositories
                     new MergedStock {ProductName = pair.Key, Quantity = pair.Value});
         }
 
-        public async Task<Stock> GetStock(int id)
-        {
-            return await _context.Stocks
-                .Include(s => s.Product)
-                .Where(s => s.Id == id)
-                .SingleOrDefaultAsync();
-        }
-
-        public async Task AddStock(Stock stock)
-        {
-            await _context.Stocks.AddAsync(stock);
-        }
-
         public async Task<StockTotalValue> GetTotalStockValue()
         {
-            var stocks = await GetStocks();
+            var stocks = await GetSupplies();
 
             return new StockTotalValue
             {

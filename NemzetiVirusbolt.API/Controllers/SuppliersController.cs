@@ -12,10 +12,10 @@ namespace NemzetiVirusbolt.Api.Controllers
     [ApiController]
     public class SuppliersController : ControllerBase
     {
-        private readonly ISupplierRepository _supplierRepository;
+        private readonly IMerchantRepository _supplierRepository;
         private readonly IMapper _mapper;
 
-        public SuppliersController(ISupplierRepository supplierRepository, IMapper mapper)
+        public SuppliersController(IMerchantRepository supplierRepository, IMapper mapper)
         {
             _supplierRepository = supplierRepository;
             _mapper = mapper;
@@ -25,10 +25,10 @@ namespace NemzetiVirusbolt.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetSuppliers()
         {
-            var suppliers = await _supplierRepository.GetSuppliers();
+            var suppliers = await _supplierRepository.GetMerchants();
 
             var supplierResources =
-                _mapper.Map<IEnumerable<Supplier>, IEnumerable<GetSupplierResource>>(suppliers);
+                _mapper.Map<IEnumerable<Merchant>, IEnumerable<GetSupplierResource>>(suppliers);
 
             return Ok(supplierResources);
         }

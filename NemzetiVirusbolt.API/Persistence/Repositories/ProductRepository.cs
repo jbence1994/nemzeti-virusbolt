@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Api.Core.Models;
@@ -19,19 +18,18 @@ namespace NemzetiVirusbolt.Api.Persistence.Repositories
         public async Task<IEnumerable<Product>> GetProducts()
         {
             return await _context.Products
-                .Include(p => p.Supplier)
+                .Include(product => product.Merchant)
                 .ToListAsync();
         }
 
         public async Task<Product> GetProduct(int id)
         {
             return await _context.Products
-                .Include(p => p.Supplier)
-                .Where(p => p.Id == id)
-                .SingleOrDefaultAsync();
+                .Include(product => product.Merchant)
+                .SingleOrDefaultAsync(product => product.Id == id);
         }
 
-        public async Task AddProduct(Product product)
+        public async Task Add(Product product)
         {
             await _context.Products.AddAsync(product);
         }
