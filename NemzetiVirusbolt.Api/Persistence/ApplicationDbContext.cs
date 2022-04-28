@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Api.Core.Models;
+using NemzetiVirusbolt.Api.Persistence.EntityConfigurations;
 
 namespace NemzetiVirusbolt.Api.Persistence
 {
@@ -12,6 +13,13 @@ namespace NemzetiVirusbolt.Api.Persistence
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new MerchantEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new SupplyEntityConfiguration());
         }
     }
 }
