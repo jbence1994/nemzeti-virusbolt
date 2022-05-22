@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using NemzetiVirusbolt.Api.Core.Models;
-using NemzetiVirusbolt.Api.Core.Repositories;
+using NemzetiVirusbolt.Core.Models;
+using NemzetiVirusbolt.Core.Repositories;
 using NemzetiVirusbolt.Api.Resources;
 
 namespace NemzetiVirusbolt.Api.Controllers

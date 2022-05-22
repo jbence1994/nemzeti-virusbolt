@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NemzetiVirusbolt.Api.Core.Models
+namespace NemzetiVirusbolt.Core.Models
 {
     public class Stock
     {

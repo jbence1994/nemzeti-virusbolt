@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NemzetiVirusbolt.Api.Core.Models;
+using NemzetiVirusbolt.Core.Models;
 
 namespace NemzetiVirusbolt.Api.Persistence
 {

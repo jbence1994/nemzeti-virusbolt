@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using NemzetiVirusbolt.Api.Core.Models;
 using NemzetiVirusbolt.Api.Resources;
+using NemzetiVirusbolt.Core.Models;
 
 namespace NemzetiVirusbolt.Api.Mapping
 {

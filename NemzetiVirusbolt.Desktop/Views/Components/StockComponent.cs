@@ -4,8 +4,8 @@ using System.Windows.Forms;
 using NemzetiVirusbolt.Desktop.Dtos;
 using NemzetiVirusbolt.Desktop.Services.Products;
 using NemzetiVirusbolt.Desktop.Services.Stocks;
-using NemzetiVirusbolt.Desktop.Validation;
 using NemzetiVirusbolt.Desktop.Views.Helpers;
+using NemzetiVirusbolt.Validation;
 
 namespace NemzetiVirusbolt.Desktop.Views.Components
 {
