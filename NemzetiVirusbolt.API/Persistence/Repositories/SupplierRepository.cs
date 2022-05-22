@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
 
-namespace NemzetiVirusbolt.Api.Persistence.Repositories
+namespace NemzetiVirusbolt.API.Persistence.Repositories
 {
     public class SupplierRepository : ISupplierRepository
     {

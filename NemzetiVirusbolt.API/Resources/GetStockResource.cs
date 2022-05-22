@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NemzetiVirusbolt.Api.Resources
+namespace NemzetiVirusbolt.API.Resources
 {
     public class GetStockResource
     {

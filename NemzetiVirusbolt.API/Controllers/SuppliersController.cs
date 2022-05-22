@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using NemzetiVirusbolt.API.Resources;
 using NemzetiVirusbolt.Core.Models;
 using NemzetiVirusbolt.Core.Repositories;
-using NemzetiVirusbolt.Api.Resources;
 
-namespace NemzetiVirusbolt.Api.Controllers
+namespace NemzetiVirusbolt.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
