@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C51815B1-89A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FC8689F1-F938-4145-B6D8-C0646154DECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.Desktop.Tests", "NemzetiVirusbolt.Desktop.Tests\NemzetiVirusbolt.Desktop.Tests.csproj", "{2BFD69A4-2AA6-436D-8603-7B2327F39DCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.ValidationTests", "NemzetiVirusbolt.ValidationTests\NemzetiVirusbolt.ValidationTests.csproj", "{2BFD69A4-2AA6-436D-8603-7B2327F39DCA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NemzetiVirusbolt.Desktop", "NemzetiVirusbolt.Desktop\NemzetiVirusbolt.Desktop.csproj", "{0C6EEBA2-4E4D-49DC-B7C2-9B105B9F6EE9}"
 EndProject
