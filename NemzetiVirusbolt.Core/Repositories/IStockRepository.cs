@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using NemzetiVirusbolt.Api.Core.Models;
+using NemzetiVirusbolt.Core.Models;
 
-namespace NemzetiVirusbolt.Api.Core.Repositories
+namespace NemzetiVirusbolt.Core.Repositories
 {
     public interface IStockRepository
     {

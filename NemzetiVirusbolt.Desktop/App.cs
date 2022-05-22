@@ -6,9 +6,9 @@ using NemzetiVirusbolt.Desktop.Authentication;
 using NemzetiVirusbolt.Desktop.Services.Products;
 using NemzetiVirusbolt.Desktop.Services.Stocks;
 using NemzetiVirusbolt.Desktop.Services.Suppliers;
-using NemzetiVirusbolt.Desktop.Validation;
 using NemzetiVirusbolt.Desktop.Views.Components;
 using NemzetiVirusbolt.Desktop.Views.Windows;
+using NemzetiVirusbolt.Validation;
 
 namespace NemzetiVirusbolt.Desktop
 {
