@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace NemzetiVirusbolt.Api
+namespace NemzetiVirusbolt.API
 {
     public class Program
     {
